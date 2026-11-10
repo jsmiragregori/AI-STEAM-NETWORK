@@ -10,9 +10,9 @@ export const GOVERNANCE_CONFIG = {
       "va": "Governança del Projecte"
     },
     "description": {
-      "es": "Estructura de toma de decisiones y coordinación del consorcio AiSECRETT, con representación de todos los agentes del ecosistema y mecanismos de participación abierta.",
-      "en": "Decision-making and coordination structure of the AiSECRETT consortium, with representation from all ecosystem agents and open participation mechanisms.",
-      "va": "Estructura de presa de decisions i coordinació del consorci AiSECRETT, amb representació de tots els agents de l'ecosistema i mecanismes de participació oberta."
+      "es": "Estructura de gobernanza y coordinación de la red AiSTEAM, articulada en dos ámbitos complementarios: la vía académica oficial y la comunidad de práctica abierta al ecosistema.",
+      "en": "Governance and coordination structure of the AiSTEAM Network, organized into two complementary spheres: the official academic pathway and the community of practice open to the ecosystem.",
+      "va": "Estructura de governança i coordinació de la xarxa AiSTEAM, articulada en dos àmbits complementaris: la via acadèmica oficial i la comunitat de pràctica oberta a l'ecosistema."
     },
     "stats": [
       {
@@ -62,9 +62,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Estructura de Hub Distribuït"
       },
       "description": {
-        "es": "La AiSTEAM Network opera como un concentrador distribuido de mejora del conocimiento e innovación, inspirada en el modelo DigiNet (Finlandia). Su estructura física y virtual replica la lógica de un hub con nodos regionales europeos.",
-        "en": "The AiSTEAM Network operates as a distributed facility for knowledge improvement and innovation, inspired by the DigiNet model (Finland). Its physical and virtual structure replicates the logic of a hub with European regional nodes.",
-        "va": "La xarxa AiSTEAM funciona com una instal·lació distribuïda per a la millora del coneixement i la innovació, inspirada en el model DigiNet (Finlàndia). La seua estructura física i virtual replica la lògica d'un hub amb nodes regionals europeus."
+        "es": "La red AiSTEAM funciona como un centro distribuido de innovación y conocimiento, inspirado en el modelo DigiNet. Su estructura física y virtual conecta un nodo central de coordinación con nodos regionales en toda Europa.",
+        "en": "The AiSTEAM Network operates as a distributed hub for innovation and knowledge, inspired by the DigiNet model. Its physical and virtual structure connects a central coordination hub with regional nodes across Europe.",
+        "va": "La xarxa AiSTEAM funciona com un centre distribuït d'innovació i coneixement, inspirat en el model DigiNet. La seua estructura física i virtual connecta un node central de coordinació amb nodes regionals a tot Europa."
       },
       "nodes": [
         {
@@ -83,14 +83,14 @@ export const GOVERNANCE_CONFIG = {
             "va": "Valencia"
           },
           "org": {
-            "es": "CECU - Generalitat Valenciana",
-            "en": "CECU - Generalitat Valenciana",
-            "va": "CECU - Generalitat Valenciana"
+            "es": "Conselleria de Educación – Generalitat Valenciana",
+            "en": "Regional Ministry of Education – Generalitat Valenciana",
+            "va": "Conselleria d'Educació – Generalitat Valenciana"
           },
           "role": {
-            "es": "Orquestador del ecosistema. Hub central de la red. Aloja el portal, Aules y ConsensUE.",
-            "en": "Ecosystem orchestrator. Central hub of the network. Hosts the portal, Aules, and ConsensUE.",
-            "va": "Orquestrador de l'ecosistema. Hub central de la xarxa. Allotja el portal, Aules i ConsensUE."
+            "es": "Dinamización del ecosistema y punto de encuentro de la red. Aloja el portal público, los cursos en Aules y el espacio participativo ConsensUE.",
+            "en": "Ecosystem facilitation and network meeting point. Hosts the public portal, Aules training courses, and the ConsensUE collaborative space.",
+            "va": "Dinamització de l'ecosistema i punt de trobada de la xarxa. Allotja el portal públic, els cursos en Aules i l'espai participatiu ConsensUE."
           }
         },
         {
@@ -155,9 +155,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Els Dos Actors Principals de la Plataforma"
       },
       "description": {
-        "es": "Siguiendo el modelo DigiNet, la operación del hub se articula sobre una división formal de competencias entre el Orquestador Institucional y el Proveedor Académico.",
-        "en": "Following the DigiNet model, hub operation is articulated on a formal division of competencies between the Institutional Orchestrator and the Academic Provider.",
-        "va": "Seguint el model DigiNet, l'operació del hub s'articula sobre una divisió formal de competències entre l'Orquestrador Institucional i el Proveïdor Acadèmic."
+        "es": "La operativa de la red se articula sobre dos pilares complementarios: la dinamización institucional de la comunidad y la dirección académica universitaria.",
+        "en": "The operation of the network is articulated on two complementary pillars: the institutional facilitation of the community and the university academic leadership.",
+        "va": "L'operativa de la xarxa s'articula sobre dos pilars complementaris: la dinamització institucional de la comunitat i la direcció acadèmica universitària."
       },
       "cards": [
         {
@@ -167,14 +167,14 @@ export const GOVERNANCE_CONFIG = {
           "icon": "building-2",
           "tone": "orange",
           "title": {
-            "es": "CECU - Orquestador Institucional",
-            "en": "CECU - Institutional Orchestrator",
-            "va": "CECU - Orquestrador Institucional"
+            "es": "Conselleria de Educación – Dinamización Institucional",
+            "en": "Regional Ministry of Education – Institutional Facilitation",
+            "va": "Conselleria d'Educació – Dinamització Institucional"
           },
           "subtitle": {
-            "es": "Generalitat Valenciana · Track B",
-            "en": "Generalitat Valenciana · Track B",
-            "va": "Generalitat Valenciana · Track B"
+            "es": "Generalitat Valenciana · Comunidad y Ecosistema",
+            "en": "Generalitat Valenciana · Community & Ecosystem",
+            "va": "Generalitat Valenciana · Comunitat i Ecosistema"
           },
           "roles": [
             {
@@ -188,9 +188,9 @@ export const GOVERNANCE_CONFIG = {
                 "va": "Representació"
               },
               "desc": {
-                "es": "Representación pública y política de la red ante instituciones europeas y nacionales.",
-                "en": "Public and political representation of the network before European and national institutions.",
-                "va": "Representació pública i política de la xarxa davant institucions europees i nacionals."
+                "es": "Representación pública e institucional de la red ante administraciones y organismos europeos y nacionales.",
+                "en": "Public and institutional representation of the network before European and national administrations and bodies.",
+                "va": "Representació pública i institucional de la xarxa davant administracions i organismes europeus i nacionals."
               }
             },
             {
@@ -199,14 +199,14 @@ export const GOVERNANCE_CONFIG = {
               "order": 2,
               "icon": "file-text",
               "label": {
-                "es": "Contenido (no Máster)",
-                "en": "Content (non-Master)",
-                "va": "Contingut (no Màster)"
+                "es": "Iniciativas de la red",
+                "en": "Network Initiatives",
+                "va": "Iniciatives de la xarxa"
               },
               "desc": {
-                "es": "Gestiona la publicación de noticias, agenda de eventos y retos del ecosistema.",
-                "en": "Manages publication of news, event agenda, and ecosystem challenges.",
-                "va": "Gestiona la publicació de notícies, agenda d'events i reptes de l'ecosistema."
+                "es": "Gestión y difusión de iniciativas de la comunidad: retos del ecosistema, buenas prácticas, agenda y actualidad de la red.",
+                "en": "Management and dissemination of community initiatives: ecosystem challenges, best practices, event agenda, and network news.",
+                "va": "Gestió i difusió d'iniciatives de la comunitat: reptes de l'ecosistema, bones pràctiques, agenda i actualitat de la xarxa."
               }
             },
             {
@@ -215,14 +215,14 @@ export const GOVERNANCE_CONFIG = {
               "order": 3,
               "icon": "users",
               "label": {
-                "es": "Datos de miembros",
-                "en": "Member Data",
-                "va": "Dades de membres"
+                "es": "Entidades colaboradoras",
+                "en": "Collaborating Organizations",
+                "va": "Entitats col·laboradores"
               },
               "desc": {
-                "es": "Gestiona los datos de las organizaciones adheridas en los sistemas propios de la GVA bajo el marco aplicable de protección de datos. Otros sistemas mantienen sus responsabilidades específicas según su titularidad y finalidad.",
-                "en": "Manages data from adhered organizations in GVA-owned systems under the applicable data-protection framework. Other systems keep their own responsibilities according to their ownership and purpose.",
-                "va": "Gestiona les dades de les organitzacions adherides en els sistemes propis de la GVA sota el marc aplicable de protecció de dades. Altres sistemes mantenen les seues responsabilitats específiques segons la titularitat i la finalitat."
+                "es": "Gestión de las adhesiones de entidades colaboradoras en los entornos de la Generalitat Valenciana conforme al marco normativo de protección de datos.",
+                "en": "Management of collaborating organization memberships within Generalitat Valenciana systems under the applicable data-protection framework.",
+                "va": "Gestió de les adhesions d'entitats col·laboradores en els entorns de la Generalitat Valenciana d'acord amb el marc normatiu de protecció de dades."
               }
             },
             {
@@ -236,9 +236,9 @@ export const GOVERNANCE_CONFIG = {
                 "va": "Infraestructura"
               },
               "desc": {
-                "es": "Provee y mantiene esta aplicación web, Aules y el Espacio ConsensUE en Aules para la participación del Track B.",
-                "en": "Provides and maintains this web application, Aules, and the ConsensUE space in Aules for Track B participation.",
-                "va": "Proporciona i manté esta aplicació web, Aules i l'Espai ConsensUE en Aules per a la participació del Track B."
+                "es": "Provisión y soporte de la plataforma web AiSTEAM, el entorno formativo Aules y el espacio colaborativo ConsensUE.",
+                "en": "Provision and support of the AiSTEAM web platform, the Aules training environment, and the ConsensUE collaborative space.",
+                "va": "Provisió i suport de la plataforma web AiSTEAM, l'entorn formatiu Aules i l'espai col·laboratiu ConsensUE."
               }
             }
           ]
@@ -250,14 +250,14 @@ export const GOVERNANCE_CONFIG = {
           "icon": "graduation-cap",
           "tone": "blue",
           "title": {
-            "es": "UVEG - Proveedor Académico",
-            "en": "UVEG - Academic Provider",
-            "va": "UVEG - Proveïdor Acadèmic"
+            "es": "Universitat de València – Dirección Académica",
+            "en": "Universitat de València – Academic Leadership",
+            "va": "Universitat de València – Direcció Acadèmica"
           },
           "subtitle": {
-            "es": "Universitat de València · Track A",
-            "en": "Universitat de València · Track A",
-            "va": "Universitat de València · Track A"
+            "es": "Universitat de València · Vía Académica (Máster)",
+            "en": "Universitat de València · Academic Pathway (Master)",
+            "va": "Universitat de València · Via Acadèmica (Màster)"
           },
           "roles": [
             {
@@ -271,9 +271,9 @@ export const GOVERNANCE_CONFIG = {
                 "va": "Garant acadèmic"
               },
               "desc": {
-                "es": "Responsable de la calidad académica del Máster AiSECRETT, los ECTS y la evaluación de competencias. Coordina con Laurea el Espacio Académico.",
-                "en": "Responsible for academic quality of the Master AiSECRETT, ECTS credits, and competency evaluation. Coordinates with Laurea the Academic Space.",
-                "va": "Responsable de la qualitat acadèmica del Màster AiSECRETT, els crèdits ECTS i l'avaluació de competències. Coordina amb Laurea l'Espai Acadèmic."
+                "es": "Responsable de la excelencia académica del Máster Universitario AiSECRETT, las microcredenciales y la evaluación de competencias, en coordinación con las universidades socias del consorcio.",
+                "en": "Responsible for the academic excellence of the Master AiSECRETT, micro-credentials, and competency assessment, in coordination with partner universities across the consortium.",
+                "va": "Responsable de l'excel·lència acadèmica del Màster Universitari AiSECRETT, les microcredencials i l'avaluació de competències, en coordinació amb les universitats sòcies del consorci."
               }
             },
             {
@@ -287,9 +287,9 @@ export const GOVERNANCE_CONFIG = {
                 "va": "Contingut del Màster"
               },
               "desc": {
-                "es": "Gestiona el LMS, la matriculación de estudiantes y la carga y gestión de materiales docentes.",
-                "en": "Manages LMS, student registration, and uploading/managing educational materials.",
-                "va": "Gestiona l'LMS, la matriculació d'estudiants i la càrrega i gestió de materials docents."
+                "es": "Coordinación docente, diseño curricular, claustro académico y gestión de los recursos de enseñanza superior.",
+                "en": "Teaching coordination, curriculum design, academic faculty, and higher education resource management.",
+                "va": "Coordinació docent, disseny curricular, claustre acadèmic i gestió dels recursos d'ensenyament superior."
               }
             },
             {
@@ -303,9 +303,9 @@ export const GOVERNANCE_CONFIG = {
                 "va": "Dades acadèmiques"
               },
               "desc": {
-                "es": "Los expedientes académicos y la información del Máster permanecen bajo la gobernanza académica y de protección de datos de UVEG y de los sistemas autorizados del Track A.",
-                "en": "Academic records and Master information remain under UVEG academic and data-protection governance and the authorised Track A systems.",
-                "va": "Els expedients acadèmics i la informació del Màster romanen sota la governança acadèmica i de protecció de dades d'UVEG i dels sistemes autoritzats del Track A."
+                "es": "Gestión de los expedientes del alumnado y calificaciones bajo el marco de gobernanza y protección de datos universitarios.",
+                "en": "Student records and grading management under university governance and data protection frameworks.",
+                "va": "Gestió dels expedients de l'alumnat i qualificacions sota el marc de governança i protecció de dades universitaris."
               }
             },
             {
@@ -319,9 +319,9 @@ export const GOVERNANCE_CONFIG = {
                 "va": "Infraestructura acadèmica"
               },
               "desc": {
-                "es": "Provee el hardware, la seguridad y la plataforma de gestión académica del Máster.",
-                "en": "Provides hardware, security, and academic management platform for the Master.",
-                "va": "Proporciona el maquinari, la seguretat i la plataforma de gestió acadèmica del Màster."
+                "es": "Soporte técnico, entornos virtuales de aprendizaje superior y plataformas específicas del posgrado universitario.",
+                "en": "Technical support, higher education virtual learning environments, and specific postgraduate platforms.",
+                "va": "Suport tècnic, entorns virtuals d'aprenentatge superior i plataformes específiques del postgrau universitari."
               }
             }
           ]
@@ -337,9 +337,9 @@ export const GOVERNANCE_CONFIG = {
       "va": "Òrgans Formals del Consorci AiSECRETT"
     },
     "description": {
-      "es": "Los seis órganos de gobernanza están definidos en el Acuerdo de Consorcio v1.0. Cada uno opera en uno o ambos Tracks según su naturaleza.",
-      "en": "The six governance bodies are defined in the Consortium Agreement v1.0. Each operates in one or both Tracks according to its nature.",
-      "va": "Els sis òrgans de governança es definixen en l'Acord de Consorci v1.0. Cadascun funciona en una o ambdues Tracks segons la seua naturalesa."
+      "es": "Los órganos de gobernanza articulan la toma de decisiones del consorcio AiSECRETT y velan por la coordinación armónica entre la vía académica y la comunidad de práctica.",
+      "en": "The governance bodies articulate decision-making within the AiSECRETT consortium and ensure harmonious coordination between the academic pathway and the community of practice.",
+      "va": "Els òrgans de governança articulen la presa de decisions del consorci AiSECRETT i vetlen per la coordinació harmònica entre la via acadèmica i la comunitat de pràctica."
     },
     "fieldLabels": {
       "members": {
@@ -411,9 +411,9 @@ export const GOVERNANCE_CONFIG = {
           "va": "Òrgan executiu"
         },
         "desc": {
-          "es": "Gestión operativa del proyecto. Supervisa el plan de trabajo, aprueba los informes internos y coordina la coherencia entre Track A (Académico) y Track B (Ecosistema).",
-          "en": "Operational management of the project. Supervises the work plan, approves internal reports, and coordinates coherence between Track A (Academic) and Track B (Ecosystem).",
-          "va": "Gestió operativa del projecte. Supervisa el pla de treball, aprova els informes interns i coordina la coherència entre Track A (Acadèmic) i Track B (Ecosistema)."
+          "es": "Gestión operativa del proyecto. Supervisa el plan de trabajo y vela por la coherencia entre la vía académica universitaria y las iniciativas de la comunidad de práctica.",
+          "en": "Operational management of the project. Supervises the work plan and ensures coherence between the university academic pathway and the initiatives of the community of practice.",
+          "va": "Gestió operativa del projecte. Supervisa el pla de treball i vetla per la coherència entre la via acadèmica universitària i les iniciatives de la comunitat de pràctica."
         },
         "members": {
           "es": "Coordinador, líderes de paquete de trabajo y representantes designados por la Asamblea General",
@@ -478,19 +478,19 @@ export const GOVERNANCE_CONFIG = {
           "va": "Comité Científic"
         },
         "type": {
-          "es": "Órgano de validación (Track A)",
-          "en": "Validation body (Track A)",
-          "va": "Òrgan de validació (Track A)"
+          "es": "Órgano de validación académica",
+          "en": "Academic validation body",
+          "va": "Òrgan de validació acadèmica"
         },
         "desc": {
-          "es": "Valida la calidad académica del Máster AiSECRETT, los módulos ECTS y los recursos OER. Transforma los retos del ecosistema en materiales didácticos dentro del Track Académico.",
-          "en": "Validates the academic quality of the Master AiSECRETT, ECTS modules, and OER resources. Transforms ecosystem challenges into educational materials within the Academic Track.",
-          "va": "Valida la qualitat acadèmica del Màster AiSECRETT, els mòduls ECTS i els recursos OER. Transforma els reptes de l'ecosistema en materials didàctics dins del Track Acadèmic."
+          "es": "Valida la excelencia académica del Máster, los módulos de microcredenciales y los recursos educativos abiertos, transformando las aportaciones del ecosistema en propuestas pedagógicas rigurosas.",
+          "en": "Validates academic excellence of the Master AiSECRETT, micro-credential modules, and open educational resources, turning ecosystem contributions into rigorous pedagogical proposals.",
+          "va": "Valida l'excel·lència acadèmica del Màster, els mòduls de microcredencials i els recursos educatius oberts, transformant les aportacions de l'ecosistema en propostes pedagògiques rigoroses."
         },
         "members": {
-          "es": "Investigadores senior: UVEG, UMU, NTNU, INESC, Ud'A",
-          "en": "Senior researchers: UVEG, UMU, NTNU, INESC, Ud'A",
-          "va": "Investigadors sènior: UVEG, UMU, NTNU, INESC, Ud'A"
+          "es": "Investigadores senior: Universitat de València, UMU, NTNU, INESC TEC, Ud'A",
+          "en": "Senior researchers: Universitat de València, UMU, NTNU, INESC TEC, Ud'A",
+          "va": "Investigadors sènior: Universitat de València, UMU, NTNU, INESC TEC, Ud'A"
         },
         "frequency": {
           "es": "Al menos dos veces al año",
@@ -509,24 +509,24 @@ export const GOVERNANCE_CONFIG = {
         "order": 5,
         "abbr": "SN",
         "name": {
-          "es": "Red de Stakeholders",
-          "en": "Stakeholder Network",
-          "va": "Xarxa de Stakeholders"
+          "es": "Red de Entidades Colaboradoras",
+          "en": "Collaborating Organizations Network",
+          "va": "Xarxa d'Entitats Col·laboradores"
         },
         "type": {
-          "es": "Órgano participativo (Track B)",
-          "en": "Participatory body (Track B)",
-          "va": "Òrgan participatiu (Track B)"
+          "es": "Espacio consultivo del ecosistema",
+          "en": "Ecosystem consultative forum",
+          "va": "Espai consultiu de l'ecosistema"
         },
         "desc": {
-          "es": "Órgano estratégico y no decisorio del Track B. Los stakeholders de AiSECRETT, incluidos los miembros de la comunidad de práctica, aportan necesidades, conocimiento sectorial y casos o retos; INESC TEC coordina la relación con este órgano en consulta con la coordinación del proyecto.",
-          "en": "Strategic, non-decision-making body of Track B. AiSECRETT stakeholders, including members of the community of practice, contribute needs, sector expertise and cases or challenges; INESC TEC coordinates the relationship with this body in consultation with the project coordination.",
-          "va": "Òrgan estratègic i no decisori del Track B. Els stakeholders d'AiSECRETT, inclosos els membres de la comunitat de pràctica, aporten necessitats, coneixement sectorial i casos o reptes; INESC TEC coordina la relació amb este òrgan en consulta amb la coordinació del projecte."
+          "es": "Espacio consultivo y de encuentro del ecosistema. Las entidades de la comunidad de práctica aportan necesidades, experiencia sectorial y casos o retos reales, coordinados en colaboración con INESC TEC y los socios del proyecto.",
+          "en": "Consultative and collaborative ecosystem forum. Community of practice organizations contribute real-world needs, sectoral expertise, and case studies, coordinated in collaboration with INESC TEC and project partners.",
+          "va": "Espai consultiu i de trobada de l'ecosistema. Les entitats de la comunitat de pràctica aporten necessitats, experiència sectorial i casos o reptes reals, coordinats en col·laboració amb INESC TEC i els socis del projecte."
         },
         "members": {
-          "es": "Representantes externos invitados según prioridades, sectores y relevancia del proyecto",
-          "en": "External representatives invited according to project priorities, sectors and relevance",
-          "va": "Representants externs convidats segons prioritats, sectors i rellevància del projecte"
+          "es": "Representantes de organizaciones de la red, centros educativos, empresas y administraciones",
+          "en": "Representatives of network organizations, educational centers, companies, and public bodies",
+          "va": "Representants d'organitzacions de la xarxa, centres educatius, empreses i administracions"
         },
         "frequency": {
           "es": "Al menos cada nueve meses + reuniones temáticas cuando proceda",
@@ -555,14 +555,14 @@ export const GOVERNANCE_CONFIG = {
           "va": "Enllaç institucional"
         },
         "desc": {
-          "es": "Alineación con políticas europeas (Digital Decade, AI Act, EPALE) y con las prioridades de la Generalitat Valenciana. Coordina con ENRED (Red Europea de Departamentos de Educación Regional).",
-          "en": "Alignment with European policies (Digital Decade, AI Act, EPALE) and Generalitat Valenciana priorities. Coordinates with ENRED (European Network of Regional Education Departments).",
-          "va": "Alineament amb polítiques europees (Digital Decade, AI Act, EPALE) i amb les prioritats de la Generalitat Valenciana. Coordina amb ENRED (Xarxa Europea de Departaments d'Educació Regional)."
+          "es": "Alineación estratégica con las políticas europeas (Digital Decade, AI Act, EPALE) y las prioridades de la Generalitat Valenciana. Coordinación con la red europea ENRED.",
+          "en": "Strategic alignment with European policies (Digital Decade, AI Act, EPALE) and Generalitat Valenciana priorities. Coordination with the European network ENRED.",
+          "va": "Alineament estratègic amb les polítiques europees (Digital Decade, AI Act, EPALE) i les prioritats de la Generalitat Valenciana. Coordinació amb la xarxa europea ENRED."
         },
         "members": {
-          "es": "CECU, LC, KEA, Lisbon Council",
-          "en": "CECU, LC, KEA, Lisbon Council",
-          "va": "CECU, LC, KEA, Lisbon Council"
+          "es": "Conselleria de Educación (Generalitat Valenciana), KEA, Lisbon Council y socios institucionales",
+          "en": "Regional Ministry of Education (Generalitat Valenciana), KEA, Lisbon Council, and institutional partners",
+          "va": "Conselleria d'Educació (Generalitat Valenciana), KEA, Lisbon Council i socis institucionals"
         },
         "frequency": {
           "es": "Anual",
@@ -591,9 +591,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "ISO 21001 – Gestió Educativa"
           },
           "desc": {
-            "es": "Las actividades formativas de AiSECRETT se orientan por los principios de ISO 21001/EOMS bajo coordinación de UVEG. La AiSTEAM Network no actúa como entidad certificadora; cualquier esquema de certificación formal posterior dependerá de organismos de certificación independientes y requerirá la decisión formal de la Asamblea General.",
-            "en": "AiSECRETT training activities are guided by ISO 21001/EOMS principles under UVEG coordination. The AiSTEAM Network does not act as a certifying body; any subsequent formal certification scheme will depend on independent certification organisations and require a formal decision by the General Assembly.",
-            "va": "Les activitats formatives d'AiSECRETT s'orienten pels principis d'ISO 21001/EOMS sota coordinació d'UVEG. L'AiSTEAM Network no actua com a entitat certificadora; qualsevol esquema de certificació formal posterior dependrà d'organismes de certificació independents i requerirà la decisió formal de l'Assemblea General."
+            "es": "Las actividades formativas del proyecto se orientan por los principios de calidad de la norma ISO 21001/EOMS bajo la coordinación de la Universitat de València. La red AiSTEAM promueve la mejora continua de los procesos formativos y de transferencia educativa.",
+            "en": "Project training activities are guided by the quality principles of ISO 21001/EOMS under the coordination of the Universitat de València. The AiSTEAM Network promotes continuous improvement across educational and transfer processes.",
+            "va": "Les activitats formatives del projecte s'orienten pels principis de qualitat de la norma ISO 21001/EOMS sota la coordinació de la Universitat de València. La xarxa AiSTEAM promou la millora contínua dels processos formatius i de transferència educativa."
           }
         },
         {
@@ -608,9 +608,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "ENRED – Xarxa Europea de Departaments d'Educació Regional"
           },
           "desc": {
-            "es": "ENRED es un marco de cooperación interregional no vinculante que impulsa el intercambio de buenas prácticas, el diálogo político y la colaboración internacional entre departamentos regionales de educación en Europa. AiSTEAM Network se construye sobre ese ecosistema de confianza institucional: aprovecha las relaciones interregionales de ENRED para ampliar la visibilidad, la implicación de los agentes del ecosistema y la diseminación de la innovación educativa en IA, creatividad y STEAM.",
-            "en": "ENRED is a non-binding interregional cooperation framework promoting best practice exchange, policy dialogue and international collaboration among regional education departments in Europe. AiSTEAM Network builds on this institutional trust ecosystem: it draws on ENRED's interregional relationships to broaden visibility, the involvement of ecosystem actors and dissemination of educational innovation in AI, creativity and STEAM.",
-            "va": "ENRED és un marc de cooperació interregional no vinculant que impulsa l'intercanvi de bones pràctiques, el diàleg polític i la col·laboració internacional entre departaments regionals d'educació a Europa. L'AiSTEAM Network es construeix sobre eixe ecosistema de confiança institucional: aprofita les relacions interregionals d'ENRED per a ampliar la visibilitat, la implicació dels agents de l'ecosistema i la difusió de la innovació educativa en IA, creativitat i STEAM."
+            "es": "ENRED es un marco de cooperación interregional que impulsa el intercambio de buenas prácticas, el diálogo político y la colaboración institucional entre administraciones educativas regionales en Europa. La red AiSTEAM aprovecha estas sinergias para ampliar la proyección internacional y la transferencia de innovación en IA y STEAM.",
+            "en": "ENRED is an interregional cooperation framework promoting best practice exchange, policy dialogue, and institutional collaboration among regional education authorities in Europe. The AiSTEAM Network builds on these synergies to expand international reach and foster educational innovation in AI and STEAM.",
+            "va": "ENRED és un marc de cooperació interregional que impulsa l'intercanvi de bones pràctiques, el diàleg polític i la col·laboració institucional entre administracions educatives regionals a Europa. La xarxa AiSTEAM aprofita estes sinergies per a ampliar la projecció internacional i la transferència d'innovació en IA i STEAM."
           }
         }
       ]
@@ -619,14 +619,14 @@ export const GOVERNANCE_CONFIG = {
   "dualTrackBlock": {
     "visible": true,
     "title": {
-      "es": "Modelo de Gobernanza Dual Track",
-      "en": "Dual Track Governance Model",
-      "va": "Model de Governança Dual Track"
+      "es": "Modelo de Gobernanza de Doble Vía",
+      "en": "Dual Pathway Governance Model",
+      "va": "Model de Governança de Doble Via"
     },
     "description": {
-      "es": "Para garantizar la operabilidad legal y pedagógica, la AiSTEAM Network implementa un modelo de gobernanza Dual Track que opera en paralelo. Cada Track tiene su propio gestor, ámbito, marco normativo y límites de autoridad. Esta separación es deliberada: protege la autonomía universitaria en el Track A y permite la flexibilidad del ecosistema en el Track B.",
-      "en": "To ensure legal and pedagogical operability, the AiSTEAM Network implements a Dual Track governance model that operates in parallel. Each Track has its own manager, scope, normative framework, and limits of authority. This separation is deliberate: it protects university autonomy in Track A and enables ecosystem flexibility in Track B.",
-      "va": "Per garantir l'operabilitat legal i pedagògica, la AiSTEAM Network implementa un model de governança Dual Track que opera en paral·lel. Cada Track té el seu propi gestor, àmbit, marc normatiu i límits d'autoritat. Aquesta separació és deliberada: protegeix l'autonomia universitària al Track A i permet la flexibilitat de l'ecosistema al Track B."
+      "es": "Para garantizar tanto el rigor pedagógico como la agilidad organizativa, la red AiSTEAM articula su labor en dos vías complementarias e integradas. Cada itinerario cuenta con su ámbito funcional y marco regulador específico: este modelo garantiza la autonomía universitaria en la formación oficial de posgrado y, al mismo tiempo, facilita una colaboración abierta y flexible con centros educativos, empresas y administraciones.",
+      "en": "To ensure both pedagogical rigor and organizational agility, the AiSTEAM Network structures its work into two complementary, integrated pathways. Each route has its specific scope and regulatory framework: this model safeguards university autonomy in official postgraduate education while enabling open, flexible collaboration with schools, companies, and public administrations.",
+      "va": "Per a garantir tant el rigor pedagògic com l'agilitat organitzativa, la xarxa AiSTEAM articula la seua labor en dues vies complementàries i integrades. Cada itinerari compta amb el seu àmbit funcional i marc regulador específic: este model garantix l'autonomia universitària en la formació oficial de postgrau i, al mateix temps, facilita una col·laboració oberta i flexible amb centres educatius, empreses i administracions."
     },
     "fieldLabels": {
       "scope": {
@@ -657,34 +657,34 @@ export const GOVERNANCE_CONFIG = {
         "order": 1,
         "letter": "A",
         "title": {
-          "es": "Track A – Espacio Académico",
-          "en": "Track A – Academic Space",
-          "va": "Track A – Espai Acadèmic"
+          "es": "Vía Académica (Máster Oficial)",
+          "en": "Academic Pathway (Official Master)",
+          "va": "Via Acadèmica (Màster Oficial)"
         },
         "subtitle": {
-          "es": "Coordinado por UVEG con socios académicos",
-          "en": "Coordinated by UVEG with academic partners",
-          "va": "Coordinat per UVEG amb socis acadèmics"
+          "es": "Coordinada por la Universitat de València y las universidades socias",
+          "en": "Coordinated by the Universitat de València and partner universities",
+          "va": "Coordinada per la Universitat de València i les universitats sòcies"
         },
         "scope": {
           "text": {
-            "es": "Currículo del Máster AiSECRETT, microcredenciales ECTS, evaluaciones académicas, rigor científico y calidad pedagógica.",
-            "en": "Master AiSECRETT curriculum, ECTS micro-credentials, academic evaluations, scientific rigor, and pedagogical quality.",
-            "va": "Currículum del Màster AiSECRETT, microcredencials ECTS, avaluacions acadèmiques, rigor científic i qualitat pedagògica."
+            "es": "Plan formativo del Máster AiSECRETT, microcredenciales universitarias, criterios de evaluación, rigor científico y calidad pedagógica.",
+            "en": "Master AiSECRETT curriculum, university micro-credentials, evaluation criteria, scientific rigor, and pedagogical quality.",
+            "va": "Pla formatiu del Màster AiSECRETT, microcredencials universitàries, criteris d'avaluació, rigor científic i qualitat pedagògica."
           }
         },
         "normativeFramework": {
           "text": {
-            "es": "Acuerdo de Consorcio AiSECRETT + estándares universitarios de calidad (Proceso de Bolonia) + ISO 21001.",
-            "en": "AiSECRETT Consortium Agreement + university quality standards (Bologna Process) + ISO 21001.",
-            "va": "Acord de Consorci AiSECRETT + estàndards universitaris de qualitat (Procés de Bolonya) + ISO 21001."
+            "es": "Acuerdo de Consorcio AiSECRETT, estándares europeos del Espacio Europeo de Educación Superior (Bolonia) y norma ISO 21001.",
+            "en": "AiSECRETT Consortium Agreement, European Higher Education Area (Bologna Process) quality standards, and ISO 21001.",
+            "va": "Acord de Consorci AiSECRETT, estàndards europeus de l'Espai Europeu d'Educació Superior (Bolonya) i norma ISO 21001."
           }
         },
         "keyLimit": {
           "text": {
-            "es": "Los socios industriales y gubernamentales no tienen derechos de voto en la evaluación académica o emisión de títulos. La autonomía universitaria es inviolable en este espacio.",
-            "en": "Industrial and governmental partners have no voting rights in academic evaluation or degree issuance. University autonomy is inviolable in this space.",
-            "va": "Els socis industrials i governamentals no tenen drets de vot en l'avaluació acadèmica o emissió de títols. L'autonomia universitària és inviolable en aquest espai."
+            "es": "Las decisiones sobre el plan de estudios, la evaluación del alumnado y la expedición de títulos corresponden de manera exclusiva al ámbito universitario, garantizando la plena autonomía académica.",
+            "en": "Decisions regarding the curriculum, student assessments, and degree awards belong exclusively to the university sphere, ensuring full academic autonomy.",
+            "va": "Les decisions sobre el pla d'estudis, l'avaluació de l'alumnat i l'expedició de títols corresponen de manera exclusiva a l'àmbit universitari, garantint la plena autonomia acadèmica."
           }
         },
         "activeBodies": [
@@ -723,43 +723,43 @@ export const GOVERNANCE_CONFIG = {
         "order": 2,
         "letter": "B",
         "title": {
-          "es": "Track B – Espacio del Ecosistema",
-          "en": "Track B – Ecosystem Space",
-          "va": "Track B – Espai de l'Ecosistema"
+          "es": "Comunidad de Práctica y Ecosistema",
+          "en": "Community of Practice and Ecosystem",
+          "va": "Comunitat de Pràctica i Ecosistema"
         },
         "subtitle": {
-          "es": "Orquestado por CECU (GVA)",
-          "en": "Orchestrated by CECU (GVA)",
-          "va": "Orquestrat per CECU (GVA)"
+          "es": "Dinamizada por la Conselleria de Educación (Generalitat Valenciana)",
+          "en": "Facilitated by the Regional Ministry of Education (Generalitat Valenciana)",
+          "va": "Dinamitzada per la Conselleria d'Educació (Generalitat Valenciana)"
         },
         "scope": {
           "text": {
-            "es": "Foros de política educativa, banco de retos, networking, eventos, repositorio de conocimiento y participación de stakeholders de AiSECRETT.",
-            "en": "Education policy forums, challenge bank, networking, events, knowledge repository, and participation of AiSECRETT stakeholders.",
-            "va": "Fòrums de política educativa, banc de reptes, networking, events, repositori de coneixement i participació de stakeholders d'AiSECRETT."
+            "es": "Diálogo educativo, banco de retos, actividades formativas extracurriculares, recursos abiertos y colaboración con centros educativos y empresas.",
+            "en": "Educational dialogue, challenge bank, extracurricular training activities, open resources, and collaboration with schools and companies.",
+            "va": "Diàleg educatiu, banc de reptes, activitats formatives extracurriculars, recursos oberts i col·laboració amb centres educatius i empreses."
           }
         },
         "normativeFramework": {
           "text": {
-            "es": "Modelo de Acuerdo de Colaboración con Regla de Coste Cero, pendiente de validación final del proceso y de los roles de participación.",
-            "en": "Collaboration Agreement model with Zero Cost Rule, pending final validation of the process and participation roles.",
-            "va": "Model d'Acord de Col·laboració amb Regla de Cost Zero, pendent de validació final del procés i dels rols de participació."
+            "es": "Adhesión a la red mediante solicitud abierta y gratuita, basada en el principio de Coste Cero y colaboración mutua.",
+            "en": "Network membership via free, open application based on the Zero Cost Principle and mutual collaboration.",
+            "va": "Adhesió a la xarxa mitjançant sol·licitud oberta i gratuïta, basada en el principi de Cost Zero i col·laboració mútua."
           }
         },
         "keyLimit": {
           "text": {
-            "es": "Los stakeholders de AiSECRETT, también los miembros de la AiSTEAM Network, pueden canalizar sus aportaciones a través de la Red de Stakeholders y ConsensUE cuando el proceso esté habilitado. Las decisiones formales permanecen en los órganos del consorcio y en los procedimientos aprobados por CECU y la coordinación del proyecto.",
-            "en": "AiSECRETT stakeholders, including AiSTEAM Network members, may channel their input through the Stakeholder Network and ConsensUE when the process is enabled. Formal decisions remain with the consortium bodies and the procedures approved by CECU and project coordination.",
-            "va": "Els stakeholders d'AiSECRETT, inclosos els membres de l'AiSTEAM Network, poden canalitzar les seues aportacions a través de la Xarxa de Stakeholders i ConsensUE quan el procés estiga habilitat. Les decisions formals romanen en els òrgans del consorci i en els procediments aprovats per CECU i la coordinació del projecte."
+            "es": "Las entidades colaboradoras y miembros de la comunidad aportan retos e iniciativas para dinamizar la red. Las decisiones formales de gobernanza e institucionales corresponden a los órganos del consorcio.",
+            "en": "Collaborating organizations and community members contribute challenges and initiatives to enrich the network. Formal governance and institutional decisions remain with consortium bodies.",
+            "va": "Les entitats col·laboradores i membres de la comunitat aporten reptes i iniciatives per a dinamitzar la xarxa. Les decisions formals de governança i institucionals corresponen als òrgans del consorci."
           }
         },
         "activeBodies": [
           {
             "id": "sn",
             "label": {
-              "es": "Red de Stakeholders (SN)",
-              "en": "Stakeholder Network (SN)",
-              "va": "Xarxa de Stakeholders (SN)"
+              "es": "Red de Entidades Colaboradoras (SN)",
+              "en": "Collaborating Organizations Network (SN)",
+              "va": "Xarxa d'Entitats Col·laboradores (SN)"
             },
             "visible": true
           },
@@ -792,9 +792,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Arquitectura de Dades: Zones Diferenciades"
       },
       "description": {
-        "es": "La separación de tracks también se refleja en la arquitectura de información. La web pública actúa como catálogo y capa de orientación; los datos personales o académicos se gestionan en los sistemas autorizados que correspondan.",
-        "en": "Track separation is also reflected in information architecture. The public website acts as a catalogue and routing layer; personal or academic data are managed in the relevant authorised systems.",
-        "va": "La separació de tracks també es reflecteix en l'arquitectura d'informació. La web pública actua com a catàleg i capa d'orientació; les dades personals o acadèmiques es gestionen en els sistemes autoritzats que corresponguen."
+        "es": "La diferenciación de vías se refleja también en la arquitectura de datos: la web pública actúa como catálogo abierto y capa de orientación; los entornos universitarios y formativos gestionan la información académica y personal bajo sus marcos específicos.",
+        "en": "The distinction between pathways is also reflected in the data architecture: the public website acts as an open catalog and routing layer; university and learning platforms manage academic and personal data under their specific frameworks.",
+        "va": "La diferenciació de vies es reflectix també en l'arquitectura de dades: la web pública actua com a catàleg obert i capa d'orientació; els entorns universitaris i formatius gestionen la informació acadèmica i personal sota els seus marcs específics."
       },
       "zones": [
         {
@@ -802,14 +802,14 @@ export const GOVERNANCE_CONFIG = {
           "visible": true,
           "order": 1,
           "title": {
-            "es": "Zona Pública / Red (Track B)",
-            "en": "Public Zone / Network (Track B)",
-            "va": "Zona Pública / Xarxa (Track B)"
+            "es": "Zona Pública / Comunidad y Red",
+            "en": "Public Zone / Community and Network",
+            "va": "Zona Pública / Comunitat i Xarxa"
           },
           "description": {
-            "es": "Información pública de orientación, catálogo y participación Track B. Los datos tratados en sistemas propios de la GVA se gestionan bajo responsabilidad de la GVA y su marco de protección de datos.",
-            "en": "Public information for Track B orientation, catalogue and participation. Data processed in GVA-owned systems are managed under GVA responsibility and its data-protection framework.",
-            "va": "Informació pública d'orientació, catàleg i participació Track B. Les dades tractades en sistemes propis de la GVA es gestionen sota responsabilitat de la GVA i el seu marc de protecció de dades."
+            "es": "Información pública de orientación, catálogo de retos y recursos formativos abiertos. Los datos gestionados en plataformas de la Generalitat Valenciana se tratan conforme a su normativa de protección de datos.",
+            "en": "Public guidance information, challenge bank, and open educational resources. Data processed in Generalitat Valenciana platforms follow its applicable data-protection framework.",
+            "va": "Informació pública d'orientació, catàleg de reptes i recursos formatius oberts. Les dades gestionades en plataformes de la Generalitat Valenciana es tracten d'acord amb la seua normativa de protecció de dades."
           },
           "items": [
             {
@@ -844,14 +844,14 @@ export const GOVERNANCE_CONFIG = {
           "visible": true,
           "order": 2,
           "title": {
-            "es": "Zona Privada / Académica (Track A)",
-            "en": "Private Zone / Academic (Track A)",
-            "va": "Zona Privada / Acadèmica (Track A)"
+            "es": "Zona Universitaria / Académica",
+            "en": "University / Academic Zone",
+            "va": "Zona Universitària / Acadèmica"
           },
           "description": {
-            "es": "Información académica gestionada en sistemas autorizados del Track A, fuera de la web pública AiSTEAM Network.",
-            "en": "Academic information managed in authorised Track A systems, outside the public AiSTEAM Network website.",
-            "va": "Informació acadèmica gestionada en sistemes autoritzats del Track A, fora de la web pública AiSTEAM Network."
+            "es": "Entornos universitarios seguros para la gestión académica del Máster, fuera de la web pública de la red AiSTEAM.",
+            "en": "Secure university environments for academic management of the Master, outside the public AiSTEAM Network website.",
+            "va": "Entorns universitaris segurs per a la gestió acadèmica del Màster, fora de la web pública de la xarxa AiSTEAM."
           },
           "items": [
             {
@@ -891,9 +891,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Dades i límits de responsabilitat"
       },
       "description": {
-        "es": "Cada plataforma mantiene su responsabilidad operativa. La AiSTEAM Network protege los compromisos de CECU en el Track B sin entrar en decisiones académicas del Máster.",
-        "en": "Each platform keeps its operational responsibility. The AiSTEAM Network protects CECU commitments in Track B without entering Master academic decisions.",
-        "va": "Cada plataforma manté la seua responsabilitat operativa. La AiSTEAM Network protegeix els compromisos de CECU al Track B sense entrar en decisions acadèmiques del Màster."
+        "es": "Cada plataforma mantiene su responsabilidad operativa. La red AiSTEAM dinamiza la colaboración comunitaria respetando plenamente la autonomía académica universitaria.",
+        "en": "Each platform keeps its operational responsibility. The AiSTEAM Network fosters community collaboration while fully respecting university academic autonomy.",
+        "va": "Cada plataforma manté la seua responsabilitat operativa. La xarxa AiSTEAM dinamitza la col·laboració comunitària respectant plenament l'autonomia acadèmica universitària."
       },
       "items": [
         {
@@ -901,14 +901,14 @@ export const GOVERNANCE_CONFIG = {
           "visible": true,
           "order": 1,
           "owner": {
-            "es": "CECU",
-            "en": "CECU",
-            "va": "CECU"
+            "es": "CONSELLERIA DE EDUCACIÓN",
+            "en": "REGIONAL MINISTRY OF EDUCATION",
+            "va": "CONSELLERIA D'EDUCACIÓ"
           },
           "scope": {
-            "es": "Datos de miembros, participación comunitaria, red ENRED/AiSTEAM, retos/casos y evidencias del Track B.",
-            "en": "Member data, community participation, ENRED/AiSTEAM Network, challenges/cases and Track B evidence.",
-            "va": "Dades de membres, participació comunitària, xarxa ENRED/AiSTEAM, reptes/casos i evidències del Track B."
+            "es": "Dinamización de la comunidad de práctica, iniciativas de la red AiSTEAM y gestión segura de las entidades colaboradoras en los canales de la Generalitat Valenciana.",
+            "en": "Facilitation of the community of practice, AiSTEAM network initiatives, and secure management of collaborating organizations in Generalitat Valenciana channels.",
+            "va": "Dinamització de la comunitat de pràctica, iniciatives de la xarxa AiSTEAM i gestió segura de les entitats col·laboradores en els canals de la Generalitat Valenciana."
           }
         },
         {
@@ -916,14 +916,14 @@ export const GOVERNANCE_CONFIG = {
           "visible": true,
           "order": 2,
           "owner": {
-            "es": "UVEG Y SOCIOS ACADÉMICOS",
-            "en": "UVEG AND ACADEMIC PARTNERS",
-            "va": "UVEG I SOCIS ACADÈMICS"
+            "es": "UNIVERSITAT DE VALÈNCIA Y UNIVERSIDADES SOCIAS",
+            "en": "UNIVERSITAT DE VALÈNCIA AND PARTNER UNIVERSITIES",
+            "va": "UNIVERSITAT DE VALÈNCIA I UNIVERSITATS SÒCIES"
           },
           "scope": {
-            "es": "Expedientes académicos de estudiantes, evaluación del Máster, criterios docentes, ECTS y decisiones curriculares del Track A.",
-            "en": "Academic student records, Master evaluation, teaching criteria, ECTS and Track A curriculum decisions.",
-            "va": "Expedients acadèmics d'estudiants, avaluació del Màster, criteris docents, ECTS i decisions curriculars del Track A."
+            "es": "Expedientes académicos del estudiantado, docencia del Máster, criterios pedagógicos, microcredenciales y decisiones curriculares oficiales.",
+            "en": "Academic student records, Master teaching, pedagogical criteria, micro-credentials, and official curriculum decisions.",
+            "va": "Expedients acadèmics de l'estudiantat, docència del Màster, criteris pedagògics, microcredencials i decisions curriculars oficials."
           }
         },
         {
@@ -936,9 +936,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "CONSENSUE (Aules)"
           },
           "scope": {
-            "es": "Participación, consultas y contribuciones documentadas de la comunidad cuando el proceso esté habilitado por CECU y las reglas aplicables.",
-            "en": "Participation, consultations and documented community contributions when the process is enabled by CECU and the applicable rules.",
-            "va": "Participació, consultes i contribucions documentades de la comunitat quan el procés estiga habilitat per CECU i les regles aplicables."
+            "es": "Espacio de deliberación interna, consulta y coordinación entre las entidades socias del consorcio.",
+            "en": "Internal deliberation, consultation, and coordination workspace among consortium partner institutions.",
+            "va": "Espai de deliberació interna, consulta i coordinació entre les entitats sòcies del consorci."
           }
         },
         {
@@ -946,14 +946,14 @@ export const GOVERNANCE_CONFIG = {
           "visible": true,
           "order": 4,
           "owner": {
-            "es": "AULES / ESTA APLICACIÓN WEB",
-            "en": "AULES / THIS WEB APPLICATION",
-            "va": "AULES / ESTA APLICACIÓ WEB"
+            "es": "AULES / ENTORNO FORMATIVO VIRTUAL",
+            "en": "AULES / VIRTUAL LEARNING ENVIRONMENT",
+            "va": "AULES / ENTORN FORMATIU VIRTUAL"
           },
           "scope": {
-            "es": "Entornos de aprendizaje y recursos donde corresponda, según el responsable de cada actividad.",
-            "en": "Learning and resource environments where applicable, according to the responsible owner of each activity.",
-            "va": "Entorns d'aprenentatge i recursos on corresponga, segons el responsable de cada activitat."
+            "es": "Plataforma oficial de aprendizaje de la Conselleria de Educación para los cursos y actividades formativas de la red.",
+            "en": "Official learning platform of the Regional Ministry of Education for network courses and training activities.",
+            "va": "Plataforma oficial d'aprenentatge de la Conselleria d'Educació per als cursos i activitats formatives de la xarxa."
           }
         }
       ]
@@ -961,14 +961,14 @@ export const GOVERNANCE_CONFIG = {
     "agreement": {
       "visible": true,
       "title": {
-        "es": "Modelo de Acuerdo de Colaboración – Regla de Coste Cero",
-        "en": "Collaboration Agreement Model – Zero Cost Rule",
-        "va": "Model d'Acord de Col·laboració – Regla de Cost Zero"
+        "es": "Principios de Adhesión a la Red – Regla de Coste Cero",
+        "en": "Network Membership Principles – Zero Cost Rule",
+        "va": "Principis d'Adhesió a la Xarxa – Regla de Cost Zero"
       },
       "description": {
-        "es": "Este bloque muestra una propuesta de principios para el futuro proceso de adhesión al Track B. El contenido está pendiente de decisión por CECU, la coordinación del proyecto y los socios responsables del proceso de adhesión.",
-        "en": "This block shows a proposed set of principles for the future Track B joining process. The content is pending decision by CECU, project coordination and the partners responsible for the joining process.",
-        "va": "Este bloc mostra una proposta de principis per al futur procés d'adhesió al Track B. El contingut està pendent de decisió per CECU, la coordinació del projecte i els socis responsables del procés d'adhesió."
+        "es": "La incorporación de centros educativos, empresas y entidades a la comunidad de práctica se basa en la colaboración abierta, ágil y sin cuotas.",
+        "en": "The participation of educational institutions, businesses, and organizations in the community of practice is based on open, agile, and fee-free collaboration.",
+        "va": "La incorporació de centres educatius, empreses i entitats a la comunitat de pràctica es basa en la col·laboració oberta, àgil i sense quotes."
       },
       "items": [
         {
@@ -1042,9 +1042,9 @@ export const GOVERNANCE_CONFIG = {
       "va": "Metodologia Learning by Developing (LbD)"
     },
     "description": {
-      "es": "La AiSTEAM Network no es un repositorio pasivo. La interacción entre los dos Tracks (Académico y Ecosistema) utiliza la metodología LbD (Learning by Developing) como modelo pedagógico de referencia, transformando necesidades reales en oportunidades de aprendizaje, transferencia y evidencia cuando proceda.",
-      "en": "The AiSTEAM Network is not a passive repository. Interaction between the two Tracks (Academic and Ecosystem) uses the LbD methodology as a reference pedagogical model, transforming real needs into learning, transfer and evidence opportunities where appropriate.",
-      "va": "La xarxa AiSTEAM no és un repositori passiu. La interacció entre els dos Tracks (Acadèmic i Ecosistema) utilitza la metodologia LbD com a model pedagògic de referència, transformant necessitats reals en oportunitats d'aprenentatge, transferència i evidència quan pertoque."
+      "es": "La red AiSTEAM no es un repositorio pasivo. La interacción entre la vía académica y la comunidad de práctica utiliza la metodología pedagógica Learning by Developing (LbD) como modelo de referencia, transformando necesidades reales en oportunidades de aprendizaje práctico y evidencias compartidas.",
+      "en": "The AiSTEAM Network is not a passive repository. The interaction between the academic pathway and the community of practice uses the Learning by Developing (LbD) pedagogical methodology as a reference model, transforming real-world needs into hands-on learning opportunities and shared evidence.",
+      "va": "La xarxa AiSTEAM no és un repositori passiu. La interacció entre la via acadèmica i la comunitat de pràctica utilitza la metodologia pedagògica Learning by Developing (LbD) com a model de referència, transformant necessitats reals en oportunitats d'aprenentatge pràctic i evidències compartides."
     },
     "diginetDescription": {
       "es": "El enfoque se inspira en experiencias como DigiNet y en el modelo LbD aportado por Laurea, adaptándolos con prudencia al contexto de la IA aplicada a la triple transición europea.",
@@ -1054,9 +1054,9 @@ export const GOVERNANCE_CONFIG = {
     "cycle": {
       "visible": true,
       "title": {
-        "es": "El ciclo LbD: de necesidades del ecosistema a aprendizaje y evidencia",
-        "en": "The LbD Cycle: From Ecosystem Needs to Learning and Evidence",
-        "va": "El cicle LbD: de necessitats de l'ecosistema a aprenentatge i evidència"
+        "es": "El ciclo LbD: de las necesidades del entorno al aprendizaje aplicado y la evidencia",
+        "en": "The LbD Cycle: From Real-World Needs to Applied Learning and Evidence",
+        "va": "El cicle LbD: de les necessitats de l'entorn a l'aprenentatge aplicat i l'evidència"
       },
       "phases": [
         {
@@ -1065,29 +1065,29 @@ export const GOVERNANCE_CONFIG = {
           "order": 1,
           "step": "1",
           "track": {
-            "es": "Track B",
-            "en": "Track B",
-            "va": "Track B"
+            "es": "Comunidad de Práctica",
+            "en": "Community of Practice",
+            "va": "Comunitat de Pràctica"
           },
           "platform": {
-            "es": "ConsensUE + AiSTEAM Network",
-            "en": "ConsensUE + AiSTEAM Network",
-            "va": "ConsensUE + AiSTEAM Network"
+            "es": "Red AiSTEAM",
+            "en": "AiSTEAM Network",
+            "va": "Xarxa AiSTEAM"
           },
           "title": {
-            "es": "Input: Retos y Casos de Uso",
-            "en": "Input: Challenges and Use Cases",
-            "va": "Input: Reptes i Casos d'Ús"
+            "es": "Identificación: retos y necesidades reales",
+            "en": "Input: Challenges and Real-World Needs",
+            "va": "Identificació: reptes i necessitats reals"
           },
           "actor": {
-            "es": "Organizaciones de la red (empresas, administraciones, ONGs)",
-            "en": "Network organizations",
-            "va": "Organitzacions de la xarxa"
+            "es": "Centros educativos, empresas y entidades de la red",
+            "en": "Educational institutions, businesses, and network organizations",
+            "va": "Centres educatius, empreses i entitats de la xarxa"
           },
           "description": {
-            "es": "Los stakeholders de AiSECRETT, incluidos los miembros de la AiSTEAM Network, aportan necesidades, retos y casos de uso a través de los canales habilitados. La Red de Stakeholders (SN), coordinada por INESC TEC y con CECU como orquestadora del Track B, puede revisar su relevancia y orientar su clasificación para actividades, recursos, pilotos o posible revisión académica por Track A.",
-            "en": "AiSECRETT stakeholders, including AiSTEAM Network members, contribute needs, challenges and use cases through ConsensUE. The Stakeholder Network, coordinated by INESC TEC and with CECU as Track B orchestrator, may review their relevance and guide classification for activities, resources, pilots or possible academic review by Track A.",
-            "va": "Els stakeholders d'AiSECRETT, inclosos els membres de l'AiSTEAM Network, aporten necessitats, reptes i casos d'ús a través dels canals habilitats. La Xarxa de Stakeholders, coordinada per INESC TEC i amb CECU com a orquestradora del Track B, pot revisar la seua rellevància i orientar-ne la classificació per a activitats, recursos, pilots o possible revisió acadèmica per Track A."
+            "es": "Los centros educativos, empresas y entidades colaboradoras plantean necesidades formativas, retos y casos prácticos a través de los canales de la red. Estas propuestas se clasifican para orientar su desarrollo en actividades formativas, proyectos piloto o su adaptación pedagógica.",
+            "en": "Educational institutions, companies, and collaborating organizations contribute learning needs, challenges, and practical cases through network channels. These proposals are categorized to guide their development into training activities, pilots, or pedagogical adaptation.",
+            "va": "Els centres educatius, empreses i entitats col·laboradores plantegen necessitats formatives, reptes i casos pràctics a través dels canals de la xarxa. Estes propostes es classifiquen per a orientar el seu desenvolupament en activitats formatives, projectes pilot o la seua adaptació pedagògica."
           },
           "outputs": [
             {
@@ -1125,38 +1125,38 @@ export const GOVERNANCE_CONFIG = {
           "order": 2,
           "step": "2",
           "track": {
-            "es": "Track A",
-            "en": "Track A",
-            "va": "Track A"
+            "es": "Vía Académica y Formativa",
+            "en": "Academic & Educational Pathway",
+            "va": "Via Acadèmica i Formativa"
           },
           "platform": {
-            "es": "Comité Científico + UVEG",
-            "en": "Scientific Committee + UVEG",
-            "va": "Comité Científic + UVEG"
+            "es": "Comité Científico y Universidades Socias",
+            "en": "Scientific Committee & Partner Universities",
+            "va": "Comité Científic i Universitats Sòcies"
           },
           "title": {
-            "es": "Procesamiento Académico",
-            "en": "Academic Processing",
-            "va": "Processament Acadèmic"
+            "es": "Tratamiento pedagógico y formativo",
+            "en": "Educational and Academic Processing",
+            "va": "Tractament pedagògic i formatiu"
           },
           "actor": {
-            "es": "Comité Científico + Equipo docente UVEG/Laurea",
-            "en": "Scientific Committee + UVEG/Laurea teaching team",
-            "va": "Comité Científic + equip docent UVEG/Laurea"
+            "es": "Comité Científico y equipos docentes universitarios",
+            "en": "Scientific Committee and university teaching teams",
+            "va": "Comité Científic i equips docents universitaris"
           },
           "description": {
-            "es": "Cuando una contribución se considera académicamente pertinente, UVEG y los socios académicos deciden si se convierte en material, actividad o propuesta de trabajo dentro del Track A. La AiSTEAM Network no asigna ECTS ni evalúa al alumnado del Máster.",
-            "en": "When a contribution is academically relevant, UVEG and academic partners decide whether it becomes material, an activity or a work proposal within Track A. The AiSTEAM Network does not assign ECTS or evaluate Master students.",
-            "va": "Quan una contribució és acadèmicament pertinent, UVEG i els socis acadèmics decidixen si es converteix en material, activitat o proposta de treball dins del Track A. La xarxa AiSTEAM no assigna ECTS ni avalua l'alumnat del Màster."
+            "es": "Cuando una propuesta presenta interés pedagógico, los equipos docentes y el Comité Científico valoran su adaptación como caso de estudio, reto aplicado o trabajo de fin de ciclo en los programas universitarios o formativos. La red no evalúa académicamente al alumnado, labor que corresponde en exclusiva al profesorado universitario.",
+            "en": "When a contribution presents educational relevance, teaching teams and the Scientific Committee evaluate adapting it as a case study, applied challenge, or capstone project within higher education or training programs. The network does not assess students academically, which remains the exclusive responsibility of university faculties.",
+            "va": "Quan una proposta presenta interés pedagògic, els equips docents i el Comité Científic valoren la seua adaptació com a cas d'estudi, repte aplicat o treball de final de cicle en els programes universitaris o formatius. La xarxa no avalua acadèmicament l'alumnat, tasca que correspon en exclusiva al professorat universitari."
           },
           "outputs": [
             {
               "visible": true,
               "order": 1,
               "label": {
-                "es": "Revisión académica por Track A",
-                "en": "Academic review by Track A",
-                "va": "Revisió acadèmica per Track A"
+                "es": "Revisión académica universitaria",
+                "en": "University academic review",
+                "va": "Revisió acadèmica universitària"
               }
             },
             {
@@ -1185,29 +1185,29 @@ export const GOVERNANCE_CONFIG = {
           "order": 3,
           "step": "3",
           "track": {
-            "es": "Track B + Track A",
-            "en": "Track B + Track A",
-            "va": "Track B + Track A"
+            "es": "Red y Ámbito Académico",
+            "en": "Network & Academic Spheres",
+            "va": "Xarxa i Àmbit Acadèmic"
           },
           "platform": {
-            "es": "AiSTEAM Network + Aules",
+            "es": "Red AiSTEAM + Aules",
             "en": "AiSTEAM Network + Aules",
-            "va": "AiSTEAM Network + Aules"
+            "va": "Xarxa AiSTEAM + Aules"
           },
           "title": {
-            "es": "Output: Beneficio Triple",
-            "en": "Output: Triple Benefit",
-            "va": "Output: Benefici Triple"
+            "es": "Resultados y transferencia: beneficio compartido",
+            "en": "Output: Shared Triple Benefit",
+            "va": "Resultats i transferència: benefici compartit"
           },
           "actor": {
-            "es": "Organización proponente + Estudiante + Red AiSTEAM",
-            "en": "Proposing organization + Student + AiSTEAM Network",
-            "va": "Organització proponent + Estudiant + Xarxa AiSTEAM"
+            "es": "Organización proponente + Alumnado + Comunidad educativa",
+            "en": "Proposing organization + Students + Educational community",
+            "va": "Organització proponent + Alumnat + Comunitat educativa"
           },
           "description": {
-            "es": "Al completar el reto, cada parte recibe su beneficio específico. Si el resultado no es confidencial, se publica como caso de éxito en la sección de Conocimiento para visibilidad europea.",
-            "en": "When work is completed, each party receives its specific benefit. If results are not confidential, they can be published as success cases or evidence records for European visibility.",
-            "va": "En completar el treball, cada part rep el seu benefici específic. Si els resultats no són confidencials, poden publicar-se com a casos d'èxit o registres d'evidència per a visibilitat europea."
+            "es": "Al completarse el reto, cada parte obtiene un impacto positivo: la entidad recibe un prototipo o informe de solución; el alumnado desarrolla competencias prácticas; y los resultados no confidenciales se publican como casos de éxito y recursos educativos abiertos.",
+            "en": "Upon challenge completion, each party experiences a positive impact: the organization receives a prototype or solution report; students develop practical competencies; and non-confidential outcomes are published as success cases and open educational resources.",
+            "va": "En completar-se el repte, cada part obté un impacte positiu: l'entitat rep un prototip o informe de solució; l'alumnat desenvolupa competències pràctiques; i els resultats no confidencials es publiquen com a casos d'èxit i recursos educatius oberts."
           },
           "outputs": [
             {
@@ -1223,9 +1223,9 @@ export const GOVERNANCE_CONFIG = {
               "visible": true,
               "order": 2,
               "label": {
-                "es": "Track A: evaluación gestionada por UVEG si aplica",
-                "en": "Track A: evaluation managed by UVEG where applicable",
-                "va": "Track A: avaluació gestionada per UVEG si aplica"
+                "es": "Evaluación académica gestionada por la universidad si aplica",
+                "en": "Academic evaluation managed by the university where applicable",
+                "va": "Avaluació acadèmica gestionada per la universitat si aplica"
               }
             },
             {
@@ -1244,14 +1244,14 @@ export const GOVERNANCE_CONFIG = {
     "operatingFlow": {
       "visible": true,
       "title": {
-        "es": "Flujo operativo de Track B a evidencias",
-        "en": "Operating flow from Track B to evidence",
-        "va": "Flux operatiu de Track B a evidències"
+        "es": "Flujo operativo: de la necesidad real a la evidencia compartida",
+        "en": "Operating flow: from real-world need to shared evidence",
+        "va": "Flux operatiu: de la necessitat real a l'evidència compartida"
       },
       "description": {
-        "es": "El recorrido muestra cómo CECU puede convertir participación de red en evidencias auditables.",
-        "en": "The flow shows how CECU can turn network participation into auditable evidence.",
-        "va": "El recorregut mostra com CECU pot convertir participació de xarxa en evidències auditables."
+        "es": "Muestra cómo la red transforma las inquietudes formativas y del entorno en experiencias pedagógicas contrastadas y resultados de utilidad pública.",
+        "en": "Shows how the network turns educational and real-world needs into validated pedagogical experiences and public outcomes.",
+        "va": "Mostra com la xarxa transforma les inquietuds formatives i de l'entorn en experiències pedagògiques contrastades i resultats d'utilitat pública."
       },
       "steps": [
         {
@@ -1259,14 +1259,14 @@ export const GOVERNANCE_CONFIG = {
           "visible": true,
           "order": 1,
           "title": {
-            "es": "Input",
-            "en": "Input",
-            "va": "Input"
+            "es": "Aportación inicial",
+            "en": "Initial Input",
+            "va": "Aportació inicial"
           },
           "description": {
-            "es": "Stakeholder de AiSECRETT, ENRED o centro educativo aporta una necesidad, caso o propuesta.",
-            "en": "An AiSECRETT stakeholder, ENRED or education center contributes a need, case or proposal.",
-            "va": "Un stakeholder d'AiSECRETT, ENRED o centre educatiu aporta una necessitat, cas o proposta."
+            "es": "Un centro educativo, empresa o entidad colaboradora plantea una necesidad, reto formativo o propuesta innovadora.",
+            "en": "An educational institution, company, or collaborating organization submits a need, educational challenge, or innovative proposal.",
+            "va": "Un centre educatiu, empresa o entitat col·laboradora planteja una necessitat, repte formatiu o proposta innovadora."
           }
         },
         {
@@ -1279,9 +1279,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Classificació"
           },
           "description": {
-            "es": "Se clasifica por sector AiSECRETT y ruta: FP, docente, recurso, piloto o puente académico.",
-            "en": "It is classified by AiSECRETT sector and route: VET, teacher, resource, pilot or academic bridge.",
-            "va": "Es classifica per sector AiSECRETT i ruta: FP, docent, recurs, pilot o pont acadèmic."
+            "es": "Se analiza la iniciativa por sector temático y se asigna su orientación: formación docente, FP, recursos abiertos o posible conexión académica.",
+            "en": "The initiative is analyzed by thematic sector and routed: teacher development, VET, open resources, or potential academic link.",
+            "va": "S'analitza la iniciativa per sector temàtic i s'assigna la seua orientació: formació docent, FP, recursos oberts o possible connexió acadèmica."
           }
         },
         {
@@ -1289,14 +1289,14 @@ export const GOVERNANCE_CONFIG = {
           "visible": true,
           "order": 3,
           "title": {
-            "es": "Validación",
-            "en": "Validation",
-            "va": "Validació"
+            "es": "Validación y contraste",
+            "en": "Validation & Discussion",
+            "va": "Validació i contrast"
           },
           "description": {
-            "es": "La relevancia se contrasta en Track B y, si procede, se deriva a órganos académicos Track A.",
-            "en": "Relevance is checked in Track B and, where appropriate, routed to Track A academic bodies.",
-            "va": "La rellevància es contrasta en Track B i, si escau, es deriva a òrgans acadèmics Track A."
+            "es": "Se valora la pertinencia pedagógica de la iniciativa de forma colaborativa entre los socios y miembros de la red.",
+            "en": "The pedagogical relevance is reviewed collaboratively among network members and project partners.",
+            "va": "Es valora la pertinença pedagògica de la iniciativa de manera col·laborativa entre els socis i membres de la xarxa."
           }
         },
         {
@@ -1304,14 +1304,14 @@ export const GOVERNANCE_CONFIG = {
           "visible": true,
           "order": 4,
           "title": {
-            "es": "Actividad",
-            "en": "Activity",
-            "va": "Activitat"
+            "es": "Desarrollo formativo",
+            "en": "Educational Delivery",
+            "va": "Desenvolupament formatiu"
           },
           "description": {
-            "es": "Se genera actividad, recurso OER, debate, piloto o caso documentado.",
-            "en": "An activity, OER resource, debate, pilot or documented case is produced.",
-            "va": "Es genera activitat, recurs OER, debat, pilot o cas documentat."
+            "es": "Se genera la actividad correspondiente: curso, recurso educativo abierto, debate, piloto o caso práctico.",
+            "en": "The initiative is carried out: course, open educational resource, practical pilot, or challenge resolution.",
+            "va": "Es genera l'activitat corresponent: curs, recurs educatiu obert, debat, pilot o cas pràctic."
           }
         },
         {
@@ -1319,14 +1319,14 @@ export const GOVERNANCE_CONFIG = {
           "visible": true,
           "order": 5,
           "title": {
-            "es": "Evidencia",
-            "en": "Evidence",
-            "va": "Evidència"
+            "es": "Evidencias y resultados",
+            "en": "Documentation & Evidence",
+            "va": "Evidències i resultats"
           },
           "description": {
-            "es": "Se registran indicadores, trazas ConsensUE, recursos, encuestas y participación.",
-            "en": "Indicators, ConsensUE traces, resources, surveys and participation are recorded.",
-            "va": "Es registren indicadors, traces ConsensUE, recursos, enquestes i participació."
+            "es": "Se registran indicadores pedagógicos, encuestas de satisfacción, recursos generados y participación comunitaria.",
+            "en": "Outcomes, pedagogical indicators, feedback surveys, and newly created resources are recorded.",
+            "va": "Es registren indicadors pedagògics, enquestes de satisfacció, recursos generats i participació comunitària."
           }
         },
         {
@@ -1334,14 +1334,14 @@ export const GOVERNANCE_CONFIG = {
           "visible": true,
           "order": 6,
           "title": {
-            "es": "Seguimiento",
-            "en": "Tracking",
-            "va": "Seguiment"
+            "es": "Seguimiento y mejora",
+            "en": "Continuous Improvement",
+            "va": "Seguiment i millora"
           },
           "description": {
-            "es": "La evidencia alimenta la mejora continua y el relato público de evolución de la red.",
-            "en": "Evidence feeds continuous improvement and the public story of network evolution.",
-            "va": "L'evidència alimenta la millora contínua i el relat públic d'evolució de la xarxa."
+            "es": "Los resultados obtenidos nutren el repositorio público de conocimiento y orientan futuras ediciones y actividades de la red.",
+            "en": "Achieved results enrich the public knowledge repository and guide future editions and network activities.",
+            "va": "Els resultats obtinguts nodrixen el repositori públic de coneixement i orienten futures edicions i activitats de la xarxa."
           }
         }
       ]
@@ -1354,9 +1354,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Les Tres Plataformes en el Flux LbD"
       },
       "description": {
-        "es": "Cada plataforma tiene un rol específico. La web AiSTEAM publica y orienta; el Espacio ConsensUE en Aules apoya la participación cuando esté habilitada; Aules se usa para cursos y actividades del Track B.",
-        "en": "Each platform has a specific role. The AiSTEAM website publishes and routes; the ConsensUE space in Aules supports participation when enabled; Aules is used for Track B courses and activities.",
-        "va": "Cada plataforma té un rol específic. La web AiSTEAM publica i orienta; l'Espai ConsensUE en Aules dona suport a la participació quan estiga habilitada; Aules s'utilitza per a cursos i activitats del Track B."
+        "es": "Cada plataforma cumple una función bien definida en el ecosistema: la web AiSTEAM centraliza el catálogo abierto y la orientación; el espacio ConsensUE facilita el diálogo y la deliberación interna del consorcio; y Aules da soporte a las actividades y cursos formativos de la red.",
+        "en": "Each platform fulfills a distinct role within the ecosystem: the AiSTEAM portal serves as the open catalog and routing layer; the ConsensUE space fosters consortium internal dialogue and deliberation; and Aules supports the network's training courses and activities.",
+        "va": "Cada plataforma complix una funció ben definida en l'ecosistema: la web AiSTEAM centralitza el catàleg obert i l'orientació; l'espai ConsensUE facilita el diàleg i la deliberació interna del consorci; i Aules dona suport a les activitats i cursos formatius de la xarxa."
       },
       "cards": [
         {
@@ -1374,24 +1374,24 @@ export const GOVERNANCE_CONFIG = {
             "va": "Espai ConsensUE en Aules"
           },
           "track": {
-            "es": "Track B",
-            "en": "Track B",
-            "va": "Track B"
+            "es": "Consorcio AiSECRETT",
+            "en": "AiSECRETT Consortium",
+            "va": "Consorci AiSECRETT"
           },
           "owner": {
-            "es": "CECU",
-            "en": "CECU",
-            "va": "CECU"
+            "es": "Conselleria de Educación",
+            "en": "Regional Ministry of Education",
+            "va": "Conselleria d'Educació"
           },
           "role": {
-            "es": "Participación democrática",
-            "en": "Democratic Participation",
-            "va": "Participació Democràtica"
+            "es": "Deliberación y coordinación interna",
+            "en": "Internal Deliberation & Coordination",
+            "va": "Deliberació i coordinació interna"
           },
           "description": {
-            "es": "Canal de propuestas, consulta y deliberación comunitaria cuando el proceso esté habilitado, sin sustituir a los órganos formales de decisión.",
-            "en": "Channel for proposals, consultation and community deliberation when the process is enabled, without replacing formal decision-making bodies.",
-            "va": "Canal de propostes, consulta i deliberació comunitària quan el procés estiga habilitat, sense substituir els òrgans formals de decisió."
+            "es": "Canal reservado a las instituciones socias del consorcio para consultas, contraste de propuestas y coordinación de los paquetes de trabajo.",
+            "en": "Channel reserved for consortium partner institutions for consultations, proposal reviews, and work package coordination.",
+            "va": "Canal reservat a les institucions sòcies del consorci per a consultes, contrast de propostes i coordinació dels paquets de treball."
           }
         },
         {
@@ -1409,24 +1409,24 @@ export const GOVERNANCE_CONFIG = {
             "va": "Portal Web"
           },
           "track": {
-            "es": "Track A + B",
-            "en": "Track A + B",
-            "va": "Track A + B"
+            "es": "Red y Ecosistema",
+            "en": "Network & Ecosystem",
+            "va": "Xarxa i Ecosistema"
           },
           "owner": {
-            "es": "CECU + UVEG",
-            "en": "CECU + UVEG",
-            "va": "CECU + UVEG"
+            "es": "Conselleria de Educación / Universitat de València",
+            "en": "Regional Ministry of Education / Universitat de València",
+            "va": "Conselleria d'Educació / Universitat de València"
           },
           "role": {
-            "es": "Catálogo público y orientación",
-            "en": "Public catalogue and routing",
-            "va": "Catàleg públic i orientació"
+            "es": "Catálogo público y punto de encuentro",
+            "en": "Public Catalogue & Meeting Point",
+            "va": "Catàleg públic i punt de trobada"
           },
           "description": {
-            "es": "Banco de retos, conocimiento OER y directorio de la red como capa pública de consulta, publicación y orientación.",
-            "en": "Challenge bank, OER knowledge and network directory as a public layer for consultation, publication and routing.",
-            "va": "Banc de reptes, coneixement OER i directori de la xarxa com a capa pública de consulta, publicació i orientació."
+            "es": "Banco de retos, recursos educativos abiertos y directorio de organizaciones como capa pública de difusión, orientación y participación comunitaria.",
+            "en": "Challenge bank, open educational resources, and network directory as a public layer for dissemination, guidance, and community participation.",
+            "va": "Banc de reptes, recursos educatius oberts i directori d'organitzacions com a capa pública de difusió, orientació i participació comunitària."
           }
         },
         {
@@ -1444,24 +1444,24 @@ export const GOVERNANCE_CONFIG = {
             "va": "Moodle LMS"
           },
           "track": {
-            "es": "Track B",
-            "en": "Track B",
-            "va": "Track B"
+            "es": "Formación de la Red",
+            "en": "Network Training",
+            "va": "Formació de la Xarxa"
           },
           "owner": {
-            "es": "CECU",
-            "en": "CECU",
-            "va": "CECU"
+            "es": "Conselleria de Educación",
+            "en": "Regional Ministry of Education",
+            "va": "Conselleria d'Educació"
           },
           "role": {
-            "es": "Entrega formativa",
-            "en": "Training Delivery",
-            "va": "Entrega Formativa"
+            "es": "Entorno virtual de aprendizaje",
+            "en": "Virtual Learning Environment",
+            "va": "Entorn virtual d'aprenentatge"
           },
           "description": {
-            "es": "Entorno de aprendizaje para cursos, FP, formación docente y otras actividades del Track B gestionadas por CECU. El Máster AiSECRETT se desarrolla en su plataforma propia, ValgrAI.",
-            "en": "Learning environment for courses, VET, teacher training and other Track B activities managed by CECU. The AiSECRETT Master is delivered in its own platform, ValgrAI.",
-            "va": "Entorn d'aprenentatge per a cursos, FP, formació docent i altres activitats del Track B gestionades per CECU. El Màster AiSECRETT es desenvolupa en la seua plataforma pròpia, ValgrAI."
+            "es": "Plataforma oficial de aprendizaje de la Conselleria de Educación para el desarrollo de cursos, FP, formación docente y actividades formativas de la red.",
+            "en": "Official learning platform of the Regional Ministry of Education for delivering courses, VET, teacher training, and network educational activities.",
+            "va": "Plataforma oficial d'aprenentatge de la Conselleria d'Educació per al desenvolupament de cursos, FP, formació docent i activitats formatives de la xarxa."
           }
         }
       ]
@@ -1485,9 +1485,9 @@ export const GOVERNANCE_CONFIG = {
       "va": "Documentació de Transparència"
     },
     "description": {
-      "es": "Los documentos públicos estarán disponibles para descarga directa cuando exista un archivo aprobado. Los documentos de socios se gestionan en espacios externos autorizados, como Aules o Basecamp, y esta web solo actúa como catálogo público.",
-      "en": "Public documents will be available for direct download when an approved file exists. Partner documents are managed in authorised external spaces, such as Aules or Basecamp, and this website only acts as a public catalogue.",
-      "va": "Els documents públics estaran disponibles per a descàrrega directa quan existisca un arxiu aprovat. Els documents de socis es gestionen en espais externs autoritzats, com Aules o Basecamp, i esta web només actua com a catàleg públic."
+      "es": "Los documentos públicos de gobernanza e institucionalidad están disponibles para consulta y descarga directa. La documentación interna de trabajo de los socios se gestiona a través de los espacios autorizados del consorcio.",
+      "en": "Public governance and institutional documents are available for direct download. Internal partner working documentation is managed through authorized consortium workspaces.",
+      "va": "Els documents públics de governança i institucionalitat estan disponibles per a consulta i descàrrega directa. La documentació interna de treball dels socis es gestiona a través dels espais autoritzats del consorci."
     },
     "noDocsMessage": {
       "es": "Aún no hay documentos disponibles. Por favor, consulta más tarde.",
@@ -1532,78 +1532,64 @@ export const GOVERNANCE_CONFIG = {
     "stakeholderCard": {
       "visible": true,
       "title": {
-        "es": "Adhesión como miembro",
-        "en": "Join as a member",
-        "va": "Adhesió com a membre"
+        "es": "Adhesión a la red",
+        "en": "Join the Network",
+        "va": "Adhesió a la xarxa"
       },
       "subtitle": {
-        "es": "Propuesta Track B · Espacio Ecosistema · Pendiente de validación",
-        "en": "Proposed Track B · Ecosystem Space · Pending validation",
-        "va": "Proposta Track B · Espai Ecosistema · Pendent de validació"
+        "es": "Comunidad de práctica abierta a entidades y centros educativos",
+        "en": "Open community of practice for organizations and education centers",
+        "va": "Comunitat de pràctica oberta a entitats i centres educatius"
       },
       "description": {
-        "es": "Esta tarjeta muestra el procedimiento de adhesión de miembros al Track B. La solicitud se canaliza mediante formulario y su validación se formaliza a través del procedimiento en ConsensUE y el correspondiente Acuerdo de Colaboración.",
-        "en": "This card outlines the Track B member onboarding process. Applications are submitted via form and validation is formalized through the ConsensUE procedure and the corresponding Collaboration Agreement.",
-        "va": "Esta targeta mostra el procediment d'adhesió de membres al Track B. La sol·licitud es canalitza mitjançant formulari i la seua validació es formalitza a través del procediment en ConsensUE i el corresponent Acord de Col·laboració."
+        "es": "Invitamos a centros educativos, empresas y entidades sociales a sumarse a la comunidad de práctica de la red AiSTEAM. La participación es abierta y gratuita, y puede solicitarse de forma sencilla a través del formulario de adhesión.",
+        "en": "We invite educational centers, businesses, and social organizations to join the AiSTEAM Network community of practice. Participation is open and free of charge, and can be easily requested through the application form.",
+        "va": "Convidem centres educatius, empreses i entitats socials a sumar-se a la comunitat de pràctica de la xarxa AiSTEAM. La participació és oberta i gratuïta, i pot sol·licitar-se de manera senzilla a través del formulari d'adhesió."
       },
       "benefitsLabel": {
-        "es": "La propuesta podría incluir:",
-        "en": "The proposal could include:",
-        "va": "La proposta podria incloure:"
+        "es": "Qué aporta a las entidades:",
+        "en": "Benefits for organizations:",
+        "va": "Què aporta a les entitats:"
       },
       "benefits": [
         {
           "text": {
-            "es": "Dar visibilidad a retos reales en el Banco de Retos vía ConsensUE",
-            "en": "Give visibility to real challenges in the Challenge Bank via ConsensUE",
-            "va": "Donar visibilitat a reptes reals al Banc de Reptes via ConsensUE"
+            "es": "Proponer retos formativos reales y casos de estudio",
+            "en": "Propose real-world educational challenges and case studies",
+            "va": "Proposar reptes formatius reals i casos d'estudi"
           }
         },
         {
           "text": {
-            "es": "Informar necesidades, validar relevancia y contribuir casos o retos",
-            "en": "Inform needs, validate relevance and contribute cases or challenges",
-            "va": "Informar necessitats, validar rellevància i contribuir casos o reptes"
+            "es": "Acceder a recursos educativos abiertos y buenas prácticas compartidas",
+            "en": "Access open educational resources and shared best practices",
+            "va": "Accedir a recursos educatius oberts i bones pràctiques compartides"
           }
         },
         {
           "text": {
-            "es": "Acceder al repositorio de recursos OER y casos de éxito",
-            "en": "Access the OER resources repository and success cases",
-            "va": "Accedir al repositori de recursos OER i casos d'èxit"
+            "es": "Participar en grupos de trabajo e iniciativas sectoriales",
+            "en": "Participate in working groups and sectoral initiatives",
+            "va": "Participar en grups de treball i iniciatives sectorials"
           }
         },
         {
           "text": {
-            "es": "Participar en grupos de trabajo sectoriales",
-            "en": "Participate in sectorial working groups",
-            "va": "Participar en grups de treball sectorials"
-          }
-        },
-        {
-          "text": {
-            "es": "Proponer necesidades que, si procede, puedan orientarse hacia actividades formativas, recursos o revisión académica",
-            "en": "Propose needs that, where appropriate, may be routed towards training activities, resources or academic review",
-            "va": "Proposar necessitats que, si escau, puguen orientar-se cap a activitats formatives, recursos o revisió acadèmica"
-          }
-        },
-        {
-          "text": {
-            "es": "Conectar con los socios del consorcio y la red europea",
-            "en": "Connect with consortium partners and the European network",
-            "va": "Connectar amb els socis del consorcio i la xarxa europea"
+            "es": "Conectar con centros y profesionales de toda Europa",
+            "en": "Connect with schools and professionals across Europe",
+            "va": "Connectar amb centres i professionals de tot Europa"
           }
         }
       ],
       "warning": {
-        "es": "La participación de miembros no implica admisión automática, acceso a espacios académicos ni derechos de decisión en los órganos formales del consorcio.",
-        "en": "Member participation does not imply automatic admission, access to academic spaces or decision rights in the consortium's formal bodies.",
-        "va": "La participació de membres no implica admissió automàtica, accés a espais acadèmics ni drets de decisió en els òrgans formals del consorci."
+        "es": "La solicitud de adhesión permite incorporarse a las actividades abiertas de la comunidad de práctica, sin implicar atribuciones en la gobernanza formal del consorcio ni en la evaluación académica.",
+        "en": "Applying for membership enables participation in the open activities of the community of practice, without conferring roles in consortium formal governance or academic evaluation.",
+        "va": "La sol·licitud d'adhesió permet incorporar-se a les activitats obertes de la comunitat de pràctica, sense implicar atribucions en la governança formal del consorci ni en l'avaluació acadèmica."
       },
       "buttonText": {
-        "es": "Únete a la AiSTEAM Network",
-        "en": "Join the AiSTEAM Network",
-        "va": "Uneix-te a la AiSTEAM Network"
+        "es": "Solicitar adhesión a la red",
+        "en": "Apply to Join the Network",
+        "va": "Sol·licitar adhesió a la xarxa"
       },
       "formVisible": true,
       "membershipCtasVisible": true,
@@ -1623,113 +1609,67 @@ export const GOVERNANCE_CONFIG = {
           "va": "Completa el formulari de Microsoft Forms per a sol·licitar l'alta de la teua organització a l'AiSTEAM Network."
         },
         "openExternalLabel": {
-          "es": "Solicitar adhesión como miembro",
-          "en": "Apply for Membership",
-          "va": "Sol·licitar adhesió com a membre"
+          "es": "Solicitar adhesión a la red",
+          "en": "Apply to Join the Network",
+          "va": "Sol·licitar adhesió a la xarxa"
         }
       }
     },
     "consensueCard": {
       "visible": true,
       "title": {
-        "es": "Participa vía ConsensUE",
-        "en": "Participate via ConsensUE",
-        "va": "Participa vía ConsensUE"
+        "es": "Espacio ConsensUE",
+        "en": "ConsensUE Space",
+        "va": "Espai ConsensUE"
       },
       "subtitle": {
-        "es": "Track B · Espacio ConsensUE en Aules · Participación cuando esté habilitada",
-        "en": "Track B · ConsensUE space in Aules · Participation when enabled",
-        "va": "Track B · Espai ConsensUE en Aules · Participació quan estiga habilitada"
+        "es": "Entorno de deliberación interna y trabajo colaborativo del consorcio",
+        "en": "Consortium internal deliberation and collaborative workspace",
+        "va": "Entorn de deliberació interna i treball col·laboratiu del consorci"
       },
       "description": {
-        "es": "El Espacio ConsensUE en Aules, gestionado por CECU, puede servir como canal de consulta, propuesta y deliberación del Track B cuando el proceso esté habilitado, sin sustituir a los órganos formales de decisión del consorcio.",
-        "en": "The ConsensUE space in Aules, managed by CECU, may serve as a consultation, proposal and deliberation channel for Track B when the process is enabled, without replacing the consortium's formal decision-making bodies.",
-        "va": "L'Espai ConsensUE en Aules, gestionat per CECU, pot servir com a canal de consulta, proposta i deliberació del Track B quan el procés estiga habilitat, sense substituir els òrgans formals de decisió del consorci."
+        "es": "ConsensUE es el espacio de consulta y deliberación reservado a las instituciones socias del consorcio AiSECRETT, alojado en la plataforma Aules de la Conselleria de Educación.",
+        "en": "ConsensUE is the consultation and deliberation environment reserved for partner institutions of the AiSECRETT consortium, hosted on the Aules platform by the Regional Ministry of Education.",
+        "va": "ConsensUE és l'espai de consulta i deliberació reservat a les institucions sòcies del consorci AiSECRETT, allotjat en la plataforma Aules de la Conselleria d'Educació."
       },
       "groups": [
-        {
-          "id": "stakeholders",
-          "visible": true,
-          "who": {
-            "es": "Para miembros (Track B)",
-            "en": "For members (Track B)",
-            "va": "Per a membres (Track B)"
-          },
-          "actions": [
-            {
-              "text": {
-                "es": "Proponer retos al Banco de Retos",
-                "en": "Propose challenges to the Challenge Bank",
-                "va": "Proposar reptes al Banc de Reptes"
-              }
-            },
-            {
-              "text": {
-                "es": "Comentar o priorizar propuestas cuando el proceso esté habilitado",
-                "en": "Comment on or prioritise proposals when the process is enabled",
-                "va": "Comentar o prioritzar propostes quan el procés estiga habilitat"
-              }
-            },
-            {
-              "text": {
-                "es": "Participar en grupos de trabajo sectoriales",
-                "en": "Participate in sectorial working groups",
-                "va": "Participar en grups de treball sectorials"
-              }
-            },
-            {
-              "text": {
-                "es": "Responder consultas de la red convocadas por CECU o los órganos competentes",
-                "en": "Respond to network consultations convened by CECU or the competent bodies",
-                "va": "Respondre consultes de la xarxa convocades per CECU o els òrgans competents"
-              }
-            }
-          ]
-        },
         {
           "id": "consortium",
           "visible": true,
           "who": {
-            "es": "Para Socios del Consorcio",
-            "en": "For Consortium Partners",
-            "va": "Per a Socis del Consorcio"
+            "es": "Socios del Consorcio",
+            "en": "Consortium Partners",
+            "va": "Socis del Consorci"
           },
           "actions": [
             {
               "text": {
-                "es": "Proponer recursos OER y casos de éxito",
-                "en": "Propose OER resources and success cases",
-                "va": "Proposar recursos OER i casos d'èxit"
+                "es": "Debatir y contrastar propuestas pedagógicas y de gobernanza",
+                "en": "Discuss and evaluate pedagogical and governance proposals",
+                "va": "Debatre i contrastar propostes pedagògiques i de governança"
               }
             },
             {
               "text": {
-                "es": "Aportar comentarios a propuestas de gobernanza cuando proceda",
-                "en": "Provide feedback on governance proposals where appropriate",
-                "va": "Aportar comentaris a propostes de governança quan pertoque"
+                "es": "Compartir recursos y acuerdos entre las entidades socias",
+                "en": "Share resources and agreements among partner organizations",
+                "va": "Compartir recursos i acords entre les entitats sòcies"
               }
             },
             {
               "text": {
-                "es": "Participar en consultas convocadas por CECU o por los órganos competentes",
-                "en": "Participate in consultations convened by CECU or the competent bodies",
-                "va": "Participar en consultes convocades per CECU o pels òrgans competents"
-              }
-            },
-            {
-              "text": {
-                "es": "Coordinar nodos distribuidos",
-                "en": "Coordinate distributed nodes",
-                "va": "Coordinar nodes distribuïts"
+                "es": "Coordinar las acciones de los diferentes paquetes de trabajo",
+                "en": "Coordinate actions across project work packages",
+                "va": "Coordinar les accions dels diferents paquets de treball"
               }
             }
           ]
         }
       ],
       "buttonText": {
-        "es": "Ir a ConsensUE",
-        "en": "Go to ConsensUE",
-        "va": "Anar a ConsensUE"
+        "es": "Acceso a ConsensUE",
+        "en": "Access to ConsensUE",
+        "va": "Accés a ConsensUE"
       },
       "buttonUrl": "https://aules.edu.gva.es/formaciodelprofessorat/course/view.php?id=41369",
       "buttonExternal": true

@@ -876,7 +876,7 @@ export const translations = {
       "eyebrow": "Gobernanza",
       "title": "Gobernanza y Transparencia",
       "subtitle": "Estructura de decisión y participación",
-      "description": "La AiSTEAM Network opera bajo un modelo de gobernanza de Doble Vía (Dual Track): un espacio académico liderado por UVEG y un espacio ecosistema orquestado por la Generalitat Valenciana (CECU).",
+      "description": "La red AiSTEAM articula su gobernanza en dos ámbitos complementarios: una vía académica liderada por la Universitat de València y un espacio colaborativo y de ecosistema dinamizado por la Conselleria de Educación de la Generalitat Valenciana.",
       "tabEstructura": "Estructura y Órganos",
       "tabDualTrack": "Arquitectura Dual Track",
       "tabLbd": "Metodología LbD",
@@ -944,7 +944,7 @@ export const translations = {
           "freq": "Bajo demanda",
           "quorum": "3 revisores mínimo",
           "members": "Investigadores senior: UVEG, UMU, NTNU, INESC, Ud'A",
-          "desc": "Valida la calidad académica del Máster AiSECRETT, los módulos ECTS y los recursos OER. Transforma los retos del ecosistema en materiales didácticos dentro del Track Académico.",
+          "desc": "Valida la excelencia académica del Máster, los módulos de microcredenciales y los recursos educativos abiertos, transformando las aportaciones del ecosistema en propuestas pedagógicas rigurosas.",
           "color": "border-indigo-600 bg-indigo-50",
           "iconColor": "text-indigo-700"
         },
@@ -955,8 +955,8 @@ export const translations = {
           "type": "Órgano participativo (Track B)",
           "freq": "Semestral + Online continua",
           "quorum": "Participación abierta",
-          "members": "Stakeholders de AiSECRETT que participan mediante Acuerdo de Colaboración, según el procedimiento de ConsensUE",
-          "desc": "Órgano participativo del Track B. Los stakeholders de AiSECRETT, incluidos los miembros de la comunidad de práctica, informan necesidades, validan relevancia y aportan casos o retos vía ConsensUE. CECU actúa como Orquestadora de este espacio.",
+          "members": "Representantes de organizaciones de la red, centros educativos, empresas y administraciones",
+          "desc": "Espacio consultivo y de encuentro del ecosistema. Las entidades de la comunidad de práctica aportan necesidades, experiencia sectorial y casos o retos reales, coordinados en colaboración con INESC TEC y los socios del proyecto.",
           "color": "border-eu-purple bg-eu-yellow/60",
           "iconColor": "text-eu-purple"
         },
@@ -975,21 +975,21 @@ export const translations = {
       ],
       "transparencyDocs": [
         {
-          "title": "Acuerdo de Consorcio AiSECRETT v1.0",
+          "title": "Acuerdo de Consorcio AiSECRETT",
           "date": "Oct 2025",
           "type": "Fundacional",
           "access": "Público",
           "icon": "📄"
         },
         {
-          "title": "D1.2 – AiSTEAM Network: Conceptos Iniciales y Gobernanza",
+          "title": "AiSTEAM Network: Bases Conceptuales y Modelo de Gobernanza",
           "date": "Feb 2026",
           "type": "Gobernanza",
           "access": "Público",
           "icon": "🏛️"
         },
         {
-          "title": "Modelo de Acuerdo de Colaboración – Miembros",
+          "title": "Bases y Condiciones de Adhesión a la Red",
           "date": "Feb 2026",
           "type": "Colaboración",
           "access": "Público",
@@ -1045,7 +1045,7 @@ export const translations = {
           "icon": "📈"
         },
         {
-          "title": "Manual de Usuario – ConsensUE para miembros",
+          "title": "Guía de Participación en ConsensUE",
           "date": "Mar 2026",
           "type": "Operativo",
           "access": "Público",
@@ -1061,14 +1061,14 @@ export const translations = {
       ],
       "tabContent_dualtrack": {
         "title": "Modelo de Gobernanza de Doble Vía (Dual Track)",
-        "desc": "Para garantizar la operabilidad jurídica y pedagógica, la AiSTEAM Network implementa un modelo de gobernanza de Doble Vía que funciona en paralelo. Cada Track tiene su propio responsable, alcance, marco normativo y límites de autoridad. Esta separación es deliberada: protege la autonomía universitaria del Track A y permite la flexibilidad del ecosistema en el Track B.",
+        "desc": "Para garantizar tanto el rigor pedagógico como la agilidad organizativa, la red AiSTEAM articula su labor en dos vías complementarias e integradas. Cada itinerario cuenta con su ámbito funcional y marco regulador específico: este modelo garantiza la autonomía universitaria en la formación oficial de posgrado y, al mismo tiempo, facilita una colaboración abierta y flexible con centros educativos, empresas y administraciones.",
         "trackA": {
           "title": "Track A – Espacio Académico",
           "subtitle": "Liderado por UVEG + Laurea",
           "scope_label": "Alcance",
-          "scope_desc": "Currículo del Máster AiSECRETT, evaluaciones académicas, ECTS y créditos, rigor científico y calidad pedagógica.",
+          "scope_desc": "Plan formativo del Máster AiSECRETT, microcredenciales universitarias, criterios de evaluación, rigor científico y calidad pedagógica.",
           "framework_label": "Marco normativo",
-          "framework_desc": "Acuerdo de Consorcio AiSECRETT + estándares de calidad universitaria (Proceso de Bolonia) + ISO 21001.",
+          "framework_desc": "Acuerdo de Consorcio AiSECRETT, estándares europeos del Espacio Europeo de Educación Superior (Bolonia) y norma ISO 21001.",
           "limit_label": "Límite clave",
           "limit_desc": "Los socios industriales y gubernamentales no tienen derecho a voto en la evaluación académica ni en la emisión de títulos. La autonomía universitaria es inviolable en este espacio.",
           "bodies_label": "Órganos activos",
@@ -1082,11 +1082,11 @@ export const translations = {
           "title": "Track B – Espacio Ecosistema",
           "subtitle": "Orquestado por CECU (GVA)",
           "scope_label": "Alcance",
-          "scope_desc": "Foros de política educativa, banco de retos, networking, eventos, repositorio de conocimiento y participación de stakeholders de AiSECRETT.",
+          "scope_desc": "Diálogo educativo, banco de retos, actividades formativas extracurriculares, recursos abiertos y colaboración con centros educativos y empresas.",
           "framework_label": "Marco normativo",
           "framework_desc": "Acuerdo de Colaboración con Regla de Gasto Cero. Espacio abierto y flexible, sin burocracia académica.",
           "limit_label": "Límite clave",
-          "limit_desc": "La admisión de nuevos miembros se decide en ConsensUE mediante un proceso ágil y poco burocrático, cuyo detalle se definirá. La validación de relevancia de los retos sigue en la Red de Stakeholders (SN) en ConsensUE. CECU, como orquestadora, tiene voz principal en este proceso, pero no actúa unilateralmente.",
+          "limit_desc": "Las entidades colaboradoras y miembros de la comunidad aportan retos e iniciativas para dinamizar la red. Las decisiones formales de gobernanza e institucionales corresponden a los órganos del consorcio.",
           "bodies_label": "Órganos activos",
           "bodies": [
             "Red de Stakeholders (SN)",
@@ -1122,11 +1122,11 @@ export const translations = {
         },
         "responsibilityBoundaries": {
           "title": "Límites de datos y responsabilidad",
-          "desc": "Cada plataforma conserva su responsabilidad operativa. La AiSTEAM Network protege los compromisos CECU en Track B sin invadir decisiones académicas del Máster.",
+          "desc": "Cada plataforma mantiene su responsabilidad operativa. La red AiSTEAM dinamiza la colaboración comunitaria respetando plenamente la autonomía académica universitaria.",
           "items": [
             {
               "owner": "CECU",
-              "scope": "Datos de miembros, participación comunitaria, red ENRED/AiSTEAM, retos/casos y evidencias Track B."
+              "scope": "Dinamización de la comunidad de práctica, iniciativas de la red AiSTEAM y gestión segura de las entidades colaboradoras en los canales de la Generalitat Valenciana."
             },
             {
               "owner": "UVEG y socios académicos",
@@ -1167,7 +1167,7 @@ export const translations = {
       },
       "tabContent_lbd": {
         "title": "Metodología Learning by Developing (LbD)",
-        "intro_desc": "La AiSTEAM Network no es un repositorio pasivo. La interacción entre los dos Tracks (Académico y Ecosistema) está gobernada por la metodología LbD (Learning by Developing), que convierte los retos reales de las organizaciones en motores de aprendizaje académico con impacto mutuo.",
+        "intro_desc": "La red AiSTEAM no es un repositorio pasivo. La interacción entre la vía académica y la comunidad de práctica utiliza la metodología pedagógica Learning by Developing (LbD) como modelo de referencia, transformando necesidades reales en oportunidades de aprendizaje práctico y evidencias compartidas.",
         "diginetDesc": "Este modelo replica el éxito de DigiNet (red educativa finlandesa en salud digital y bienestar), adaptándolo al contexto de la IA aplicada a la triple transición europea.",
         "cycleTitle": "El ciclo LbD: de la empresa al estudiante y de vuelta",
         "phases": [
@@ -1177,7 +1177,7 @@ export const translations = {
             "platform": "ConsensUE + AiSTEAM Network",
             "title": "Input: Retos y Casos de Uso",
             "actor": "Organizaciones de la red (empresas, administraciones, ONGs)",
-            "desc": "Los stakeholders de AiSECRETT, incluidos los miembros de la AiSTEAM Network, aportan necesidades, retos y casos de uso a través de ConsensUE. La Red de Stakeholders (SN), con CECU como orquestadora, valida su relevancia Track B y los clasifica para actividades, recursos, pilotos o posible revisión académica por Track A.",
+            "desc": "Los centros educativos, empresas y entidades colaboradoras plantean necesidades formativas, retos y casos prácticos a través de los canales de la red. Estas propuestas se clasifican para orientar su desarrollo en actividades formativas, proyectos piloto o su adaptación pedagógica.",
             "outputs": [
               "Reto o caso registrado",
               "Necesidad y sector clasificados",
@@ -1190,7 +1190,7 @@ export const translations = {
             "platform": "Comité Científico + UVEG",
             "title": "Procesamiento Académico",
             "actor": "Comité Científico + Equipo docente UVEG/Laurea",
-            "desc": "Cuando una contribución se considera académicamente pertinente, UVEG y los socios académicos deciden si se convierte en material, actividad o propuesta de trabajo dentro del Track A. La AiSTEAM Network no asigna ECTS ni evalúa al alumnado del Máster.",
+            "desc": "Cuando una propuesta presenta interés pedagógico, los equipos docentes y el Comité Científico valoran su adaptación como caso de estudio, reto aplicado o trabajo de fin de ciclo en los programas universitarios o formativos. La red no evalúa académicamente al alumnado, labor que corresponde en exclusiva al profesorado universitario.",
             "outputs": [
               "Revisión académica por Track A",
               "Decisión docente documentada",
@@ -1242,7 +1242,7 @@ export const translations = {
       },
       "tabContent_estructura": {
         "hubTitle": "Estructura de Hub Distribuido",
-        "hubDesc": "La AiSTEAM Network opera como una facilidad distribuida de mejora del conocimiento e innovación, inspirada en el modelo DigiNet (Finlandia). Su estructura física y virtual replica la lógica de un hub con nodos regionales europeos.",
+        "hubDesc": "La red AiSTEAM funciona como un centro distribuido de innovación y conocimiento, inspirado en el modelo DigiNet. Su estructura física y virtual conecta un nodo central de coordinación con nodos regionales en toda Europa.",
         "nodes": [
           {
             "label": "Nodo Principal",
@@ -1290,7 +1290,7 @@ export const translations = {
         "uvegRoles": [
           {
             "label": "Garante académico",
-            "desc": "Responsable de la calidad académica del Máster AiSECRETT, los ECTS y la evaluación de competencias. Coordina con Laurea el Espacio Académico."
+            "desc": "Responsable de la excelencia académica del Máster Universitario AiSECRETT, las microcredenciales y la evaluación de competencias, en coordinación con las universidades socias del consorcio."
           },
           {
             "label": "Contenido del Máster",
@@ -1308,7 +1308,7 @@ export const translations = {
         "bodiesTitle": "Órganos Formales del Consorcio AiSECRETT",
         "bodiesDesc": "Los seis órganos de gobernanza están definidos en el Acuerdo de Consorcio v1.0. Cada uno opera en uno o ambos Tracks según su naturaleza.",
         "iso21001Title": "ISO 21001 – Gestión Educativa",
-        "iso21001Desc": "El consorcio opera bajo ISO 21001 (EOMS), coordinado por UVEG. Garantiza que los procedimientos formativos estén orientados a las necesidades de estudiantes y de otros agentes implicados, con trazabilidad y auditabilidad plena.",
+        "iso21001Desc": "Las actividades formativas del proyecto se orientan por los principios de calidad de la norma ISO 21001/EOMS bajo la coordinación de la Universitat de València. La red AiSTEAM promueve la mejora continua de los procesos formativos y de transferencia educativa.",
         "enredTitle": "ENRED – Red Europea de Departamentos de Educación Regional",
         "enredDesc": "ENRED es un marco de cooperación interregional no vinculante que impulsa el intercambio de buenas prácticas, el diálogo político y la colaboración internacional entre departamentos regionales de educación en Europa. AiSTEAM Network se construye sobre ese ecosistema de confianza institucional: aprovecha las relaciones interregionales de ENRED para ampliar la visibilidad, la implicación de los agentes del ecosistema y la diseminación de la innovación educativa en IA, creatividad y STEAM."
       },
@@ -1319,9 +1319,9 @@ export const translations = {
         "accessPartners": "🔒 Socios"
       },
       "tabContent_participar": {
-        "stakeholderTitle": "Adhesión como miembro",
+        "stakeholderTitle": "Adhesión a la red",
         "stakeholderSubtitle": "Track B · Espacio Ecosistema · Gasto Cero",
-        "stakeholderDesc": "Cualquier organización pública o privada puede adherirse a la red suscribiendo el <strong>Acuerdo de Colaboración</strong>. La adhesión es gratuita (Regla de Gasto Cero).",
+        "stakeholderDesc": "Invitamos a centros educativos, empresas y entidades sociales a sumarse a la comunidad de práctica de la red AiSTEAM. La participación es abierta y gratuita, y puede solicitarse de forma sencilla a través del formulario de adhesión.",
         "stakeholderBenefitsLabel": "Como miembro podrás:",
         "stakeholderBenefits": [
           "Dar visibilidad a retos reales en el Banco de Retos vía ConsensUE",
@@ -1331,7 +1331,7 @@ export const translations = {
           "Recibir soluciones prototipadas de equipos del Máster AiSECRETT",
           "Conectar con los socios del consorcio y la red europea"
         ],
-        "stakeholderWarning": "Los stakeholders de AiSECRETT operan exclusivamente en el Track B. No tienen acceso al espacio académico (Aules/Máster) salvo autorización expresa de UVEG.",
+        "stakeholderWarning": "La solicitud de adhesión permite incorporarse a las actividades abiertas de la comunidad de práctica, sin implicar atribuciones en la gobernanza formal del consorcio ni en la evaluación académica.",
         "stakeholderButton": "Solicitar Acuerdo de Colaboración",
         "consensueTitle": "Participa vía ConsensUE",
         "consensueSubtitle": "Track B · Espacio ConsensUE en Aules · Participación cuando esté habilitada",
@@ -2455,7 +2455,7 @@ export const translations = {
       "eyebrow": "Governance",
       "title": "Governance and Transparency",
       "subtitle": "Decision-making structure and participation",
-      "description": "The AiSTEAM Network operates under a Dual Track governance model: an academic space led by UVEG and an ecosystem space orchestrated by the Generalitat Valenciana (CECU).",
+      "description": "The AiSTEAM Network organizes its governance into two complementary spheres: an academic pathway led by the Universitat de València and an open collaborative ecosystem fostered by the Regional Ministry of Education of the Generalitat Valenciana.",
       "tabEstructura": "Structure and Bodies",
       "tabDualTrack": "Dual Track Architecture",
       "tabLbd": "LbD Methodology",
@@ -2523,7 +2523,7 @@ export const translations = {
           "freq": "On demand",
           "quorum": "Minimum 3 reviewers",
           "members": "Senior researchers: UVEG, UMU, NTNU, INESC, Ud'A",
-          "desc": "Validates the academic quality of the Master AiSECRETT, ECTS modules and OER resources. Transforms ecosystem challenges into educational materials within the Academic Track.",
+          "desc": "Validates academic excellence of the Master AiSECRETT, micro-credential modules, and open educational resources, turning ecosystem contributions into rigorous pedagogical proposals.",
           "color": "border-indigo-600 bg-indigo-50",
           "iconColor": "text-indigo-700"
         },
@@ -2534,8 +2534,8 @@ export const translations = {
           "type": "Participatory body (Track B)",
           "freq": "Biannual + Continuous online",
           "quorum": "Open participation",
-          "members": "AiSECRETT stakeholders who take part through a Collaboration Agreement, under the ConsensUE procedure",
-          "desc": "Participatory body of Track B. AiSECRETT stakeholders, including members of the community of practice, inform needs, validate relevance and contribute cases or challenges via ConsensUE. CECU acts as orchestrator of this space.",
+          "members": "Representatives of network organizations, educational centers, companies, and public bodies",
+          "desc": "Consultative and collaborative ecosystem forum. Community of practice organizations contribute real-world needs, sectoral expertise, and case studies, coordinated in collaboration with INESC TEC and project partners.",
           "color": "border-eu-purple bg-eu-yellow/60",
           "iconColor": "text-eu-purple"
         },
@@ -2554,21 +2554,21 @@ export const translations = {
       ],
       "transparencyDocs": [
         {
-          "title": "AiSECRETT Consortium Agreement v1.0",
+          "title": "AiSECRETT Consortium Agreement",
           "date": "Oct 2025",
           "type": "Foundational",
           "access": "Public",
           "icon": "📄"
         },
         {
-          "title": "D1.2 – AiSTEAM Network: Initial Concepts and Governance",
+          "title": "AiSTEAM Network: Conceptual Foundations and Governance Model",
           "date": "Feb 2026",
           "type": "Governance",
           "access": "Public",
           "icon": "🏛️"
         },
         {
-          "title": "Collaboration Agreement Model – Members",
+          "title": "Network Membership Terms and Conditions",
           "date": "Feb 2026",
           "type": "Collaboration",
           "access": "Public",
@@ -2624,7 +2624,7 @@ export const translations = {
           "icon": "📈"
         },
         {
-          "title": "User Manual – ConsensUE for members",
+          "title": "ConsensUE Participation Guide",
           "date": "Mar 2026",
           "type": "Operational",
           "access": "Public",
@@ -2640,14 +2640,14 @@ export const translations = {
       ],
       "tabContent_dualtrack": {
         "title": "Dual Track Governance Model",
-        "desc": "To ensure legal and pedagogical operability, the AiSTEAM Network implements a Dual Track governance model that operates in parallel. Each Track has its own manager, scope, normative framework, and limits of authority. This separation is deliberate: it protects university autonomy in Track A and enables ecosystem flexibility in Track B.",
+        "desc": "To ensure both pedagogical rigor and organizational agility, the AiSTEAM Network structures its work into two complementary, integrated pathways. Each route has its specific scope and regulatory framework: this model safeguards university autonomy in official postgraduate education while enabling open, flexible collaboration with schools, companies, and public administrations.",
         "trackA": {
           "title": "Track A – Academic Space",
           "subtitle": "Led by UVEG + Laurea",
           "scope_label": "Scope",
-          "scope_desc": "Master AiSECRETT curriculum, ECTS micro-credentials, academic evaluations, scientific rigor, and pedagogical quality.",
+          "scope_desc": "Master AiSECRETT curriculum, university micro-credentials, evaluation criteria, scientific rigor, and pedagogical quality.",
           "framework_label": "Normative Framework",
-          "framework_desc": "AiSECRETT Consortium Agreement + university quality standards (Bologna Process) + ISO 21001.",
+          "framework_desc": "AiSECRETT Consortium Agreement, European Higher Education Area (Bologna Process) quality standards, and ISO 21001.",
           "limit_label": "Key Limit",
           "limit_desc": "Industrial and governmental partners have no voting rights in academic evaluation or degree issuance. University autonomy is inviolable in this space.",
           "bodies_label": "Active Bodies",
@@ -2661,11 +2661,11 @@ export const translations = {
           "title": "Track B – Ecosystem Space",
           "subtitle": "Orchestrated by CECU (GVA)",
           "scope_label": "Scope",
-          "scope_desc": "Education policy forums, challenge bank, networking, events, knowledge repository, and participation of AiSECRETT stakeholders.",
+          "scope_desc": "Educational dialogue, challenge bank, extracurricular training activities, open resources, and collaboration with schools and companies.",
           "framework_label": "Normative Framework",
           "framework_desc": "Collaboration Agreement with Zero Cost Rule. Open and flexible space, without academic bureaucracy.",
           "limit_label": "Key Limit",
-          "limit_desc": "Admission of new members is decided in ConsensUE through an agile, non-bureaucratic process whose details are yet to be defined. Validation of challenge relevance remains with the Stakeholder Network (SN) in ConsensUE. CECU, as orchestrator, has the main voice in this process but does not act unilaterally.",
+          "limit_desc": "Collaborating organizations and community members contribute challenges and initiatives to enrich the network. Formal governance and institutional decisions remain with consortium bodies.",
           "bodies_label": "Active Bodies",
           "bodies": [
             "Stakeholder Network (SN)",
@@ -2701,11 +2701,11 @@ export const translations = {
         },
         "responsibilityBoundaries": {
           "title": "Data and responsibility boundaries",
-          "desc": "Each platform keeps its operational responsibility. The AiSTEAM Network protects CECU commitments in Track B without entering Master academic decisions.",
+          "desc": "Each platform keeps its operational responsibility. The AiSTEAM Network fosters community collaboration while fully respecting university academic autonomy.",
           "items": [
             {
               "owner": "CECU",
-              "scope": "Member data, community participation, ENRED/AiSTEAM Network, challenges/cases and Track B evidence."
+              "scope": "Facilitation of the community of practice, AiSTEAM network initiatives, and secure management of collaborating organizations in Generalitat Valenciana channels."
             },
             {
               "owner": "UVEG and academic partners",
@@ -2746,7 +2746,7 @@ export const translations = {
       },
       "tabContent_lbd": {
         "title": "Learning by Developing (LbD) Methodology",
-        "intro_desc": "The AiSTEAM Network is not a passive repository. Interaction between the two Tracks (Academic and Ecosystem) is governed by the LbD methodology, which transforms real challenges into engines of academic learning with mutual impact.",
+        "intro_desc": "The AiSTEAM Network is not a passive repository. The interaction between the academic pathway and the community of practice uses the Learning by Developing (LbD) pedagogical methodology as a reference model, transforming real-world needs into hands-on learning opportunities and shared evidence.",
         "diginetDesc": "This model replicates the success of DigiNet (Finnish educational network in digital health), adapting it to the context of AI applied to Europe's triple transition.",
         "cycleTitle": "The LbD Cycle: From Business to Student and Back",
         "phases": [
@@ -2756,7 +2756,7 @@ export const translations = {
             "platform": "ConsensUE + AiSTEAM Network",
             "title": "Input: Challenges and Use Cases",
             "actor": "Network organizations",
-            "desc": "AiSECRETT stakeholders, including AiSTEAM Network members, contribute needs, challenges and use cases through ConsensUE. The Stakeholder Network (SN), with CECU as orchestrator, validates their Track B relevance and classifies them for activities, resources, pilots or possible academic review by Track A.",
+            "desc": "Educational institutions, companies, and collaborating organizations contribute learning needs, challenges, and practical cases through network channels. These proposals are categorized to guide their development into training activities, pilots, or pedagogical adaptation.",
             "outputs": [
               "Challenge or case registered",
               "Need and sector classified",
@@ -2769,7 +2769,7 @@ export const translations = {
             "platform": "Scientific Committee + UVEG",
             "title": "Academic Processing",
             "actor": "Scientific Committee + UVEG/Laurea teaching team",
-            "desc": "When a contribution is academically relevant, UVEG and academic partners decide whether it becomes material, an activity or a work proposal within Track A. The AiSTEAM Network does not assign ECTS or evaluate Master students.",
+            "desc": "When a contribution presents educational relevance, teaching teams and the Scientific Committee evaluate adapting it as a case study, applied challenge, or capstone project within higher education or training programs. The network does not assess students academically, which remains the exclusive responsibility of university faculties.",
             "outputs": [
               "Academic review by Track A",
               "Teaching decision documented",
@@ -2821,7 +2821,7 @@ export const translations = {
       },
       "tabContent_estructura": {
         "hubTitle": "Distributed Hub Structure",
-        "hubDesc": "The AiSTEAM Network operates as a distributed facility for knowledge improvement and innovation, inspired by the DigiNet model (Finland). Its physical and virtual structure replicates the logic of a hub with European regional nodes.",
+        "hubDesc": "The AiSTEAM Network operates as a distributed hub for innovation and knowledge, inspired by the DigiNet model. Its physical and virtual structure connects a central coordination hub with regional nodes across Europe.",
         "nodes": [
           {
             "label": "Main Node",
@@ -2869,7 +2869,7 @@ export const translations = {
         "uvegRoles": [
           {
             "label": "Academic Guarantor",
-            "desc": "Responsible for academic quality of the Master AiSECRETT, ECTS credits, and competency evaluation. Coordinates with Laurea the Academic Space."
+            "desc": "Responsible for the academic excellence of the Master AiSECRETT, micro-credentials, and competency assessment, in coordination with partner universities across the consortium."
           },
           {
             "label": "Master Content",
@@ -2887,7 +2887,7 @@ export const translations = {
         "bodiesTitle": "Formal Bodies of the AiSECRETT Consortium",
         "bodiesDesc": "The six governance bodies are defined in the Consortium Agreement v1.0. Each operates in one or both Tracks according to its nature.",
         "iso21001Title": "ISO 21001 – Educational Management",
-        "iso21001Desc": "The consortium operates under ISO 21001 (EOMS), coordinated by UVEG. It ensures that training procedures are oriented to the needs of students and other involved actors, with full traceability and auditability.",
+        "iso21001Desc": "Project training activities are guided by the quality principles of ISO 21001/EOMS under the coordination of the Universitat de València. The AiSTEAM Network promotes continuous improvement across educational and transfer processes.",
         "enredTitle": "ENRED – European Network of Regional Education Departments",
         "enredDesc": "ENRED is a non-binding interregional cooperation framework promoting best practice exchange, policy dialogue and international collaboration among regional education departments in Europe. AiSTEAM Network builds on this institutional trust ecosystem: it draws on ENRED's interregional relationships to broaden visibility, the involvement of ecosystem actors and dissemination of educational innovation in AI, creativity and STEAM."
       },
@@ -2898,9 +2898,9 @@ export const translations = {
         "accessPartners": "🔒 Partners"
       },
       "tabContent_participar": {
-        "stakeholderTitle": "Join as a member",
+        "stakeholderTitle": "Join the Network",
         "stakeholderSubtitle": "Track B · Ecosystem Space · Zero Cost",
-        "stakeholderDesc": "Any public or private organization can join the network by signing the <strong>Collaboration Agreement</strong>. Membership is free (Zero Cost Rule).",
+        "stakeholderDesc": "We invite educational centers, businesses, and social organizations to join the AiSTEAM Network community of practice. Participation is open and free of charge, and can be easily requested through the application form.",
         "stakeholderBenefitsLabel": "As a member you can:",
         "stakeholderBenefits": [
           "Give visibility to real challenges in the Challenge Bank via ConsensUE",
@@ -2910,7 +2910,7 @@ export const translations = {
           "Receive prototyped solutions from Master AiSECRETT teams",
           "Connect with consortium partners and the European network"
         ],
-        "stakeholderWarning": "AiSECRETT stakeholders operate exclusively in Track B. They do not have access to the academic space (Aules/Master) unless expressly authorized by UVEG.",
+        "stakeholderWarning": "Applying for membership enables participation in the open activities of the community of practice, without conferring roles in consortium formal governance or academic evaluation.",
         "stakeholderButton": "Request Collaboration Agreement",
         "consensueTitle": "Participate via ConsensUE",
         "consensueSubtitle": "Track B · ConsensUE space in Aules · Participation when enabled",
@@ -4019,7 +4019,7 @@ export const translations = {
       "eyebrow": "Governança",
       "title": "Governança i Transparència",
       "subtitle": "Estructura de decisió i participació",
-      "description": "L'AiSTEAM Network funciona sota un model de governança de Doble Via: un espai acadèmic liderat per UVEG i un espai ecosistema orquestrat per la Generalitat Valenciana (CECU).",
+      "description": "La xarxa AiSTEAM articula la seua governança en dos àmbits complementaris: una via acadèmica liderada per la Universitat de València i un espai col·laboratiu i d'ecosistema dinamitzat per la Conselleria d'Educació de la Generalitat Valenciana.",
       "tabEstructura": "Estructura i Òrgans",
       "tabDualTrack": "Arquitectura de Doble Vía",
       "tabLbd": "Metodologia LbD",
@@ -4087,7 +4087,7 @@ export const translations = {
           "freq": "Sota demanda",
           "quorum": "3 revisors mínim",
           "members": "Investigadors sènior: UVEG, UMU, NTNU, INESC, Ud'A",
-          "desc": "Valida la qualitat acadèmica del Màster AiSECRETT, els mòduls ECTS i els recursos OER. Transforma els reptes de l'ecosistema en materials didàctics dins del Track Acadèmic.",
+          "desc": "Valida l'excel·lència acadèmica del Màster, els mòduls de microcredencials i els recursos educatius oberts, transformant les aportacions de l'ecosistema en propostes pedagògiques rigoroses.",
           "color": "border-indigo-600 bg-indigo-50",
           "iconColor": "text-indigo-700"
         },
@@ -4098,8 +4098,8 @@ export const translations = {
           "type": "Òrgan participatiu (Track B)",
           "freq": "Semestral + Online contínua",
           "quorum": "Participació oberta",
-          "members": "Stakeholders d'AiSECRETT que participen mitjançant Acord de Col·laboració, segons el procediment de ConsensUE",
-          "desc": "Òrgan participatiu del Track B. Els stakeholders d'AiSECRETT, inclosos els membres de la comunitat de pràctica, informen necessitats, validen la rellevància i aporten casos o reptes via ConsensUE. CECU actua com a orquestradora d'este espai.",
+          "members": "Representants d'organitzacions de la xarxa, centres educatius, empreses i administracions",
+          "desc": "Espai consultiu i de trobada de l'ecosistema. Les entitats de la comunitat de pràctica aporten necessitats, experiència sectorial i casos o reptes reals, coordinats en col·laboració amb INESC TEC i els socis del projecte.",
           "color": "border-eu-purple bg-eu-yellow/60",
           "iconColor": "text-eu-purple"
         },
@@ -4118,21 +4118,21 @@ export const translations = {
       ],
       "transparencyDocs": [
         {
-          "title": "Acord de Consorci AiSECRETT v1.0",
+          "title": "Acord de Consorci AiSECRETT",
           "date": "Oct 2025",
           "type": "Fundacional",
           "access": "Públic",
           "icon": "📄"
         },
         {
-          "title": "D1.2 – AiSTEAM Network: Conceptes Inicials i Governança",
+          "title": "AiSTEAM Network: Bases Conceptuals i Model de Governança",
           "date": "Feb 2026",
           "type": "Governança",
           "access": "Públic",
           "icon": "🏛️"
         },
         {
-          "title": "Model d'Acord de Col·laboració – Membres",
+          "title": "Bases i Condicions d'Adhesió a la Xarxa",
           "date": "Feb 2026",
           "type": "Col·laboració",
           "access": "Públic",
@@ -4188,7 +4188,7 @@ export const translations = {
           "icon": "📈"
         },
         {
-          "title": "Manual d'Usuari – ConsensUE per a membres",
+          "title": "Guia de Participació en ConsensUE",
           "date": "Mar 2026",
           "type": "Operatiu",
           "access": "Públic",
@@ -4204,14 +4204,14 @@ export const translations = {
       ],
       "tabContent_dualtrack": {
         "title": "Model de Governança de Doble Vía (Dual Track)",
-        "desc": "Per a garantir l'operabilitat jurídica i pedagògica, l'AiSTEAM Network implementa un model de governança de Doble Via que funciona en paral·lel. Cada Track té el seu propi responsable, abast, marc normatiu i límits d'autoritat. Esta separació és deliberada: protegeix l'autonomia universitària del Track A i permet la flexibilitat de l'ecosistema en el Track B.",
+        "desc": "Per a garantir tant el rigor pedagògic com l'agilitat organitzativa, la xarxa AiSTEAM articula la seua labor en dues vies complementàries i integrades. Cada itinerari compta amb el seu àmbit funcional i marc regulador específic: este model garantix l'autonomia universitària en la formació oficial de postgrau i, al mateix temps, facilita una col·laboració oberta i flexible amb centres educatius, empreses i administracions.",
         "trackA": {
           "title": "Track A – Espai Acadèmic",
           "subtitle": "Liderat per UVEG + Laurea",
           "scope_label": "Alcance",
-          "scope_desc": "Currículum del Màster AiSECRETT, avaluacions acadèmiques, crèdits ECTS, rigor científic i qualitat pedagògica.",
+          "scope_desc": "Pla formatiu del Màster AiSECRETT, microcredencials universitàries, criteris d'avaluació, rigor científic i qualitat pedagògica.",
           "framework_label": "Marc Normatiu",
-          "framework_desc": "Acord de Consorci AiSECRETT + estàndards de qualitat universitària (Procés de Bolònia) + ISO 21001.",
+          "framework_desc": "Acord de Consorci AiSECRETT, estàndards europeus de l'Espai Europeu d'Educació Superior (Bolonya) i norma ISO 21001.",
           "limit_label": "Límit Clau",
           "limit_desc": "Els socis industrials i governamentals no tenen dret a vot en l'avaluació acadèmica ni en l'emissió de títols. L'autonomia universitaria és inviolable en este espai.",
           "bodies_label": "Òrgans Actius",
@@ -4225,11 +4225,11 @@ export const translations = {
           "title": "Track B – Espai Ecosistema",
           "subtitle": "Orquestrat per CECU (GVA)",
           "scope_label": "Alcance",
-          "scope_desc": "Fòrums de política educativa, banc de reptes, networking, esdeveniments, repositori de coneixement i participació de stakeholders d'AiSECRETT.",
+          "scope_desc": "Diàleg educatiu, banc de reptes, activitats formatives extracurriculars, recursos oberts i col·laboració amb centres educatius i empreses.",
           "framework_label": "Marc Normatiu",
           "framework_desc": "Acord de Col·laboració amb Regla de Cost Zero. Espai obert i flexible, sense burocràcia acadèmica.",
           "limit_label": "Límit Clau",
-          "limit_desc": "L'admissió de nous membres es decidix en ConsensUE mitjançant un procés àgil i poc burocràtic, el detall del qual es definirà. La validació de la rellevància dels reptes continua a la Xarxa de Stakeholders (SN) en ConsensUE. CECU, com a orquestradora, té veu principal en este procés, però no actua unilateralment.",
+          "limit_desc": "Les entitats col·laboradores i membres de la comunitat aporten reptes i iniciatives per a dinamitzar la xarxa. Les decisions formals de governança i institucionals corresponen als òrgans del consorci.",
           "bodies_label": "Òrgans Actius",
           "bodies": [
             "Xarxa de Stakeholders (SN)",
@@ -4265,11 +4265,11 @@ export const translations = {
         },
         "responsibilityBoundaries": {
           "title": "Límits de dades i responsabilitat",
-          "desc": "Cada plataforma conserva la seua responsabilitat operativa. L'AiSTEAM Network protegeix els compromisos de CECU en Track B sense entrar en decisions acadèmiques del Màster.",
+          "desc": "Cada plataforma manté la seua responsabilitat operativa. La xarxa AiSTEAM dinamitza la col·laboració comunitària respectant plenament l'autonomia acadèmica universitària.",
           "items": [
             {
               "owner": "CECU",
-              "scope": "Dades de membres, participació comunitària, xarxa ENRED/AiSTEAM, reptes/casos i evidències Track B."
+              "scope": "Dinamització de la comunitat de pràctica, iniciatives de la xarxa AiSTEAM i gestió segura de les entitats col·laboradores en els canals de la Generalitat Valenciana."
             },
             {
               "owner": "UVEG i socis acadèmics",
@@ -4310,7 +4310,7 @@ export const translations = {
       },
       "tabContent_lbd": {
         "title": "Metodologia Learning by Developing (LbD)",
-        "intro_desc": "L'AiSTEAM Network no és un repositori passiu. La interacció entre els dos Tracks (Acadèmic i Ecosistema) està governada per la metodologia LbD, que transforma els reptes reals en motors d'aprenentatge acadèmic amb impacte mutu.",
+        "intro_desc": "La xarxa AiSTEAM no és un repositori passiu. La interacció entre la via acadèmica i la comunitat de pràctica utilitza la metodologia pedagògica Learning by Developing (LbD) com a model de referència, transformant necessitats reals en oportunitats d'aprenentatge pràctic i evidències compartides.",
         "diginetDesc": "Este model replica l'èxit de DigiNet (xarxa educativa finlandesa en salut digital), adaptant-lo al context de la IA aplicada a la triple transició europea.",
         "cycleTitle": "El cicle LbD: de l'empresa a l'estudiant i de tornada",
         "phases": [
@@ -4320,7 +4320,7 @@ export const translations = {
             "platform": "ConsensUE + AiSTEAM Network",
             "title": "Input: Reptes i Casos d'Ús",
             "actor": "Organitzacions de la xarxa",
-            "desc": "Els stakeholders d'AiSECRETT, inclosos els membres de l'AiSTEAM Network, aporten necessitats, reptes i casos d'ús a través de ConsensUE. La Xarxa de Stakeholders (SN), amb CECU com a orquestradora, valida la seua rellevància Track B i els classifica per a activitats, recursos, pilots o possible revisió acadèmica per Track A.",
+            "desc": "Els centres educatius, empreses i entitats col·laboradores plantegen necessitats formatives, reptes i casos pràctics a través dels canals de la xarxa. Estes propostes es classifiquen per a orientar el seu desenvolupament en activitats formatives, projectes pilot o la seua adaptació pedagògica.",
             "outputs": [
               "Repte o cas registrat",
               "Necessitat i sector classificats",
@@ -4333,7 +4333,7 @@ export const translations = {
             "platform": "Comité Científic + UVEG",
             "title": "Processament Acadèmic",
             "actor": "Comité Científic + equip docent UVEG/Laurea",
-            "desc": "Quan una contribució és acadèmicament pertinent, UVEG i els socis acadèmics decidixen si es converteix en material, activitat o proposta de treball dins del Track A. L'AiSTEAM Network no assigna ECTS ni avalua l'alumnat del Màster.",
+            "desc": "Quan una proposta presenta interés pedagògic, els equips docents i el Comité Científic valoren la seua adaptació com a cas d'estudi, repte aplicat o treball de final de cicle en els programes universitaris o formatius. La xarxa no avalua acadèmicament l'alumnat, tasca que correspon en exclusiva al professorat universitari.",
             "outputs": [
               "Revisió acadèmica per Track A",
               "Decisió docent documentada",
@@ -4385,7 +4385,7 @@ export const translations = {
       },
       "tabContent_estructura": {
         "hubTitle": "Estructura de Hub Distribuït",
-        "hubDesc": "L'AiSTEAM Network funciona com una instal·lació distribuïda per a la millora del coneixement i la innovació, inspirada en el model DigiNet (Finlàndia). La seua estructura física i virtual replica la lògica d'un hub amb nodes regionals europeus.",
+        "hubDesc": "La xarxa AiSTEAM funciona com un centre distribuït d'innovació i coneixement, inspirat en el model DigiNet. La seua estructura física i virtual connecta un node central de coordinació amb nodes regionals a tot Europa.",
         "nodes": [
           {
             "label": "Node Principal",
@@ -4433,7 +4433,7 @@ export const translations = {
         "uvegRoles": [
           {
             "label": "Garant acadèmic",
-            "desc": "Responsable de la qualitat acadèmica del Màster AiSECRETT, els crèdits ECTS i l'avaluació de competències. Coordina amb Laurea l'Espai Acadèmic."
+            "desc": "Responsable de l'excel·lència acadèmica del Màster Universitari AiSECRETT, les microcredencials i l'avaluació de competències, en coordinació amb les universitats sòcies del consorci."
           },
           {
             "label": "Contingut del Màster",
@@ -4451,7 +4451,7 @@ export const translations = {
         "bodiesTitle": "Òrgans Formals del Consorci AiSECRETT",
         "bodiesDesc": "Els sis òrgans de governança es definixen en l'Acord de Consorcio v1.0. Cadascun funciona en una o ambdues Tracks segons la seua naturalesa.",
         "iso21001Title": "ISO 21001 – Gestió Educativa",
-        "iso21001Desc": "El consorci funciona sota ISO 21001 (EOMS), coordinat per UVEG. Garanteix que els procediments formatius estiguen orientats a les necessitats d'estudiants i d'altres agents implicats, amb total rastreabilitat i auditabilitat.",
+        "iso21001Desc": "Les activitats formatives del projecte s'orienten pels principis de qualitat de la norma ISO 21001/EOMS sota la coordinació de la Universitat de València. La xarxa AiSTEAM promou la millora contínua dels processos formatius i de transferència educativa.",
         "enredTitle": "ENRED – Xarxa Europea de Departaments d'Educació Regional",
         "enredDesc": "ENRED és un marc de cooperació interregional no vinculant que impulsa l'intercanvi de bones pràctiques, el diàleg polític i la col·laboració internacional entre departaments regionals d'educació a Europa. L'AiSTEAM Network es construeix sobre eixe ecosistema de confiança institucional: aprofita les relacions interregionals d'ENRED per a ampliar la visibilitat, la implicació dels agents de l'ecosistema i la difusió de la innovació educativa en IA, creativitat i STEAM."
       },
@@ -4462,9 +4462,9 @@ export const translations = {
         "accessPartners": "🔒 Socis"
       },
       "tabContent_participar": {
-        "stakeholderTitle": "Adhesió com a membre",
+        "stakeholderTitle": "Adhesió a la xarxa",
         "stakeholderSubtitle": "Track B · Espai Ecosistema · Cost Zero",
-        "stakeholderDesc": "Qualsevol organització pública o privada pot adherir-se a la xarxa signant l'<strong>Acord de Col·laboració</strong>. L'adhesió és gratuïta (Regla de Cost Zero).",
+        "stakeholderDesc": "Convidem centres educatius, empreses i entitats socials a sumar-se a la comunitat de pràctica de la xarxa AiSTEAM. La participació és oberta i gratuïta, i pot sol·licitar-se de manera senzilla a través del formulari d'adhesió.",
         "stakeholderBenefitsLabel": "Com a membre podràs:",
         "stakeholderBenefits": [
           "Donar visibilitat a reptes reals al Banc de Reptes via ConsensUE",
@@ -4474,7 +4474,7 @@ export const translations = {
           "Rebre solucions prototipades d'equips del Màster AiSECRETT",
           "Connectar amb els socis del consorcio i la xarxa europea"
         ],
-        "stakeholderWarning": "Els stakeholders d'AiSECRETT operen exclusivament en el Track B. No tenen accés a l'espai acadèmic (Aules/Màster) llevat que UVEG ho autoritze expressament.",
+        "stakeholderWarning": "La sol·licitud d'adhesió permet incorporar-se a les activitats obertes de la comunitat de pràctica, sense implicar atribucions en la governança formal del consorci ni en l'avaluació acadèmica.",
         "stakeholderButton": "Solicitar Acord de Col·laboració",
         "consensueTitle": "Participa vía ConsensUE",
         "consensueSubtitle": "Track B · Espai ConsensUE en Aules · Participació quan estiga habilitada",
