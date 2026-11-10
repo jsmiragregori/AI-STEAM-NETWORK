@@ -544,9 +544,9 @@ export const HOME_CONFIG = {
           {
             "id": "master-1",
             "html": {
-              "es": "2 ediciones anuales (formato blended)",
-              "en": "2 annual editions (blended format)",
-              "va": "2 edicions anuals (format blended)"
+              "es": "Programa en fase de diseño: 2 ediciones piloto previstas (inicio en 2027)",
+              "en": "Programme in development: 2 planned pilot editions (launching in 2027)",
+              "va": "Programa en fase de disseny: 2 edicions pilot previstes (inici en 2027)"
             }
           },
           {
