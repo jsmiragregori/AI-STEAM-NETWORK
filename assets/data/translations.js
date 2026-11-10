@@ -1357,7 +1357,7 @@ export const translations = {
     "marketplace": {
       "title": "Contribuciones del Ecosistema",
       "subtitle": "Retos, casos, validaciones, mentorías, pilotajes y recursos",
-      "description": "Catálogo de contribuciones reales propuestas por organizaciones del ecosistema AiSECRETT: retos, casos de uso, validaciones, mentorías y pilotos para FP, formación docente y, cuando corresponde, el Track A.",
+      "description": "La comunidad de práctica en acción: un entorno vivo donde organizaciones y profesorado plantean necesidades reales, co-diseñan soluciones con inteligencia artificial y transforman los desafíos de las empresas en experiencias de aprendizaje y transferencia compartida.",
       "search": "Buscar contribuciones...",
       "searchLabel": "Buscar",
       "filter": "Filtrar",
@@ -1451,7 +1451,7 @@ export const translations = {
       "filterBy": "Filtrar por",
       "filterHelixRole": "Hélice",
       "filterTransition": "Transición",
-      "filterTrack": "Track",
+      "filterTrack": "Itinerario",
       "publishedLabel": "Publicado",
       "revisedLabel": "Revisado",
       "emptyContributionsTitle": "No hay retos publicados",
@@ -1495,7 +1495,7 @@ export const translations = {
       "enrollBeforeDeadline": "Solicita participación antes del",
       "privateAreaAccess": "Accede con tu cuenta del Área Privada de la AiSTEAM Network",
       "requestParticipationButton": "Solicitar participación →",
-      "requestBeforeDeadline": "Abierto a centros, profesorado, FP, stakeholders de AiSECRETT y socios de la red hasta el",
+      "requestBeforeDeadline": "Abierto a centros educativos, profesorado, Formación Profesional, entidades colaboradoras y socios de la red hasta el",
       "requestReviewNote": "Revisaremos tu solicitud para conectarla con la vía adecuada: comunidad, FP, formación docente, pilotaje o conexión académica.",
       "consensuePreferredLabel": "Solicitud revisada · posible elevación a ConsensUE",
       "participationFormTitle": "Formulario de solicitud de participación",
@@ -1550,7 +1550,7 @@ export const translations = {
         "Quiero recibir información cuando se active"
       ],
       "participationPathways": [
-        "Track B: comunidad, implicación del ecosistema, validación o pilotaje",
+        "Comunidad de práctica: implicación del entorno laboral, validación o pilotaje",
         "FP o formación docente",
         "Track A: Máster, microcredenciales o actividad académica",
         "No lo sé todavía"
@@ -2936,7 +2936,7 @@ export const translations = {
     "marketplace": {
       "title": "Ecosystem Contributions",
       "subtitle": "Challenges, cases, validations, mentoring, pilots and resources",
-      "description": "Catalog of real contributions from AiSECRETT ecosystem organizations: challenges, use cases, validations, mentorships and pilots for VET, teacher training and, when relevant, Track A.",
+      "description": "Our community of practice in action: a living environment where organizations and educators raise real needs, co-design solutions using artificial intelligence and turn workplace challenges into shared learning and transfer experiences.",
       "search": "Search contributions...",
       "searchLabel": "Search",
       "filter": "Filter",
@@ -3030,7 +3030,7 @@ export const translations = {
       "filterBy": "Filter by",
       "filterHelixRole": "Helix",
       "filterTransition": "Transition",
-      "filterTrack": "Track",
+      "filterTrack": "Pathway",
       "publishedLabel": "Published",
       "revisedLabel": "Revised",
       "emptyContributionsTitle": "No contributions published",
@@ -3074,7 +3074,7 @@ export const translations = {
       "enrollBeforeDeadline": "Request participation before",
       "privateAreaAccess": "Access with your AiSTEAM Network Private Area account",
       "requestParticipationButton": "Request participation →",
-      "requestBeforeDeadline": "Open to centers, teachers, VET, AiSECRETT stakeholders and network partners until",
+      "requestBeforeDeadline": "Open to educational institutions, teachers, VET, collaborating organizations and network partners until",
       "requestReviewNote": "We will review your request and connect it with the right pathway: community, VET, teacher training, piloting or academic connection.",
       "consensuePreferredLabel": "Reviewed request · possible submission to ConsensUE",
       "participationFormTitle": "Participation request form",
@@ -3129,7 +3129,7 @@ export const translations = {
         "I want to receive information when it is activated"
       ],
       "participationPathways": [
-        "Track B: community, ecosystem involvement, validation or piloting",
+        "Community of practice: workplace involvement, validation or piloting",
         "VET or teacher training",
         "Track A: Master, microcredentials or academic activity",
         "I do not know yet"
@@ -4500,7 +4500,7 @@ export const translations = {
     "marketplace": {
       "title": "Contribucions de l'Ecosistema",
       "subtitle": "Reptes, casos, validacions, mentories, pilotatges i recursos",
-      "description": "Catàleg de contribucions reals proposades per organitzacions de l'ecosistema AiSECRETT: reptes, casos d'ús, validacions, mentories i pilots per a FP, formació docent i, quan escaiga, el Track A.",
+      "description": "La comunitat de pràctica en acció: un entorn viu on organitzacions i professorat plantegen necessitats reals, co-dissenyen solucions amb intel·ligència artificial i transformen els desafiaments de les empreses en experiències d'aprenentatge i transferència compartida.",
       "search": "Busca contribucions...",
       "searchLabel": "Busca",
       "filter": "Filtra",
@@ -4594,7 +4594,7 @@ export const translations = {
       "filterBy": "Filtrar per",
       "filterHelixRole": "Hèlix",
       "filterTransition": "Transició",
-      "filterTrack": "Track",
+      "filterTrack": "Itinerari",
       "publishedLabel": "Publicat",
       "revisedLabel": "Revisat",
       "emptyContributionsTitle": "No hi ha reptes publicats",
@@ -4638,7 +4638,7 @@ export const translations = {
       "enrollBeforeDeadline": "Sol·licita participació abans del",
       "privateAreaAccess": "Accés amb el compte de l'Àrea Privada de l'AiSTEAM Network",
       "requestParticipationButton": "Sol·licitar participació →",
-      "requestBeforeDeadline": "Obert a centres, professorat, FP, stakeholders d'AiSECRETT i socis de la xarxa fins al",
+      "requestBeforeDeadline": "Obert a centres educatius, professorat, Formació Professional, entitats col·laboradores i socis de la xarxa fins al",
       "requestReviewNote": "Revisarem la teua sol·licitud per connectar-la amb la via adequada: comunitat, FP, formació docent, pilotatge o connexió acadèmica.",
       "consensuePreferredLabel": "Sol·licitud revisada · possible elevació a ConsensUE",
       "participationFormTitle": "Formulari de sol·licitud de participació",
@@ -4693,7 +4693,7 @@ export const translations = {
         "Vull rebre informació quan s'active"
       ],
       "participationPathways": [
-        "Track B: comunitat, implicació de l'ecosistema, validació o pilotatge",
+        "Comunitat de pràctica: implicació de l'entorn laboral, validació o pilotatge",
         "FP o formació docent",
         "Track A: Màster, microcredencials o activitat acadèmica",
         "Encara no ho sé"

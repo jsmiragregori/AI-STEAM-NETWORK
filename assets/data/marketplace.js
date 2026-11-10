@@ -862,18 +862,18 @@ export const MARKETPLACE_CONFIG = {
       "id": "A",
       "visible": true,
       "label": {
-        "es": "Track A (Académico)",
-        "en": "Track A (Academic)",
-        "va": "Track A (Acadèmic)"
+        "es": "Vía Académica (Máster)",
+        "en": "Academic Pathway (Master's)",
+        "va": "Via Acadèmica (Màster)"
       }
     },
     {
       "id": "B",
       "visible": true,
       "label": {
-        "es": "Track B (Ecosistema)",
-        "en": "Track B (Ecosystem)",
-        "va": "Track B (Ecosistema)"
+        "es": "Comunidad de Práctica (FP y Empresas)",
+        "en": "Community of Practice (VET & Industry)",
+        "va": "Comunitat de Pràctica (FP i Empreses)"
       }
     }
   ],
@@ -1592,9 +1592,9 @@ export const MARKETPLACE_CONFIG = {
       "id": "transferValue",
       "visible": true,
       "label": {
-        "es": "Valor para Track B",
-        "en": "Track B value",
-        "va": "Valor per a Track B"
+        "es": "Valor para la comunidad de práctica",
+        "en": "Community of practice value",
+        "va": "Valor per a la comunitat de pràctica"
       }
     },
     {
@@ -1664,9 +1664,9 @@ export const MARKETPLACE_CONFIG = {
       "id": "trackA",
       "visible": true,
       "label": {
-        "es": "Derivación Track A",
-        "en": "Track A pathway",
-        "va": "Derivació Track A"
+        "es": "Conexión académica (Máster)",
+        "en": "Academic connection (Master's)",
+        "va": "Connexió acadèmica (Màster)"
       }
     },
     {
@@ -2387,9 +2387,9 @@ export const MARKETPLACE_CONFIG = {
       "id": "track-routing-note",
       "visible": true,
       "label": {
-        "es": "Nota de derivación Track A/B",
-        "en": "Track A/B routing note",
-        "va": "Nota de derivació Track A/B"
+        "es": "Nota de asignación de itinerario",
+        "en": "Pathway routing note",
+        "va": "Nota d'assignació d'itinerari"
       }
     },
     {
@@ -2936,9 +2936,9 @@ export const MARKETPLACE_CONFIG = {
       "id": "track-triage",
       "visible": true,
       "label": {
-        "es": "Triage Track A/B",
-        "en": "Track A/B triage",
-        "va": "Triatge Track A/B"
+        "es": "Evaluación de itinerario",
+        "en": "Pathway assessment",
+        "va": "Avaluació d'itinerari"
       }
     },
     {
@@ -2956,18 +2956,18 @@ export const MARKETPLACE_CONFIG = {
       "id": "validated-track-a",
       "visible": true,
       "label": {
-        "es": "Validado — Track A",
-        "en": "Validated — Track A",
-        "va": "Validat — Track A"
+        "es": "Validado — Vía Académica (Máster)",
+        "en": "Validated — Academic Pathway (Master's)",
+        "va": "Validat — Via Acadèmica (Màster)"
       }
     },
     {
       "id": "validated-track-b",
       "visible": true,
       "label": {
-        "es": "Validado — Track B",
-        "en": "Validated — Track B",
-        "va": "Validat — Track B"
+        "es": "Validado — Comunidad de Práctica",
+        "en": "Validated — Community of Practice",
+        "va": "Validat — Comunitat de Pràctica"
       }
     },
     {
@@ -3169,9 +3169,9 @@ export const MARKETPLACE_CONFIG = {
       "id": "track-b-transfer",
       "visible": true,
       "label": {
-        "es": "Transferencia Track B",
-        "en": "Track B transfer",
-        "va": "Transferència Track B"
+        "es": "Transferencia a la comunidad de práctica",
+        "en": "Community transfer",
+        "va": "Transferència a la comunitat de pràctica"
       }
     },
     {
@@ -6027,9 +6027,9 @@ export const MARKETPLACE_CONFIG = {
         "id": "transferValue",
         "visible": true,
         "label": {
-          "es": "Valor para Track B",
-          "en": "Track B value",
-          "va": "Valor per a Track B"
+          "es": "Valor para la comunidad de práctica",
+          "en": "Community of practice value",
+          "va": "Valor per a la comunitat de pràctica"
         }
       },
       {
@@ -6099,9 +6099,9 @@ export const MARKETPLACE_CONFIG = {
         "id": "trackA",
         "visible": true,
         "label": {
-          "es": "Derivación Track A",
-          "en": "Track A pathway",
-          "va": "Derivació Track A"
+          "es": "Conexión académica (Máster)",
+          "en": "Academic connection (Master's)",
+          "va": "Connexió acadèmica (Màster)"
         }
       },
       {
@@ -7564,9 +7564,9 @@ export const MARKETPLACE_CONFIG = {
         "id": "track-routing-note",
         "visible": true,
         "label": {
-          "es": "Nota de derivación Track A/B",
-          "en": "Track A/B routing note",
-          "va": "Nota de derivació Track A/B"
+          "es": "Nota de asignación de itinerario",
+          "en": "Pathway routing note",
+          "va": "Nota d'assignació d'itinerari"
         }
       },
       {
@@ -7723,9 +7723,9 @@ export const MARKETPLACE_CONFIG = {
         "id": "track-b-transfer",
         "visible": true,
         "label": {
-          "es": "Transferencia Track B",
-          "en": "Track B transfer",
-          "va": "Transferència Track B"
+          "es": "Transferencia a la comunidad de práctica",
+          "en": "Community transfer",
+          "va": "Transferència a la comunitat de pràctica"
         }
       },
       {
@@ -8311,18 +8311,18 @@ export const MARKETPLACE_CONFIG = {
         "id": "A",
         "visible": true,
         "label": {
-          "es": "Track A (Académico)",
-          "en": "Track A (Academic)",
-          "va": "Track A (Acadèmic)"
+          "es": "Vía Académica (Máster)",
+          "en": "Academic Pathway (Master's)",
+          "va": "Via Acadèmica (Màster)"
         }
       },
       {
         "id": "B",
         "visible": true,
         "label": {
-          "es": "Track B (Ecosistema)",
-          "en": "Track B (Ecosystem)",
-          "va": "Track B (Ecosistema)"
+          "es": "Comunidad de Práctica (FP y Empresas)",
+          "en": "Community of Practice (VET & Industry)",
+          "va": "Comunitat de Pràctica (FP i Empreses)"
         }
       }
     ],
