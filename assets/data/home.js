@@ -552,21 +552,13 @@ export const HOME_CONFIG = {
           {
             "id": "master-2",
             "html": {
-              "es": "Certificación TÜV Thüringen (TUV.IT)",
-              "en": "TÜV Thüringen certification (TUV.IT)",
-              "va": "Certificació TÜV Thüringen (TUV.IT)"
-            }
-          },
-          {
-            "id": "master-3",
-            "html": {
               "es": "Modelo curricular basado en créditos ECTS y Credenciales Digitales Europeas (en tramitación)",
               "en": "Curriculum model based on ECTS credits and European Digital Credentials (under academic approval)",
               "va": "Model curricular basat en crèdits ECTS i Credencials Digitals Europees (en tramitació)"
             }
           },
           {
-            "id": "master-4",
+            "id": "master-3",
             "html": {
               "es": "Opción de incorporar retos reales del Banco de Retos como TFM (sujeto a aprobación académica)",
               "en": "Option to incorporate real ecosystem challenges as Master&#39;s Final Projects (subject to academic approval)",
