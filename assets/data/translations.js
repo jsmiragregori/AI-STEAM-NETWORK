@@ -268,7 +268,7 @@ export const translations = {
     },
     "sectors": {
       "title": "Los 7 Sectores AiSECRETT",
-      "description": "Mapa de transferencia AiSECRETT: cada sector conecta necesidades reales de stakeholders de AiSECRETT con competencias FP, formación docente y posibles puentes académicos. Triple transición digital, ecológica y social.",
+      "description": "Mapa de transferencia de AiSECRETT: cada sector conecta los retos reales del entorno sociolaboral con la Formación Profesional, la capacitación docente y los estudios universitarios, transformándolos en proyectos prácticos de aula, casos de estudio y experiencias piloto sobre inteligencia artificial.",
       "stats": {
         "totalChallenges": "Retos y casos",
         "partners": "Socios",
@@ -281,7 +281,7 @@ export const translations = {
       "masterTopics": "Candidatos a puente académico",
       "featuredPartners": "Socios Destacados",
       "cta": "¿Tu organización trabaja en alguno de estos sectores?",
-      "ctaDesc": "La AiSTEAM Network está abierta a organizaciones interesadas de cualquiera de los 7 sectores. La solicitud se gestiona desde la sección <strong>La Red</strong>, donde se recoge la información necesaria para ubicar tu organización en el ecosistema.",
+      "ctaDesc": "La AiSTEAM Network está abierta a centros educativos, empresas y entidades de cualquiera de los 7 sectores. A través del formulario de la sección <strong>La Red</strong> puedes solicitar la adhesión de tu organización para colaborar en retos reales, compartir experiencias formativas y formar parte de la red europea.",
       "ctaButton": "Ir al formulario de adhesión",
       "sectorLabels": {
         "initiatives": "Iniciativas",
@@ -292,7 +292,7 @@ export const translations = {
       "fpModulesLabel": "Competencias FP prioritarias",
       "masterTopicsLabel": "Conexiones académicas posibles",
       "featuredPartnersLabel": "Socios destacados",
-      "stakeholderTypesLabel": "Stakeholders de AiSECRETT que pueden participar",
+      "stakeholderTypesLabel": "Organizaciones que pueden colaborar en este sector",
       "teacherRelevanceLabel": "Aplicación didáctica para formación docente",
       "exampleChallengeLabel": "Evidencia destacada",
       "transferChainTitle": "Ruta de transferencia del sector",
@@ -506,15 +506,15 @@ export const translations = {
           "Gobernanza de datos en servicios públicos"
         ]
       },
-      "stakeholderContributionLabel": "Qué puede aportar un stakeholder de AiSECRETT",
+      "stakeholderContributionLabel": "Qué pueden aportar las entidades colaboradoras",
       "relatedContentLabel": "Contenidos relacionados",
       "exploreSectorContent": "Explorar contenidos del sector",
       "noFeaturedEvidence": "Sin evidencia publicada todavía",
       "noRelatedContent": "Sin contenidos relacionados publicados todavía",
       "expandSector": "Abrir brújula sectorial",
       "collapseSector": "Cerrar brújula",
-      "stakeholderNote": "Tipos de organización orientativos. La participación de stakeholders de AiSECRETT es voluntaria y futura, sujeta al proceso de adhesión que se defina; la Red de Stakeholders es un órgano consultivo, no decisorio, y no implica publicación directa ni roles automáticos.",
-      "academicNote": "Posibles líneas de conexión académica, pendientes de validación por UVEG. No son contenidos aprobados del Máster AiSECRETT."
+      "stakeholderNote": "Tipos de organización orientativos. La participación de las entidades colaboradoras es voluntaria y se canaliza a través de la solicitud de adhesión a la red, actuando como espacio consultivo y de cooperación práctica.",
+      "academicNote": "Posibles líneas de conexión académica, en coordinación con la Universitat de València y las universidades socias del consorcio. No constituyen contenidos cerrados del Máster AiSECRETT."
     },
     "training": {
       "title": "Itinerarios de Transferencia AiSTEAM Network",
@@ -1847,7 +1847,7 @@ export const translations = {
     },
     "sectors": {
       "title": "The 7 AiSECRETT Sectors",
-      "description": "AiSECRETT transfer map: each sector connects real AiSECRETT stakeholder needs with VET skills, teacher training relevance and possible academic bridges. Digital, ecological and social triple transition.",
+      "description": "AiSECRETT transfer map: each sector connects real-world workplace challenges with Vocational Education and Training, teacher training and university studies, turning them into practical classroom projects, case studies and pilot experiences in artificial intelligence.",
       "stats": {
         "totalChallenges": "Challenges & cases",
         "partners": "Partners",
@@ -1860,7 +1860,7 @@ export const translations = {
       "masterTopics": "Academic Bridge Candidates",
       "featuredPartners": "Featured Partners",
       "cta": "Does your organization work in any of these sectors?",
-      "ctaDesc": "The AiSTEAM Network is open to interested organizations from any of the 7 sectors. Requests are managed from the <strong>Network</strong> section, where the information needed to place your organization in the ecosystem is collected.",
+      "ctaDesc": "The AiSTEAM Network is open to educational institutions, businesses and organizations across all 7 sectors. Through the form in the <strong>Network</strong> section, you can apply for organization membership to collaborate on real-world challenges, share training experiences and take part in the European network.",
       "ctaButton": "Go to membership form",
       "sectorLabels": {
         "initiatives": "Initiatives",
@@ -1871,7 +1871,7 @@ export const translations = {
       "fpModulesLabel": "Priority VET competences",
       "masterTopicsLabel": "Possible academic connections",
       "featuredPartnersLabel": "Featured partners",
-      "stakeholderTypesLabel": "AiSECRETT stakeholders who can participate",
+      "stakeholderTypesLabel": "Organizations that can collaborate in this sector",
       "teacherRelevanceLabel": "Didactic application for teacher training",
       "exampleChallengeLabel": "Featured evidence",
       "transferChainTitle": "Sector transfer route",
@@ -2085,15 +2085,15 @@ export const translations = {
           "Data governance in public services"
         ]
       },
-      "stakeholderContributionLabel": "What an AiSECRETT stakeholder can contribute",
+      "stakeholderContributionLabel": "What collaborating organizations can contribute",
       "relatedContentLabel": "Related content",
       "exploreSectorContent": "Explore sector content",
       "noFeaturedEvidence": "No published evidence yet",
       "noRelatedContent": "No related content published yet",
       "expandSector": "Open sector compass",
       "collapseSector": "Close compass",
-      "stakeholderNote": "Indicative organization types. Participation by AiSECRETT stakeholders is voluntary and prospective, subject to the joining process to be defined; the Stakeholder Network is an advisory, non-decision-making body and does not imply direct publishing or automatic roles.",
-      "academicNote": "Possible academic connection lines, pending validation by UVEG. These are not approved Master AiSECRETT contents."
+      "stakeholderNote": "Indicative organization types. Participation by collaborating organizations is voluntary and organized through network membership applications, serving as a consultative and practical cooperation space.",
+      "academicNote": "Possible academic connection lines, coordinated with Universitat de València and consortium partner universities. These do not constitute finalized Master AiSECRETT contents."
     },
     "training": {
       "title": "AiSTEAM Network Transfer Pathways",
@@ -3426,7 +3426,7 @@ export const translations = {
     },
     "sectors": {
       "title": "Els 7 Sectors AiSECRETT",
-      "description": "Mapa de transferència AiSECRETT: cada sector connecta necessitats reals dels stakeholders d'AiSECRETT amb competències FP, formació docent i possibles ponts acadèmics. Triple transició digital, ecològica i social.",
+      "description": "Mapa de transferència d'AiSECRETT: cada sector connecta els reptes reals de l'entorn sociolaboral amb la Formació Professional, la capacitació docent i els estudis universitaris, transformant-los en projectes pràctics d'aula, casos d'estudi i experiències pilot sobre intel·ligència artificial.",
       "stats": {
         "totalChallenges": "Reptes i casos",
         "partners": "Socis",
@@ -3439,7 +3439,7 @@ export const translations = {
       "masterTopics": "Candidats a pont acadèmic",
       "featuredPartners": "Socis Destacats",
       "cta": "La teua organització treballa en algun d'estos sectors?",
-      "ctaDesc": "L'AiSTEAM Network és oberta a organitzacions interessades de qualsevol dels 7 sectors. La sol·licitud es gestiona des de la secció <strong>La Xarxa</strong>, on es recull la informació necessària per a ubicar la teua organització a l'ecosistema.",
+      "ctaDesc": "L'AiSTEAM Network és oberta a centres educatius, empreses i entitats de qualsevol dels 7 sectors. A través del formulari de la secció <strong>La Xarxa</strong> pots sol·licitar l'adhesió de la teua organització per a col·laborar en reptes reals, compartir experiències formatives i formar part d'esta comunitat europea.",
       "ctaButton": "Anar al formulari d'adhesió",
       "sectorLabels": {
         "initiatives": "Iniciatives",
@@ -3450,7 +3450,7 @@ export const translations = {
       "fpModulesLabel": "Competències FP prioritàries",
       "masterTopicsLabel": "Connexions acadèmiques possibles",
       "featuredPartnersLabel": "Socis destacats",
-      "stakeholderTypesLabel": "Stakeholders d'AiSECRETT que poden participar",
+      "stakeholderTypesLabel": "Organitzacions que poden col·laborar en este sector",
       "teacherRelevanceLabel": "Aplicació didàctica per a formació docent",
       "exampleChallengeLabel": "Evidència destacada",
       "transferChainTitle": "Ruta de transferència del sector",
@@ -3664,15 +3664,15 @@ export const translations = {
           "Governança de dades en serveis públics"
         ]
       },
-      "stakeholderContributionLabel": "Què pot aportar un stakeholder d'AiSECRETT",
+      "stakeholderContributionLabel": "Què poden aportar les entitats col·laboradores",
       "relatedContentLabel": "Continguts relacionats",
       "exploreSectorContent": "Explorar continguts del sector",
       "noFeaturedEvidence": "Sense evidència publicada encara",
       "noRelatedContent": "Sense continguts relacionats publicats encara",
       "expandSector": "Obrir brúixola sectorial",
       "collapseSector": "Tancar brúixola",
-      "stakeholderNote": "Tipus d'organització orientatius. La participació dels stakeholders d'AiSECRETT és voluntària i futura, subjecta al procés d'adhesió que es definisca; la Xarxa de Stakeholders és un òrgan consultiu, no decisori, i no implica publicació directa ni rols automàtics.",
-      "academicNote": "Possibles línies de connexió acadèmica, pendents de validació per UVEG. No són continguts aprovats del Màster AiSECRETT."
+      "stakeholderNote": "Tipus d'organització orientatius. La participació de les entitats col·laboradores és voluntària i es canalitza a través de la sol·licitud d'adhesió a la xarxa, actuant com a espai consultiu i de cooperació pràctica.",
+      "academicNote": "Possibles línies de connexió acadèmica, en coordinació amb la Universitat de València i les universitats sòcies del consorci. No constituïxen continguts tancats del Màster AiSECRETT."
     },
     "training": {
       "title": "Itineraris de Transferència AiSTEAM Network",

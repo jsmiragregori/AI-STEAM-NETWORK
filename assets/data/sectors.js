@@ -10,9 +10,9 @@ export const SECTORS_CONFIG = {
       "va": "Els 7 Sectors AiSECRETT"
     },
     "description": {
-      "es": "Mapa de transferencia AiSECRETT: cada sector conecta necesidades reales de stakeholders de AiSECRETT con soluciones de IA, y los miembros de la AiSTEAM Network las convierten en retos, casos y pilotos.",
-      "en": "AiSECRETT transfer map: each sector connects real AiSECRETT stakeholder needs with AI solutions, and AiSTEAM Network members turn them into challenges, cases and pilots.",
-      "va": "Mapa de transferència AiSECRETT: cada sector connecta necessitats reals dels stakeholders d'AiSECRETT amb solucions d'IA, i els membres de l'AiSTEAM Network les converteixen en reptes, casos i pilots."
+      "es": "Mapa de transferencia de AiSECRETT: cada sector conecta los retos reales del entorno sociolaboral con la Formación Profesional, la capacitación docente y los estudios universitarios, transformándolos en proyectos prácticos de aula, casos de estudio y experiencias piloto sobre inteligencia artificial.",
+      "en": "AiSECRETT transfer map: each sector connects real-world workplace challenges with Vocational Education and Training, teacher training and university studies, turning them into practical classroom projects, case studies and pilot experiences in artificial intelligence.",
+      "va": "Mapa de transferència d'AiSECRETT: cada sector connecta els reptes reals de l'entorn sociolaboral amb la Formació Professional, la capacitació docent i els estudis universitaris, transformant-los en projectes pràctics d'aula, casos d'estudi i experiències pilot sobre intel·ligència artificial."
     },
     "stats": [
       {
@@ -2236,9 +2236,9 @@ export const SECTORS_CONFIG = {
       "va": "La teua organització treballa en algun d'estos sectors?"
     },
     "description": {
-      "es": "La red AiSTEAM está abierta a organizaciones interesadas de cualquiera de los 7 sectores. Desde la sección <strong>La Red</strong> puedes <strong>expresar tu interés</strong>: la solicitud se revisa y, cuando proceda, se inicia el proceso de incorporación. No implica adhesión automática ni aceptación inmediata.",
-      "en": "The AiSTEAM Network is open to interested organizations from any of the 7 sectors. From the <strong>Network</strong> section you can <strong>register your interest</strong>: the request is reviewed and, where appropriate, the onboarding process begins. It does not imply automatic membership or immediate acceptance.",
-      "va": "La xarxa AiSTEAM és oberta a organitzacions interessades de qualsevol dels 7 sectors. Des de la secció <strong>La Xarxa</strong> pots <strong>expressar el teu interés</strong>: la sol·licitud es revisa i, quan procedisca, s'inicia el procés d'incorporació. No implica adhesió automàtica ni acceptació immediata."
+      "es": "La AiSTEAM Network está abierta a centros educativos, empresas y entidades de cualquiera de los 7 sectores. A través del formulario de la sección <strong>La Red</strong> puedes solicitar la adhesión de tu organización para colaborar en retos reales, compartir experiencias formativas y formar parte de la red europea.",
+      "en": "The AiSTEAM Network is open to educational institutions, businesses and organizations across all 7 sectors. Through the form in the <strong>Network</strong> section, you can apply for organization membership to collaborate on real-world challenges, share training experiences and take part in the European network.",
+      "va": "L'AiSTEAM Network és oberta a centres educatius, empreses i entitats de qualsevol dels 7 sectors. A través del formulari de la secció <strong>La Xarxa</strong> pots sol·licitar l'adhesió de la teua organització per a col·laborar en reptes reals, compartir experiències formatives i formar part de la xarxa europea."
     },
     "buttonVisible": true,
     "configuredButtonVisible": true,
@@ -2266,9 +2266,9 @@ export const SECTORS_CONFIG = {
       }
     },
     "buttonLabel": {
-      "es": "Expresar mi interés",
-      "en": "Register my interest",
-      "va": "Expressar el meu interés"
+      "es": "Solicitar adhesión a la red",
+      "en": "Apply to Join the Network",
+      "va": "Sol·licitar adhesió a la xarxa"
     },
     "targetRoute": "red",
     "targetNetworkTab": "stakeholders",
