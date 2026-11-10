@@ -21,9 +21,9 @@ export const NETWORK_CONFIG = {
         "manualOverride": false,
         "computedValue": 23,
         "label": {
-          "es": "Socios Consorcio",
-          "en": "Consortium Partners",
-          "va": "Socis Consorci"
+          "es": "Socios del consorcio",
+          "en": "Consortium partners",
+          "va": "Socis del consorci"
         }
       },
       {
@@ -911,9 +911,9 @@ export const NETWORK_CONFIG = {
       {
         "id": "CECU",
         "name": {
-          "es": "Conselleria de Educación, Cultura y Universidades",
-          "en": "Department of Education, Culture and Universities",
-          "va": "Conselleria d'Educació, Cultura i Universitats"
+          "es": "Conselleria de Educación, Cultura y Universidades (Generalitat Valenciana)",
+          "en": "Regional Ministry of Education, Culture and Universities (Generalitat Valenciana)",
+          "va": "Conselleria d'Educació, Cultura i Universitats (Generalitat Valenciana)"
         },
         "acronym": "CECU",
         "country": "ES",
@@ -932,9 +932,9 @@ export const NETWORK_CONFIG = {
           "va": "Administració Pública"
         },
         "contribution": {
-          "es": "Impulsa la Comunidad AiSTEAM y aporta política educativa, FP y formación docente a la transferencia regional.",
-          "en": "Drives the AiSTEAM Community and brings education policy, VET and teacher training to regional transfer.",
-          "va": "Impulsa la Comunitat AiSTEAM i aporta política educativa, FP i formació docent a la transferència regional."
+          "es": "Impulsa la red AiSTEAM y aporta al proyecto las políticas educativas, el ecosistema de Formación Profesional y la formación del profesorado para la transferencia regional.",
+          "en": "Drives the AiSTEAM Network and contributes education policy, the Vocational Education and Training ecosystem and teacher training to regional transfer.",
+          "va": "Impulsa la xarxa AiSTEAM i aporta al projecte les polítiques educatives, l'ecosistema de Formació Professional i la formació del professorat per a la transferència regional."
         },
         "sectors": [
           {
@@ -1625,9 +1625,9 @@ export const NETWORK_CONFIG = {
         "va": "Completa el formulari de Microsoft Forms per a sol·licitar l'alta de la teua organització a l'AiSTEAM Network."
       },
       "openExternalLabel": {
-        "es": "Solicitar adhesión como miembro",
-        "en": "Apply for Membership",
-        "va": "Sol·licitar adhesió com a membre"
+        "es": "Solicitar adhesión a la red",
+        "en": "Apply to Join the Network",
+        "va": "Sol·licitar adhesió a la xarxa"
       }
     },
     "tabTitle": {
@@ -1636,9 +1636,9 @@ export const NETWORK_CONFIG = {
       "va": "Membres de la xarxa"
     },
     "description": {
-      "es": "Únete a la comunidad de práctica de la AiSTEAM Network: organizaciones que comparten retos, casos y pilotos de IA y creatividad. La participación es gratuita: las organizaciones interesadas pueden solicitar su adhesión mediante formulario, decidiéndose su admisión a través del procedimiento en ConsensUE. Una vez aprobada el alta, la entidad pasa a ser miembro de la AiSTEAM Network y, de facto, stakeholder de AiSECRETT.",
-      "en": "Join the AiSTEAM Network community of practice: organizations that share AI and creativity challenges, cases and pilots. Participation is free: interested organizations may apply through our registration form, and applications are reviewed and decided upon within ConsensUE. Once admission is approved, the organization formally becomes an AiSTEAM Network member and, de facto, an AiSECRETT stakeholder.",
-      "va": "Uneix-te a la comunitat de pràctica de l'AiSTEAM Network: organitzacions que comparteixen reptes, casos i pilots d'IA i creativitat. La participació és gratuïta: les organitzacions interessades poden sol·licitar l'adhesió mitjançant formulari, decidint-se la seua admissió a través del procediment en ConsensUE. Una vegada aprovada l'alta, l'entitat esdevé membre de l'AiSTEAM Network i, de facto, stakeholder d'AiSECRETT."
+      "es": "Únete a la comunidad de práctica de la AiSTEAM Network: centros educativos, empresas y entidades que colaboran en torno a retos reales, casos de uso y experiencias piloto en inteligencia artificial y creatividad. La adhesión es gratuita mediante solicitud; una vez formalizada el alta, la organización se integra como miembro de la red y pasa a ser reconocida como entidad participante (stakeholder) del proyecto europeo AiSECRETT.",
+      "en": "Join the AiSTEAM Network community of practice: educational institutions, companies and organizations collaborating around real-world challenges, use cases and pilot experiences in artificial intelligence and creativity. Participation is free upon application; once registered, the organization becomes a network member and is recognized as a stakeholder in the European AiSECRETT project.",
+      "va": "Uneix-te a la comunitat de pràctica de l'AiSTEAM Network: centres educatius, empreses i entitats que col·laboren al voltant de reptes reals, casos d'ús i experiències pilot en intel·ligència artificial i creativitat. L'adhesió és gratuïta mitjançant sol·licitud; una vegada formalitzada l'alta, l'organització s'integra com a membre de la xarxa i passa a ser reconeguda com a entitat participant (stakeholder) del projecte europeu AiSECRETT."
     },
     "filterAll": {
       "es": "Todos",
@@ -1661,9 +1661,9 @@ export const NETWORK_CONFIG = {
       "va": "No hi ha resultats que coincidisquen amb els filtres seleccionats."
     },
     "emptyState": {
-      "es": "Aún no hay miembros registrados en la red. Las organizaciones interesadas pueden solicitar su adhesión mediante el formulario.",
-      "en": "There are not yet any members registered in the network. Interested organizations can request membership through the form.",
-      "va": "Encara no hi ha membres registrats en la xarxa. Les organitzacions interessades poden sol·licitar l'adhesió mitjançant el formulari."
+      "es": "La red se encuentra en pleno proceso de incorporación de nuevas organizaciones. Si tu centro, empresa o entidad desea participar, puedes solicitar la adhesión a través del formulario.",
+      "en": "The network is currently incorporating new participating organizations. If your institution or business wishes to take part, you can apply using the registration form.",
+      "va": "La xarxa es troba en ple procés d'incorporació de noves organitzacions. Si el teu centre, empresa o entitat desitja participar-hi, pots sol·licitar l'adhesió a través del formulari."
     },
     "emptyStateTitle": {
       "es": "La red aún está creciendo",
