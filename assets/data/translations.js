@@ -615,7 +615,7 @@ export const translations = {
       "eyebrow": "Conocimiento",
       "title": "Transferencia de Conocimiento",
       "subtitle": "Repositorio de recursos, evidencias y casos de transferencia AiSECRETT",
-      "description": "Repositorio de recursos OER, casos de transferencia, evidencias de pilotos y plantillas útiles para stakeholders de AiSECRETT, FP, formación docente y puentes académicos.",
+      "description": "Repositorio de recursos educativos abiertos (OER), casos de transferencia, experiencias piloto y plantillas prácticas para centros educativos, profesorado, Formación Profesional y estudios universitarios.",
       "tabFlow": "Ciclo de Transferencia",
       "tabOER": "Recursos OER",
       "tabCases": "Casos de Transferencia",
@@ -723,12 +723,12 @@ export const translations = {
         },
         {
           "id": "ev5",
-          "title": "Revisión de evidencias D2.2 — AiSTEAM Network funcionalmente activa",
+          "title": "Consolidación y seguimiento de la AiSTEAM Network",
           "sector": "nts",
-          "route": "AiSECRETT Deliverable",
+          "route": "Seguimiento de la red",
           "status": "En revisión",
           "participants": 0,
-          "outcome": "Indicadores Track B consolidados: miembros registrados, sectores activos, retos validados, trazas ConsensUE. Entregable D2.2 en preparación.",
+          "outcome": "Indicadores de la comunidad de práctica: seguimiento continuo de entidades colaboradoras, sectores activos, retos compartidos y participación en ConsensUE.",
           "partner": "CECU / Steering Committee"
         }
       ],
@@ -2194,7 +2194,7 @@ export const translations = {
       "eyebrow": "Knowledge",
       "title": "Knowledge Transfer",
       "subtitle": "Repository of resources, evidence and transfer cases of AiSECRETT",
-      "description": "OER resources, transfer cases, pilot evidence and useful templates for AiSECRETT stakeholders, VET, teacher training and academic bridges.",
+      "description": "Repository of open educational resources (OER), transfer cases, pilot experiences and practical templates for educational institutions, teachers, Vocational Education and Training and university studies.",
       "tabFlow": "Transfer Cycle",
       "tabOER": "OER Resources",
       "tabCases": "Transfer Cases",
@@ -2302,12 +2302,12 @@ export const translations = {
         },
         {
           "id": "ev5",
-          "title": "D2.2 Evidence Review — AiSTEAM Network functionally active",
+          "title": "AiSTEAM Network consolidation and monitoring",
           "sector": "nts",
-          "route": "AiSECRETT Deliverable",
+          "route": "Network monitoring",
           "status": "Under review",
           "participants": 0,
-          "outcome": "Track B indicators consolidated: registered members, active sectors, validated challenges, ConsensUE traces. D2.2 deliverable in preparation.",
+          "outcome": "Community of practice indicators: continuous monitoring of collaborating organizations, active sectors, shared challenges and ConsensUE participation.",
           "partner": "CECU / Steering Committee"
         }
       ],
@@ -3760,7 +3760,7 @@ export const translations = {
       "eyebrow": "Coneixement",
       "title": "Transferència de Coneixement",
       "subtitle": "Repositori de recursos, evidències i casos de transferència d'AiSECRETT",
-      "description": "Recursos OER, casos de transferència, evidències de pilot i plantilles útils per a stakeholders d'AiSECRETT, FP, formació docent i ponts acadèmics.",
+      "description": "Repositori de recursos educatius oberts (OER), casos de transferència, experiències pilot i plantilles pràctiques per a centres educatius, professorat, Formació Professional i estudis universitaris.",
       "tabFlow": "Cicle de Transferència",
       "tabOER": "Recursos OER",
       "tabCases": "Casos de Transferència",
@@ -3866,12 +3866,12 @@ export const translations = {
         },
         {
           "id": "ev5",
-          "title": "Revisió d'evidències D2.2 — AiSTEAM Network funcionalment activa",
+          "title": "Consolidació i seguiment de l'AiSTEAM Network",
           "sector": "nts",
-          "route": "Lliurable AiSECRETT",
+          "route": "Seguiment de la xarxa",
           "status": "En revisió",
           "participants": 0,
-          "outcome": "Indicadors Track B consolidats: membres registrats, sectors actius, reptes validats, traces ConsensUE. Lliurable D2.2 en preparació.",
+          "outcome": "Indicadors de la comunitat de pràctica: seguiment continu d'entitats col·laboradores, sectors actius, reptes compartits i participació en ConsensUE.",
           "partner": "CECU / Steering Committee"
         }
       ],

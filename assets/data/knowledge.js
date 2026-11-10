@@ -81,9 +81,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Classificació per Ruta"
         },
         "description": {
-          "es": "CECU, con consulta a socios según el sector, clasifica la aportación y le asigna una ruta de trabajo (FP, docente, recurso, piloto o puente académico)",
-          "en": "CECU, consulting partners by sector, classifies the input and assigns a working route (VET, teacher, resource, pilot or academic bridge)",
-          "va": "CECU, consultant socis per sector, classifica l'aportació i li assigna una ruta de treball (FP, docent, recurs, pilot o pont acadèmic)"
+          "es": "El equipo de coordinación de la red, en consulta con los socios de cada sector, clasifica la aportación y orienta su itinerario de trabajo (Formación Profesional, capacitación docente, recurso abierto, pilotaje o conexión universitaria).",
+          "en": "The network coordination team, consulting sector partners, classifies the input and guides its working pathway (Vocational Education and Training, teacher training, open resource, pilot or university connection).",
+          "va": "L'equip de coordinació de la xarxa, en consulta amb els socis de cada sector, classifica l'aportació i orienta el seu itinerari de treball (Formació Professional, capacitació docent, recurs obert, pilotatge o connexió universitària)."
         }
       },
       {
@@ -92,14 +92,14 @@ export const KNOWLEDGE_CONFIG = {
         "order": 3,
         "icon": "👥",
         "title": {
-          "es": "Validación Track B",
-          "en": "Track B Validation",
-          "va": "Validació Track B"
+          "es": "Validación en la comunidad de práctica",
+          "en": "Community of practice validation",
+          "va": "Validació en la comunitat de pràctica"
         },
         "description": {
-          "es": "El Track B de gobernanza contrasta la relevancia educativa; si procede, se deriva al Track A para validación por las instituciones académicas del consorcio",
-          "en": "The Track B governance body assesses educational relevance; where applicable, it is referred to Track A for validation by consortium academic institutions",
-          "va": "El Track B de governança contrasta la rellevància educativa; si escau, es deriva al Track A per a validació per les institucions acadèmiques del consorci"
+          "es": "La comunidad de práctica y los socios del proyecto valoran de forma participativa el interés formativo, la viabilidad y la calidad de la propuesta, permitiendo que tanto los centros educativos como el ámbito universitario puedan incorporarla a sus actividades formativas.",
+          "en": "The community of practice and project partners collaboratively assess the educational value, feasibility and quality of the proposal, enabling both educational centres and the university domain to integrate it into their learning activities.",
+          "va": "La comunitat de pràctica i els socis del projecte valoren de manera participativa l'interés formatiu, la viabilitat i la qualitat de la proposta, permetent que tant els centres educatius com l'àmbit universitari puguen incorporar-la a les seues activitats formatives."
         }
       },
       {
@@ -164,9 +164,9 @@ export const KNOWLEDGE_CONFIG = {
           "visible": true,
           "name": "Aules (Moodle)",
           "description": {
-            "es": "Plataforma educativa de CECU para FP y formación del profesorado. Puede alojar recursos OER de la red bajo las condiciones acordadas con los socios autores.",
-            "en": "CECU's educational platform for VET and teacher training. It may host network OER resources under conditions agreed with the authoring partners.",
-            "va": "Plataforma educativa de CECU per a FP i formació del professorat. Pot allotjar recursos OER de la xarxa amb les condicions acordades amb els socis autors."
+            "es": "Plataforma virtual de aprendizaje de la Conselleria de Educación (Generalitat Valenciana). Aloja la oferta formativa, los cursos en línea y los itinerarios de capacitación desarrollados en el marco de la red.",
+            "en": "Virtual learning platform of the Regional Ministry of Education (Generalitat Valenciana). It hosts the training offer, online courses and capacity-building pathways developed within the network.",
+            "va": "Plataforma virtual d'aprenentatge de la Conselleria d'Educació (Generalitat Valenciana). Allotja l'oferta formativa, els cursos en línia i els itineraris de capacitació desenvolupats en el marc de la xarxa."
           }
         },
         {
@@ -184,9 +184,9 @@ export const KNOWLEDGE_CONFIG = {
           "visible": true,
           "name": "ConsensUE (Aules)",
           "description": {
-            "es": "Espacio de participación del Track B para consultas, deliberación y trazabilidad de aportaciones de la comunidad. Puede apoyar la priorización de necesidades, retos y recursos que orienten actividades futuras de la red.",
-            "en": "Track B participation space for consultation, deliberation and traceability of community contributions. It can support the prioritisation of needs, challenges and resources that may inform future network activities.",
-            "va": "Espai de participació del Track B per a consultes, deliberació i traçabilitat de les aportacions de la comunitat. Pot donar suport a la priorització de necessitats, reptes i recursos que orienten activitats futures de la xarxa."
+            "es": "Espacio participativo de la red para la consulta, deliberación y trazabilidad de las aportaciones de la comunidad. Apoya la priorización de necesidades, retos y recursos para orientar las actividades futuras de la red.",
+            "en": "Participatory network space for consultation, deliberation and traceability of community contributions. It supports prioritizing needs, challenges and resources to guide future network activities.",
+            "va": "Espai participatiu de la xarxa per a la consulta, deliberació i traçabilitat de les aportacions de la comunitat. Dóna suport a la priorització de necessitats, reptes i recursos per a orientar les activitats futures de la xarxa."
           }
         }
       ]
@@ -409,9 +409,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "master",
         "visible": true,
         "label": {
-          "es": "Puente al Máster",
-          "en": "Master Bridge",
-          "va": "Pont al Màster"
+          "es": "Conexión con el Máster",
+          "en": "Master's Connection",
+          "va": "Connexió amb el Màster"
         }
       }
     ],
