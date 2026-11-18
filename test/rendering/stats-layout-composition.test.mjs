@@ -166,6 +166,37 @@ test('hélice: localiza socios en singular para uno y conserva el plural para ce
   }
 });
 
+test('hélice: localiza miembros en singular para uno y conserva el plural para cero y dos', () => {
+  const formas = {
+    es: { singular: 'miembro', plural: 'miembros' },
+    en: { singular: 'member', plural: 'members' },
+    va: { singular: 'membre', plural: 'membres' },
+  };
+  const fallos = [];
+
+  for (const [lang, forma] of Object.entries(formas)) {
+    for (const [count, esperado] of [[0, null], [1, forma.singular], [2, forma.plural]]) {
+      const cat = {
+        id: 'universidad', icon: 'graduation-cap', value: 1, computedValue: 1,
+        partnersCount: 0, stakeholdersCount: count,
+        label: { es: 'Sintético', en: 'Synthetic', va: 'Sintètic' },
+      };
+      const html = conIdioma(lang, () => conHelix([cat], () => vistas.red.render()));
+      const contenido = rejillaHelix(html).contenido;
+
+      if (esperado === null) {
+        if (/\b(miembros|members|membres|miembro|member|membre)\b/.test(contenido)) {
+          fallos.push(`${lang} con 0 miembros no debe mostrar detalle`);
+        }
+      } else if (!new RegExp(`\\b${count} ${esperado}\\b`).test(contenido)) {
+        fallos.push(`${lang} con ${count} debe mostrar «${count} ${esperado}»`);
+      }
+    }
+  }
+
+  assert.deepEqual(fallos, [], `pluralización de miembros incorrecta:\n${fallos.join('\n')}`);
+});
+
 test('hélice: 1, 2 y 3 ejes reparten solo las columnas visibles', () => {
   const casos = [
     [1, 'grid-cols-1'],
