@@ -147,7 +147,7 @@ function helixBlock() {
       : { es: 'socios', en: 'partners', va: 'socis' };
     const detailParts = [
       pCount ? `${pCount} ${loc(partnerNoun)}` : '',
-      sCount ? `${sCount} ${loc({es:'miembros',en:'members',va:'membres'})}` : '',
+      sCount ? `${sCount} ${loc(sCount === 1 ? {es:'miembro',en:'member',va:'membre'} : {es:'miembros',en:'members',va:'membres'})}` : '',
     ].filter(Boolean);
     return `
       <div class="rd-card rd-card-grad-violet rd-card-edge p-5 text-center group">
