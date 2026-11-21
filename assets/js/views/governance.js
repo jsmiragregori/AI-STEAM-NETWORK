@@ -553,21 +553,45 @@ function tabLbd(govT) {
 // ─── Tab 4: Documentos ───────────────────────────────────────────────────────
 
 function formatDocDate(dateStr) {
-  if (!dateStr) return '';
+  if (typeof dateStr !== 'string') return '';
+  const value = dateStr.trim();
+  if (!value) return '';
+
+  const isoDate = /^(\d{4})-(\d{2})-(\d{2})(?:$|T)/.exec(value);
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return '';
+
+  // El CMS admite fechas de calendario y marcas de tiempo ISO. Valida la
+  // parte de calendario sin dejar que Date normalice días imposibles.
+  if (isoDate) {
+    const [, year, month, day] = isoDate;
+    const calendarDate = new Date(`${year}-${month}-${day}T00:00:00.000Z`);
+    if (calendarDate.getUTCFullYear() !== Number(year)
+      || calendarDate.getUTCMonth() + 1 !== Number(month)
+      || calendarDate.getUTCDate() !== Number(day)) return '';
+  }
+
+  const lang = getLang();
+  const dateOnly = /^\d{4}-\d{2}-\d{2}$/.test(value);
+  const d = dateOnly ? date.getUTCDate() : date.getDate();
+  const m = dateOnly ? date.getUTCMonth() : date.getMonth();
+  const y = dateOnly ? date.getUTCFullYear() : date.getFullYear();
+  const months_es = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+  const months_en = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  // YYYY-MM-DD es una fecha civil: se lee con UTC getters para conservar el
+  // día en cualquier zona. Los timestamps mantienen los getters locales.
+  if (lang === 'es') return `${d} ${months_es[m]} ${y}`;
+  if (lang === 'en') return `${months_en[m]} ${d}, ${y}`;
+  if (lang !== 'va') return dateStr;
+
   try {
-    const date = new Date(dateStr);
-    const lang = getLang();
-    const months_es = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
-    const months_en = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const d = date.getDate();
-    const m = date.getMonth();
-    const y = date.getFullYear();
-    if (lang === 'es') return `${d} ${months_es[m]} ${y}`;
-    if (lang === 'en') return `${months_en[m]} ${d}, ${y}`;
-    if (lang === 'va') return `${d} ${months_es[m]} ${y}`;
-    return dateStr;
+    return date.toLocaleDateString(
+      ['ca-ES-valencia', 'ca-ES'],
+      { day: 'numeric', month: 'long', year: 'numeric', ...(dateOnly ? { timeZone: 'UTC' } : {}) },
+    );
   } catch {
-    return dateStr;
+    return '';
   }
 }
 
@@ -591,7 +615,7 @@ function tabDocumentos(govT) {
   const allLabel = cms.allLabel || { es: 'Todo', en: 'All', va: 'Tot' };
   const paginationPrev = cms.paginationPrev || { es: 'Anterior', en: 'Previous', va: 'Anterior' };
   const paginationNext = cms.paginationNext || { es: 'Siguiente', en: 'Next', va: 'Següent' };
-  const noSearchResultsMessage = cms.noSearchResultsMessage || { es: 'No hay documentos que coincidan con la búsqueda.', en: 'No documents match your search.', va: 'Cap document coincideix amb la teva cerca.' };
+  const noSearchResultsMessage = cms.noSearchResultsMessage || { es: 'No hay documentos que coincidan con la búsqueda.', en: 'No documents match your search.', va: 'Cap document coincidix amb la teua cerca.' };
   const documentIcons = new Set(['📄', '📘', '📑', '📚', '📝', '📊', '📋', '📜', '📖', '📂']);
 
   function isPublic(doc) {

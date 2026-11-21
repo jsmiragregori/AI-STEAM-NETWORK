@@ -85,12 +85,12 @@ const UI_TEXT = {
   deadline: {
     es: 'Fecha limite',
     en: 'Deadline',
-    va: 'Data limit',
+    va: 'Data límit',
   },
   direction: {
     es: 'Direccion',
     en: 'Direction',
-    va: 'Direccio',
+    va: 'Direcció',
   },
   infrastructure: {
     es: 'Infraestructura',
@@ -115,7 +115,7 @@ const UI_TEXT = {
   noResults: {
     es: 'No hay elementos con estos filtros',
     en: 'No items match these filters',
-    va: 'No hi ha elements amb aquests filtres',
+    va: 'No hi ha elements amb estos filtres',
   },
   reward: {
     es: 'Recompensa',
@@ -130,7 +130,7 @@ const UI_TEXT = {
   searchPlaceholder: {
     es: 'Buscar en esta subseccion',
     en: 'Search this subsection',
-    va: 'Buscar en aquesta subseccio',
+    va: 'Buscar en esta subsecció',
   },
   sdgs: {
     es: 'ODS',
@@ -377,12 +377,12 @@ const CASE_LEVEL_TONE = 'bg-eu-blue/10 text-eu-blue border-eu-blue/20';
 
 const SECTOR_FALLBACK_LABELS = {
   agr: { es: 'Agroalimentario', en: 'Agrifood', va: 'Agroalimentari' },
-  cci: { es: 'Industrias culturales y creativas', en: 'Cultural and creative industries', va: 'Industries culturals i creatives' },
+  cci: { es: 'Industrias culturales y creativas', en: 'Cultural and creative industries', va: 'Indústries culturals i creatives' },
   ene: { es: 'Energia y Medio Ambiente', en: 'Energy and Environment', va: 'Energia i Medi Ambient' },
   hou: { es: 'Vivienda', en: 'Housing', va: 'Habitatge' },
   mfg: { es: 'Manufactura', en: 'Manufacturing', va: 'Manufactura' },
   mob: { es: 'Movilidad y Transporte', en: 'Mobility and Transport', va: 'Mobilitat i Transport' },
-  nts: { es: 'Servicios No Turisticos', en: 'Non-Touristic Services', va: 'Serveis No Turistics' },
+  nts: { es: 'Servicios No Turisticos', en: 'Non-Touristic Services', va: 'Serveis No Turístics' },
 };
 
 const TAB_TONES = {
@@ -984,7 +984,7 @@ function getTabPagination(tab) {
     showAllOption: cfg.showAllOption !== false,
     showAllLabel: cfg.showAllLabel || { es: 'Todos', en: 'All', va: 'Tots' },
     paginationPrev: cfg.paginationPrev || { es: 'Anterior', en: 'Previous', va: 'Anterior' },
-    paginationNext: cfg.paginationNext || { es: 'Siguiente', en: 'Next', va: 'Seguent' },
+    paginationNext: cfg.paginationNext || { es: 'Siguiente', en: 'Next', va: 'Següent' },
   };
 }
 
@@ -1972,7 +1972,7 @@ function renderMentoringCard(item, tab) {
   if (offer.purpose || item.mentors || item.expectedOutputs || item.presentation) {
     const providerName = pickLang(provider.name) || pickLang(core.entity?.name);
     const providerRole = pickLangStrict(provider.role);
-    const purposeLabel = pickLang(pres.mainBlockLabel) || pickLang({ es: 'Que ofrece', en: 'What it offers', va: 'Que ofereix' });
+    const purposeLabel = pickLang(pres.mainBlockLabel) || pickLang({ es: 'Que ofrece', en: 'What it offers', va: 'Què oferix' });
     const purpose = pickLang(offer.purpose);
     const specialties = asArray(item.mentors?.items)
       .flatMap(mentor => asArray(mentor?.specialties))

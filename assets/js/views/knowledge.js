@@ -281,7 +281,7 @@ function tabOER(search) {
     const noContentMsg = lang === 'en'
       ? 'No content available in this section yet'
       : lang === 'va'
-        ? 'Encara no hi ha contingut disponible en aquesta secció'
+        ? 'Encara no hi ha contingut disponible en esta secció'
         : 'Todavía no hay contenido disponible en esta sección';
     return `
     <div class="rd-card rd-card-grad-violet rd-card-edge p-12 text-center">

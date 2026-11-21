@@ -1638,7 +1638,7 @@ export const NETWORK_CONFIG = {
     "description": {
       "es": "Únete a la comunidad de práctica de la AiSTEAM Network: centros educativos, empresas y entidades que colaboran en torno a retos reales, casos de uso y experiencias piloto en inteligencia artificial y creatividad. La adhesión es gratuita mediante solicitud; una vez formalizada el alta, la organización se integra como miembro de la red y pasa a ser reconocida como entidad participante (stakeholder) del proyecto europeo AiSECRETT.",
       "en": "Join the AiSTEAM Network community of practice: educational institutions, companies and organizations collaborating around real-world challenges, use cases and pilot experiences in artificial intelligence and creativity. Participation is free upon application; once registered, the organization becomes a network member and is recognized as a stakeholder in the European AiSECRETT project.",
-      "va": "Uneix-te a la comunitat de pràctica de l'AiSTEAM Network: centres educatius, empreses i entitats que col·laboren al voltant de reptes reals, casos d'ús i experiències pilot en intel·ligència artificial i creativitat. L'adhesió és gratuïta mitjançant sol·licitud; una vegada formalitzada l'alta, l'organització s'integra com a membre de la xarxa i passa a ser reconeguda com a entitat participant (stakeholder) del projecte europeu AiSECRETT."
+      "va": "Unix-te a la comunitat de pràctica de l'AiSTEAM Network: centres educatius, empreses i entitats que col·laboren al voltant de reptes reals, casos d'ús i experiències pilot en intel·ligència artificial i creativitat. L'adhesió és gratuïta mitjançant sol·licitud; una vegada formalitzada l'alta, l'organització s'integra com a membre de la xarxa i passa a ser reconeguda com a entitat participant (stakeholder) del projecte europeu AiSECRETT."
     },
     "filterAll": {
       "es": "Todos",
@@ -1648,7 +1648,7 @@ export const NETWORK_CONFIG = {
     "requestMembership": {
       "es": "Solicitar adhesión",
       "en": "Request Membership",
-      "va": "Solicitar adhesió"
+      "va": "Sol·licitar adhesió"
     },
     "closeForm": {
       "es": "Cerrar formulario",
@@ -1678,7 +1678,7 @@ export const NETWORK_CONFIG = {
     "searchPlaceholder": {
       "es": "Buscar por nombre, región o descripción…",
       "en": "Search by name, region or description…",
-      "va": "Cercar per nom, regió o descripció…"
+      "va": "Buscar per nom, regió o descripció…"
     },
     "paginationPrev": {
       "es": "Anterior",

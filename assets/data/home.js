@@ -145,7 +145,7 @@ export const HOME_CONFIG = {
     "heading": {
       "es": "¿Qué es y qué no es esta red?",
       "en": "What this network is — and is not",
-      "va": "Què és i què no és aquesta xarxa?"
+      "va": "Què és i què no és esta xarxa?"
     },
     "cards": [
       {
@@ -243,7 +243,7 @@ export const HOME_CONFIG = {
       "html": {
         "es": "<strong>ENRED</strong> es la red europea de departamentos regionales de educación impulsada por la Generalitat Valenciana: un entorno de cooperación interregional, intercambio de buenas prácticas, diálogo político y aprendizaje institucional entre administraciones educativas. <strong>AiSTEAM Network</strong> se construye sobre esa base de confianza institucional para añadir un foco temático especializado en IA, creatividad y educación STEAM. La sinergia es clara: <strong>ENRED</strong> proporciona el ecosistema institucional y el alcance europeo; <strong>AiSTEAM Network</strong> proporciona la profundidad temática, la comunidad especializada y el marco sostenible para movilizar centros, docentes y stakeholders de AiSECRETT alrededor de la innovación educativa en IA.",
         "en": "<strong>ENRED</strong> is the European Network of Regional Education Departments, a non-binding cooperation framework promoted by the Generalitat Valenciana: an environment of interregional cooperation, best practice exchange, policy dialogue and institutional learning among education authorities. <strong>AiSTEAM Network</strong> builds on this foundation of institutional trust to add a focused thematic expertise in AI, creativity and STEAM education. The synergy is clear: <strong>ENRED</strong> provides the institutional ecosystem and European reach; <strong>AiSTEAM Network</strong> provides thematic depth, a specialized community and a sustainable framework to mobilize centres, educators and AiSECRETT stakeholders around educational innovation in AI.",
-        "va": "<strong>ENRED</strong> és la Xarxa Europea de Departaments d&#39;Educació Regional impulsada per la Generalitat Valenciana: un entorn de cooperació interregional, intercanvi de bones pràctiques, diàleg polític i aprenentatge institucional entre administracions educatives. <strong>AiSTEAM Network</strong> es construeix sobre eixa base de confiança institucional per a afegir un focus temàtic especialitzat en IA, creativitat i educació STEAM. La sinergia és clara: <strong>ENRED</strong> proporciona l&#39;ecosistema institucional i l&#39;abast europeu; <strong>AiSTEAM Network</strong> proporciona la profunditat temàtica, la comunitat especialitzada i el marc sostenible per a mobilitzar centres, docents i stakeholders d&#39;AiSECRETT al voltant de la innovació educativa en IA."
+        "va": "<strong>ENRED</strong> és la Xarxa Europea de Departaments d&#39;Educació Regional impulsada per la Generalitat Valenciana: un entorn de cooperació interregional, intercanvi de bones pràctiques, diàleg polític i aprenentatge institucional entre administracions educatives. <strong>AiSTEAM Network</strong> es construïx sobre eixa base de confiança institucional per a afegir un focus temàtic especialitzat en IA, creativitat i educació STEAM. La sinergia és clara: <strong>ENRED</strong> proporciona l&#39;ecosistema institucional i l&#39;abast europeu; <strong>AiSTEAM Network</strong> proporciona la profunditat temàtica, la comunitat especialitzada i el marc sostenible per a mobilitzar centres, docents i stakeholders d&#39;AiSECRETT al voltant de la innovació educativa en IA."
       }
     },
     "cards": [
@@ -484,7 +484,7 @@ export const HOME_CONFIG = {
         "description": {
           "es": "Llevamos los retos del mundo laboral directamente a las aulas de FP: una comunidad donde docentes y estudiantes experimentan con inteligencia artificial aplicada, comparten recursos didácticos abiertos y dan respuesta a necesidades reales de las organizaciones.",
           "en": "Bringing real-world workplace challenges directly into VET classrooms: a community where educators and students experiment with applied artificial intelligence, share open educational resources and respond to real organizational needs.",
-          "va": "Portem els reptes del món laboral directament a les aules d'FP: una comunitat on docents i estudiants experimenten amb intel·ligència artificial aplicada, comparteixen recursos didàctics oberts i donen resposta a necessitats reals de les organitzacions."
+          "va": "Portem els reptes del món laboral directament a les aules d'FP: una comunitat on docents i estudiants experimenten amb intel·ligència artificial aplicada, compartixen recursos didàctics oberts i donen resposta a necessitats reals de les organitzacions."
         },
         "items": [
           {

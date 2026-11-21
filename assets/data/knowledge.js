@@ -12,7 +12,7 @@ export const KNOWLEDGE_CONFIG = {
     "description": {
       "es": "Recursos educativos abiertos, casos de uso, evidencias de aprendizaje y plantillas para la comunidad AiSECRETT. Descarga, adapta y comparte.",
       "en": "Open educational resources, use cases, learning evidence and templates for the AiSECRETT community. Download, adapt and share.",
-      "va": "Recursos educatius oberts, casos d'ús, evidències d'aprenentatge i plantilles per a la comunitat AiSECRETT. Descarrega, adapta i comparteix."
+      "va": "Recursos educatius oberts, casos d'ús, evidències d'aprenentatge i plantilles per a la comunitat AiSECRETT. Descarrega, adapta i compartix."
     },
     "stats": [
       {
@@ -46,12 +46,12 @@ export const KNOWLEDGE_CONFIG = {
     "title": {
       "es": "Del Reto Ecosistema al Recurso Educativo Abierto",
       "en": "From Ecosystem Challenge to Open Educational Resource",
-      "va": "Del Repte Ecosistema al Recurs Educatiu Obert"
+      "va": "Del repte d'ecosistema al recurs educatiu obert"
     },
     "description": {
       "es": "Proceso de seis etapas que convierte necesidades detectadas por organizaciones, centros educativos o la red en recursos educativos abiertos o casos de transferencia, clasificados por sector AiSECRETT y ruta de conocimiento.",
       "en": "A six-stage process that converts needs detected by organisations, education centres or the network into open educational resources or transfer cases, classified by AiSECRETT sector and knowledge route.",
-      "va": "Procés de sis etapes que converteix necessitats detectades per organitzacions, centres educatius o la xarxa en recursos educatius oberts o casos de transferència, classificats per sector AiSECRETT i ruta de coneixement."
+      "va": "Procés de sis etapes que convertix necessitats detectades per organitzacions, centres educatius o la xarxa en recursos educatius oberts o casos de transferència, classificats per sector AiSECRETT i ruta de coneixement."
     },
     "steps": [
       {
@@ -186,7 +186,7 @@ export const KNOWLEDGE_CONFIG = {
           "description": {
             "es": "Espacio participativo de la red para la consulta, deliberación y trazabilidad de las aportaciones de la comunidad. Apoya la priorización de necesidades, retos y recursos para orientar las actividades futuras de la red.",
             "en": "Participatory network space for consultation, deliberation and traceability of community contributions. It supports prioritizing needs, challenges and resources to guide future network activities.",
-            "va": "Espai participatiu de la xarxa per a la consulta, deliberació i traçabilitat de les aportacions de la comunitat. Dóna suport a la priorització de necessitats, reptes i recursos per a orientar les activitats futures de la xarxa."
+            "va": "Espai participatiu de la xarxa per a la consulta, deliberació i traçabilitat de les aportacions de la comunitat. Dona suport a la priorització de necessitats, reptes i recursos per a orientar les activitats futures de la xarxa."
           }
         }
       ]
@@ -233,7 +233,7 @@ export const KNOWLEDGE_CONFIG = {
     "emptyMessage": {
       "es": "Todavía no hay recursos disponibles en esta sección",
       "en": "No resources available in this section yet",
-      "va": "Encara no hi ha recursos disponibles en aquesta secció"
+      "va": "Encara no hi ha recursos disponibles en esta secció"
     },
     "typeLabels": [
       {
@@ -315,12 +315,12 @@ export const KNOWLEDGE_CONFIG = {
     "description": {
       "es": "Documentos de trabajo, listas de verificación y recursos de apoyo bajo licencias abiertas para facilitar la participación en la red AiSTEAM, desde la preparación de retos y propuestas hasta la documentación de actividades, casos y recursos. Disponibles para descarga directa o acceso en línea.",
       "en": "Working documents, checklists and support resources under open licenses to facilitate participation in the AiSTEAM Network, from preparing challenges and proposals to documenting activities, cases and resources. Available for direct download or online access.",
-      "va": "Documents de treball, llistes de verificació i recursos de suport sota llicències obertes per facilitar la participació en la xarxa AiSTEAM, des de la preparació de reptes i propostes fins a la documentació d'activitats, casos i recursos. Disponibles per a descàrrega directa o accés en línia."
+      "va": "Documents de treball, llistes de verificació i recursos de suport sota llicències obertes per a facilitar la participació en la xarxa AiSTEAM, des de la preparació de reptes i propostes fins a la documentació d'activitats, casos i recursos. Disponibles per a descàrrega directa o accés en línia."
     },
     "searchPlaceholder": {
       "es": "Buscar plantillas...",
       "en": "Search templates...",
-      "va": "Cercar plantilles..."
+      "va": "Buscar plantilles..."
     },
     "downloadLabel": {
       "es": "Descargar plantilla",
@@ -335,7 +335,7 @@ export const KNOWLEDGE_CONFIG = {
     "emptyMessage": {
       "es": "No hay plantillas disponibles en este momento.",
       "en": "No templates available at this moment.",
-      "va": "No hi ha plantilles disponibles en aquest moment."
+      "va": "No hi ha plantilles disponibles en este moment."
     },
     "pageSize": 9,
     "pageSizeOptions": [

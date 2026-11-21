@@ -80,7 +80,7 @@ export const GOVERNANCE_CONFIG = {
           "city": {
             "es": "Valencia",
             "en": "Valencia",
-            "va": "Valencia"
+            "va": "València"
           },
           "org": {
             "es": "Conselleria de Educación – Generalitat Valenciana",
@@ -872,7 +872,7 @@ export const GOVERNANCE_CONFIG = {
             {
               "es": "Datos personales de estudiantes (protegidos por normativa universitaria)",
               "en": "Student personal data (protected by university regulations)",
-              "va": "Dades personals d'estudiants (protegits per normativa universitària)"
+              "va": "Dades personals d'estudiants (protegides per normativa universitària)"
             },
             {
               "es": "Gestión de ECTS y evaluación académica",
@@ -998,7 +998,7 @@ export const GOVERNANCE_CONFIG = {
           "desc": {
             "es": "Propuesta inicial: duración orientativa de 4 años desde la firma, renovable por acuerdo escrito mutuo.",
             "en": "Initial proposal: indicative 4-year duration from signing, renewable by mutual written agreement.",
-            "va": "Proposta inicial: durada orientativa de 4 anys des de la signatura, renovable per acord escrit mutu."
+            "va": "Proposta inicial: duració orientativa de 4 anys des de la signatura, renovable per acord escrit mutu."
           }
         },
         {
@@ -1225,7 +1225,7 @@ export const GOVERNANCE_CONFIG = {
               "label": {
                 "es": "Evaluación académica gestionada por la universidad si aplica",
                 "en": "Academic evaluation managed by the university where applicable",
-                "va": "Avaluació acadèmica gestionada per la universitat si aplica"
+                "va": "Avaluació acadèmica gestionada per la universitat si escau"
               }
             },
             {
@@ -1497,7 +1497,7 @@ export const GOVERNANCE_CONFIG = {
     "noSearchResultsMessage": {
       "es": "No hay documentos que coincidan con la búsqueda.",
       "en": "No documents match your search.",
-      "va": "Cap document coincideix amb la teua cerca."
+      "va": "Cap document coincidix amb la teua cerca."
     },
     "allLabel": {
       "es": "Todo",
