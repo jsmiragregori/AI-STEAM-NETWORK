@@ -12,7 +12,7 @@ export const MARKETPLACE_CONFIG = {
     "description": {
       "es": "Espacio de transferencia donde empresas, centros, administraciones y agentes sociales convierten necesidades reales en retos, pilotos, casos de referencia y mentorías para aprender desarrollando.",
       "en": "Transfer space where companies, schools, public administrations and civic actors turn real needs into challenges, pilots, reference cases and mentoring opportunities for learning by developing.",
-      "va": "Espai de transferència on empreses, centres, administracions i agents socials converteixen necessitats reals en reptes, pilots, casos de referència i mentories per a aprendre desenvolupant."
+      "va": "Espai de transferència on empreses, centres, administracions i agents socials convertixen necessitats reals en reptes, pilots, casos de referència i mentories per a aprendre desenvolupant."
     },
     "stats": [
       {
@@ -163,7 +163,7 @@ export const MARKETPLACE_CONFIG = {
       "intro": {
         "es": "**Un reto es una necesidad real y claramente descrita que una organización comparte con la red para buscar conocimiento, colaboración o posibles vías de actuación.** Puede proceder de una empresa, un centro de FP, un centro educativo, una universidad, una administración pública, una organización de investigación, una entidad social u otro stakeholder de AiSECRETT relevante. Un reto no es una licitación, una solicitud de servicios gratuitos ni una solución ya definida. Debe explicar el problema, el contexto, las personas o colectivos afectados, las restricciones relevantes y el tipo de colaboración o conocimiento necesario. Las propuestas se revisan antes de su posible publicación.",
         "en": "**A challenge is a clearly described real-world need that an organization shares with the network to find knowledge, collaboration or possible ways forward.** It may come from a company, VET center, school, university, public authority, research organization, civil-society organization or another relevant AiSECRETT stakeholder. A challenge is not a tender, a request for free services or a pre-defined solution. It should explain the problem, context, affected people or groups, relevant constraints and the type of collaboration or knowledge required. Proposals are reviewed before possible publication.",
-        "va": "**Un repte és una necessitat real i clarament descrita que una organització comparteix amb la xarxa per a buscar coneixement, col·laboració o possibles vies d'actuació.** Pot procedir d'una empresa, un centre d'FP, un centre educatiu, una universitat, una administració pública, una organització de recerca, una entitat social o un altre stakeholder d'AiSECRETT rellevant. Un repte no és una licitació, una sol·licitud de serveis gratuïts ni una solució ja definida. Ha d'explicar el problema, el context, les persones o col·lectius afectats, les restriccions rellevants i el tipus de col·laboració o coneixement necessari. Les propostes es revisen abans de la possible publicació."
+        "va": "**Un repte és una necessitat real i clarament descrita que una organització compartix amb la xarxa per a buscar coneixement, col·laboració o possibles vies d'actuació.** Pot procedir d'una empresa, un centre d'FP, un centre educatiu, una universitat, una administració pública, una organització de recerca, una entitat social o un altre stakeholder d'AiSECRETT rellevant. Un repte no és una licitació, una sol·licitud de servicis gratuïts ni una solució ja definida. Ha d'explicar el problema, el context, les persones o col·lectius afectats, les restriccions rellevants i el tipus de col·laboració o coneixement necessari. Les propostes es revisen abans de la possible publicació."
       },
       "ctaLabel": {
         "es": "Solicitar participación",
@@ -222,7 +222,7 @@ export const MARKETPLACE_CONFIG = {
       "intro": {
         "es": "**Una validación es una revisión estructurada y documentada de las evidencias, los resultados y los aprendizajes producidos por un piloto, un recurso, una metodología u otra actividad realizada.** Puede incorporar revisión técnica, académica, educativa, sectorial, metodológica, ética o relacionada con los datos, según el objeto analizado. Su finalidad es determinar qué puede concluirse, identificar limitaciones y riesgos, valorar la transferibilidad y recomendar el siguiente paso. El resultado puede ser adaptar, repetir, ampliar, transferir, solicitar más evidencias, convertir la experiencia en un recurso o caso, o interrumpirla. Una validación no constituye automáticamente una certificación, una aprobación institucional, un sello oficial ni una garantía de éxito.",
         "en": "**A validation is a structured and documented review of the evidence, results and learning produced by a pilot, resource, methodology or other implemented activity.** It may include technical, academic, educational, sectoral, methodological, ethical or data-related review, depending on the item being assessed. Its purpose is to determine what can reasonably be concluded, identify limitations and risks, assess transferability and recommend the next step. The outcome may be to adapt, repeat, scale, transfer, request further evidence, convert the experience into a resource or case, or discontinue it. Validation does not automatically constitute certification, institutional approval, an official seal or a guarantee of success.",
-        "va": "**Una validació és una revisió estructurada i documentada de les evidències, els resultats i els aprenentatges produïts per un pilot, un recurs, una metodologia o una altra activitat realitzada.** Pot incorporar una revisió tècnica, acadèmica, educativa, sectorial, metodològica, ètica o relacionada amb les dades, segons l'element analitzat. La seua finalitat és determinar què es pot concloure, identificar limitacions i riscos, valorar la transferibilitat i recomanar el pas següent. El resultat pot ser adaptar, repetir, ampliar, transferir, sol·licitar més evidències, convertir l'experiència en un recurs o cas, o interrompre-la. Una validació no constitueix automàticament una certificació, una aprovació institucional, un segell oficial ni una garantia d'èxit."
+        "va": "**Una validació és una revisió estructurada i documentada de les evidències, els resultats i els aprenentatges produïts per un pilot, un recurs, una metodologia o una altra activitat realitzada.** Pot incorporar una revisió tècnica, acadèmica, educativa, sectorial, metodològica, ètica o relacionada amb les dades, segons l'element analitzat. La seua finalitat és determinar què es pot concloure, identificar limitacions i riscos, valorar la transferibilitat i recomanar el pas següent. El resultat pot ser adaptar, repetir, ampliar, transferir, sol·licitar més evidències, convertir l'experiència en un recurs o cas, o interrompre-la. Una validació no constituïx automàticament una certificació, una aprovació institucional, un segell oficial ni una garantia d'èxit."
       },
       "ctaLabel": {
         "es": "Ver validaciones",
@@ -281,7 +281,7 @@ export const MARKETPLACE_CONFIG = {
       "intro": {
         "es": "**Un piloto es una prueba limitada y con una duración definida de un método, una herramienta, un recurso, un servicio o un modelo de colaboración en un contexto educativo, organizativo o productivo real.** Debe contar con un objetivo claro, un equipo responsable, participantes o destinatarios identificados, una metodología, un calendario, un plan de evidencias y criterios para decidir qué ocurre después. Su finalidad no es demostrar que una solución funcionará en cualquier contexto, sino generar evidencias y aprendizajes que permitan adaptarla, repetirla, transferirla, ampliarla o descartarla. La información pública no debe incluir datos personales, sensibles o confidenciales.",
         "en": "**A pilot is a limited and time-bound test of a method, tool, resource, service or collaboration model in a real educational, organisational or productive context.** It should have a clear objective, a responsible team, identified participants or target users, a methodology, a timeframe, an evidence plan and criteria for deciding what happens next. Its purpose is not to prove that a solution will work in every context, but to generate evidence and learning that can support adaptation, repetition, transfer, scaling or discontinuation. Public information must not include personal, sensitive or confidential data.",
-        "va": "**Un pilot és una prova limitada i amb una duració definida d'un mètode, una ferramenta, un recurs, un servei o un model de col·laboració en un context educatiu, organitzatiu o productiu real.** Ha de tindre un objectiu clar, un equip responsable, participants o persones destinatàries identificades, una metodologia, un calendari, un pla d'evidències i criteris per a decidir què ocorre després. La seua finalitat no és demostrar que una solució funcionarà en qualsevol context, sinó generar evidències i aprenentatges que permeten adaptar-la, repetir-la, transferir-la, ampliar-la o descartar-la. La informació pública no ha d'incloure dades personals, sensibles o confidencials."
+        "va": "**Un pilot és una prova limitada i amb una duració definida d'un mètode, una ferramenta, un recurs, un servici o un model de col·laboració en un context educatiu, organitzatiu o productiu real.** Ha de tindre un objectiu clar, un equip responsable, participants o persones destinatàries identificades, una metodologia, un calendari, un pla d'evidències i criteris per a decidir què ocorre després. La seua finalitat no és demostrar que una solució funcionarà en qualsevol context, sinó generar evidències i aprenentatges que permeten adaptar-la, repetir-la, transferir-la, ampliar-la o descartar-la. La informació pública no ha d'incloure dades personals, sensibles o confidencials."
       },
       "ctaLabel": {
         "es": "Ver pilotos",
@@ -340,7 +340,7 @@ export const MARKETPLACE_CONFIG = {
       "intro": {
         "es": "**Un caso es una descripción estructurada de una experiencia ya realizada cuyas evidencias, resultados y aprendizajes han sido revisados.** Explica la necesidad inicial, el contexto, las organizaciones participantes, las actuaciones realizadas, las evidencias disponibles, los resultados, las limitaciones y las condiciones para su transferencia o reutilización. No es únicamente un caso de éxito, un artículo académico, una noticia o una presentación promocional. Puede documentar resultados positivos, parciales, inesperados o incluso actuaciones que no funcionaron como se esperaba, siempre que aporten un aprendizaje útil y responsable. Su publicación requiere confirmar la información factual y revisar los datos, permisos, nombres, logotipos, autoría, licencias y condiciones de reutilización.",
         "en": "**A case is a structured account of an implemented experience whose evidence, results and learning have been reviewed.** It explains the initial need, context, participating organisations, actions taken, available evidence, results, limitations and conditions for transfer or reuse. It is not only a success story, academic paper, news item or promotional presentation. It may document positive, partial or unexpected results, or approaches that did not work as expected, provided that they offer useful and responsibly presented learning. Publication requires factual confirmation and review of data, permissions, names, logos, authorship, licences and reuse conditions.",
-        "va": "**Un cas és una descripció estructurada d'una experiència ja realitzada les evidències, els resultats i els aprenentatges de la qual han sigut revisats.** Explica la necessitat inicial, el context, les organitzacions participants, les actuacions realitzades, les evidències disponibles, els resultats, les limitacions i les condicions per a la transferència o reutilització. No és únicament un cas d'èxit, un article acadèmic, una notícia o una presentació promocional. Pot documentar resultats positius, parcials o inesperats, o actuacions que no van funcionar com s'esperava, sempre que aporten un aprenentatge útil i presentat de manera responsable. La publicació requereix confirmar la informació factual i revisar les dades, els permisos, els noms, els logotips, l'autoria, les llicències i les condicions de reutilització."
+        "va": "**Un cas és una descripció estructurada d'una experiència ja realitzada les evidències, els resultats i els aprenentatges de la qual han sigut revisats.** Explica la necessitat inicial, el context, les organitzacions participants, les actuacions realitzades, les evidències disponibles, els resultats, les limitacions i les condicions per a la transferència o reutilització. No és únicament un cas d'èxit, un article acadèmic, una notícia o una presentació promocional. Pot documentar resultats positius, parcials o inesperats, o actuacions que no van funcionar com s'esperava, sempre que aporten un aprenentatge útil i presentat de manera responsable. La publicació requerix confirmar la informació factual i revisar les dades, els permisos, els noms, els logotips, l'autoria, les llicències i les condicions de reutilització."
       },
       "ctaLabel": {
         "es": "Ver evidencia",
@@ -654,7 +654,7 @@ export const MARKETPLACE_CONFIG = {
       "label": {
         "es": "Requiere reformulación",
         "en": "Needs reformulation",
-        "va": "Requereix reformulació"
+        "va": "Requerix reformulació"
       }
     },
     {
@@ -2272,7 +2272,7 @@ export const MARKETPLACE_CONFIG = {
       "label": {
         "es": "Guía de preparación",
         "en": "Preparation guide",
-        "va": "Guia de preparacio"
+        "va": "Guia de preparació"
       }
     },
     {
@@ -2281,7 +2281,7 @@ export const MARKETPLACE_CONFIG = {
       "label": {
         "es": "Formulario de preparación",
         "en": "Intake form",
-        "va": "Formulari de preparacio"
+        "va": "Formulari de preparació"
       }
     },
     {
@@ -2290,7 +2290,7 @@ export const MARKETPLACE_CONFIG = {
       "label": {
         "es": "Nota ética",
         "en": "Ethics note",
-        "va": "Nota etica"
+        "va": "Nota ètica"
       }
     },
     {
@@ -2308,7 +2308,7 @@ export const MARKETPLACE_CONFIG = {
       "label": {
         "es": "Nota de publicación",
         "en": "Publication note",
-        "va": "Nota de publicacio"
+        "va": "Nota de publicació"
       }
     },
     {
@@ -3059,7 +3059,7 @@ export const MARKETPLACE_CONFIG = {
       "label": {
         "es": "Revisión ética",
         "en": "Ethics review",
-        "va": "Revisio etica"
+        "va": "Revisió ètica"
       }
     },
     {
@@ -3068,7 +3068,7 @@ export const MARKETPLACE_CONFIG = {
       "label": {
         "es": "Apoyo a replicación",
         "en": "Replication support",
-        "va": "Suport a replicacio"
+        "va": "Suport a replicació"
       }
     },
     {
@@ -3077,7 +3077,7 @@ export const MARKETPLACE_CONFIG = {
       "label": {
         "es": "Soporte técnico",
         "en": "Technical support",
-        "va": "Suport tecnic"
+        "va": "Suport tècnic"
       }
     },
     {
@@ -3095,7 +3095,7 @@ export const MARKETPLACE_CONFIG = {
       "label": {
         "es": "Transferencia de investigación",
         "en": "Research transfer",
-        "va": "Transferencia d'investigacio"
+        "va": "Transferència d'investigació"
       }
     }
   ],
@@ -3133,7 +3133,7 @@ export const MARKETPLACE_CONFIG = {
       "label": {
         "es": "Próximamente",
         "en": "Upcoming",
-        "va": "Proximament"
+        "va": "Pròximament"
       }
     }
   ],
@@ -3461,7 +3461,7 @@ export const MARKETPLACE_CONFIG = {
       "label": {
         "es": "Online",
         "en": "Online",
-        "va": "En linia"
+        "va": "En línia"
       }
     },
     {
@@ -5631,7 +5631,7 @@ export const MARKETPLACE_CONFIG = {
         "label": {
           "es": "Requiere reformulación",
           "en": "Needs reformulation",
-          "va": "Requereix reformulació"
+          "va": "Requerix reformulació"
         }
       },
       {
@@ -7449,7 +7449,7 @@ export const MARKETPLACE_CONFIG = {
         "label": {
           "es": "Guía de preparación",
           "en": "Preparation guide",
-          "va": "Guia de preparacio"
+          "va": "Guia de preparació"
         }
       },
       {
@@ -7458,7 +7458,7 @@ export const MARKETPLACE_CONFIG = {
         "label": {
           "es": "Formulario de preparación",
           "en": "Intake form",
-          "va": "Formulari de preparacio"
+          "va": "Formulari de preparació"
         }
       },
       {
@@ -7467,7 +7467,7 @@ export const MARKETPLACE_CONFIG = {
         "label": {
           "es": "Nota ética",
           "en": "Ethics note",
-          "va": "Nota etica"
+          "va": "Nota ètica"
         }
       },
       {
@@ -7485,7 +7485,7 @@ export const MARKETPLACE_CONFIG = {
         "label": {
           "es": "Nota de publicación",
           "en": "Publication note",
-          "va": "Nota de publicacio"
+          "va": "Nota de publicació"
         }
       },
       {
@@ -7613,7 +7613,7 @@ export const MARKETPLACE_CONFIG = {
         "label": {
           "es": "Revisión ética",
           "en": "Ethics review",
-          "va": "Revisio etica"
+          "va": "Revisió ètica"
         }
       },
       {
@@ -7622,7 +7622,7 @@ export const MARKETPLACE_CONFIG = {
         "label": {
           "es": "Apoyo a replicación",
           "en": "Replication support",
-          "va": "Suport a replicacio"
+          "va": "Suport a replicació"
         }
       },
       {
@@ -7631,7 +7631,7 @@ export const MARKETPLACE_CONFIG = {
         "label": {
           "es": "Soporte técnico",
           "en": "Technical support",
-          "va": "Suport tecnic"
+          "va": "Suport tècnic"
         }
       },
       {
@@ -7649,7 +7649,7 @@ export const MARKETPLACE_CONFIG = {
         "label": {
           "es": "Transferencia de investigación",
           "en": "Research transfer",
-          "va": "Transferencia d'investigacio"
+          "va": "Transferència d'investigació"
         }
       }
     ],
@@ -7687,7 +7687,7 @@ export const MARKETPLACE_CONFIG = {
         "label": {
           "es": "Próximamente",
           "en": "Upcoming",
-          "va": "Proximament"
+          "va": "Pròximament"
         }
       }
     ],
@@ -8015,7 +8015,7 @@ export const MARKETPLACE_CONFIG = {
         "label": {
           "es": "Online",
           "en": "Online",
-          "va": "En linia"
+          "va": "En línia"
         }
       },
       {

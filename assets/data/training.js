@@ -145,12 +145,12 @@ export const TRAINING_CONFIG = {
             "title": {
               "es": "Uso responsable de IA generativa",
               "en": "Responsible Use of Generative AI",
-              "va": "Ús responsable de IA generativa"
+              "va": "Ús responsable d'IA generativa"
             },
             "shortLabel": {
               "es": "Uso responsable de IA generativa",
               "en": "Responsible Use of Generative AI",
-              "va": "Ús responsable de IA generativa"
+              "va": "Ús responsable d'IA generativa"
             },
             "description": {
               "es": "Uso seguro, transparente y supervisado de sistemas de IA en contextos formativos y sectoriales.",
@@ -231,7 +231,7 @@ export const TRAINING_CONFIG = {
             "description": {
               "es": "Criterios de privacidad, etica y gobernanza en el trabajo con datos e IA.",
               "en": "Privacy, ethics and governance criteria when working with data and AI.",
-              "va": "Criteris de privacitat, etica i governanca en el treball amb dades i IA."
+              "va": "Criteris de privacitat, ètica i governança en el treball amb dades i IA."
             },
             "icon": "🔒"
           },
@@ -325,12 +325,12 @@ export const TRAINING_CONFIG = {
             "title": {
               "es": "Estrategia de IA en organizaciones",
               "en": "AI Strategy in Organizations",
-              "va": "Estratègia de IA en organitzacions"
+              "va": "Estratègia d'IA en organitzacions"
             },
             "shortLabel": {
               "es": "Estrategia de IA en organizaciones",
               "en": "AI Strategy in Organizations",
-              "va": "Estratègia de IA en organitzacions"
+              "va": "Estratègia d'IA en organitzacions"
             },
             "description": {
               "es": "Diseno de estrategias de adopcion de IA conectadas con objetivos organizativos y sectoriales.",
@@ -363,12 +363,12 @@ export const TRAINING_CONFIG = {
             "title": {
               "es": "Gobernanza de IA",
               "en": "AI Governance",
-              "va": "Governança de IA"
+              "va": "Governança d'IA"
             },
             "shortLabel": {
               "es": "Gobernanza de IA",
               "en": "AI Governance",
-              "va": "Governança de IA"
+              "va": "Governança d'IA"
             },
             "description": {
               "es": "Gobernanza de IA, riesgos, responsabilidades, cumplimiento y supervision humana.",
@@ -382,17 +382,17 @@ export const TRAINING_CONFIG = {
             "title": {
               "es": "Gestión de innovación",
               "en": "Innovation Management",
-              "va": "Gestió de innovació"
+              "va": "Gestió d'innovació"
             },
             "shortLabel": {
               "es": "Gestión de innovación",
               "en": "Innovation Management",
-              "va": "Gestió de innovació"
+              "va": "Gestió d'innovació"
             },
             "description": {
               "es": "Gestion de innovacion para convertir capacidades de IA en soluciones transferibles.",
               "en": "Innovation management to turn AI capabilities into transferable solutions.",
-              "va": "Gestio de la innovacio per a convertir capacitats d IA en solucions transferibles."
+              "va": "Gestió de la innovació per a convertir capacitats d’IA en solucions transferibles."
             },
             "icon": "🚀"
           },
@@ -572,12 +572,12 @@ export const TRAINING_CONFIG = {
             "title": {
               "es": "Integración de IA en pedagogía",
               "en": "AI Integration in Pedagogy",
-              "va": "Integració de IA en pedagogia"
+              "va": "Integració d'IA en pedagogia"
             },
             "shortLabel": {
               "es": "Integración de IA en pedagogía",
               "en": "AI Integration in Pedagogy",
-              "va": "Integració de IA en pedagogia"
+              "va": "Integració d'IA en pedagogia"
             },
             "description": {
               "es": "Integracion pedagogica de la IA en actividades, proyectos, evaluacion y acompanamiento.",
@@ -734,7 +734,7 @@ export const TRAINING_CONFIG = {
     "emptyMessage": {
       "es": "Próximamente estarán disponibles nuevos cursos en esta categoría.",
       "en": "New courses in this category will be available soon.",
-      "va": "Properament estaran disponibles nous cursos en aquesta categoria."
+      "va": "Properament estaran disponibles nous cursos en esta categoria."
     },
     "pageSizeOptions": [
       9,
@@ -831,17 +831,17 @@ export const TRAINING_CONFIG = {
         "label": {
           "es": "Uso responsable de IA generativa",
           "en": "Responsible Use of Generative AI",
-          "va": "Ús responsable de IA generativa"
+          "va": "Ús responsable d'IA generativa"
         },
         "shortLabel": {
           "es": "Uso responsable de IA generativa",
           "en": "Responsible Use of Generative AI",
-          "va": "Ús responsable de IA generativa"
+          "va": "Ús responsable d'IA generativa"
         },
         "title": {
           "es": "Uso responsable de IA generativa",
           "en": "Responsible Use of Generative AI",
-          "va": "Ús responsable de IA generativa"
+          "va": "Ús responsable d'IA generativa"
         },
         "description": {
           "es": "Uso seguro, transparente y supervisado de sistemas de IA en contextos formativos y sectoriales.",
@@ -946,7 +946,7 @@ export const TRAINING_CONFIG = {
         "description": {
           "es": "Criterios de privacidad, etica y gobernanza en el trabajo con datos e IA.",
           "en": "Privacy, ethics and governance criteria when working with data and AI.",
-          "va": "Criteris de privacitat, etica i governanca en el treball amb dades i IA."
+          "va": "Criteris de privacitat, ètica i governança en el treball amb dades i IA."
         }
       },
       {
@@ -981,17 +981,17 @@ export const TRAINING_CONFIG = {
         "label": {
           "es": "Integración de IA en pedagogía",
           "en": "AI Integration in Pedagogy",
-          "va": "Integració de IA en pedagogia"
+          "va": "Integració d'IA en pedagogia"
         },
         "shortLabel": {
           "es": "Integración de IA en pedagogía",
           "en": "AI Integration in Pedagogy",
-          "va": "Integració de IA en pedagogia"
+          "va": "Integració d'IA en pedagogia"
         },
         "title": {
           "es": "Integración de IA en pedagogía",
           "en": "AI Integration in Pedagogy",
-          "va": "Integració de IA en pedagogia"
+          "va": "Integració d'IA en pedagogia"
         },
         "description": {
           "es": "Integracion pedagogica de la IA en actividades, proyectos, evaluacion y acompanamiento.",
@@ -1181,17 +1181,17 @@ export const TRAINING_CONFIG = {
         "label": {
           "es": "Estrategia de IA en organizaciones",
           "en": "AI Strategy in Organizations",
-          "va": "Estratègia de IA en organitzacions"
+          "va": "Estratègia d'IA en organitzacions"
         },
         "shortLabel": {
           "es": "Estrategia de IA en organizaciones",
           "en": "AI Strategy in Organizations",
-          "va": "Estratègia de IA en organitzacions"
+          "va": "Estratègia d'IA en organitzacions"
         },
         "title": {
           "es": "Estrategia de IA en organizaciones",
           "en": "AI Strategy in Organizations",
-          "va": "Estratègia de IA en organitzacions"
+          "va": "Estratègia d'IA en organitzacions"
         },
         "description": {
           "es": "Diseno de estrategias de adopcion de IA conectadas con objetivos organizativos y sectoriales.",
@@ -1231,17 +1231,17 @@ export const TRAINING_CONFIG = {
         "label": {
           "es": "Gobernanza de IA",
           "en": "AI Governance",
-          "va": "Governança de IA"
+          "va": "Governança d'IA"
         },
         "shortLabel": {
           "es": "Gobernanza de IA",
           "en": "AI Governance",
-          "va": "Governança de IA"
+          "va": "Governança d'IA"
         },
         "title": {
           "es": "Gobernanza de IA",
           "en": "AI Governance",
-          "va": "Governança de IA"
+          "va": "Governança d'IA"
         },
         "description": {
           "es": "Gobernanza de IA, riesgos, responsabilidades, cumplimiento y supervision humana.",
@@ -1256,22 +1256,22 @@ export const TRAINING_CONFIG = {
         "label": {
           "es": "Gestión de innovación",
           "en": "Innovation Management",
-          "va": "Gestió de innovació"
+          "va": "Gestió d'innovació"
         },
         "shortLabel": {
           "es": "Gestión de innovación",
           "en": "Innovation Management",
-          "va": "Gestió de innovació"
+          "va": "Gestió d'innovació"
         },
         "title": {
           "es": "Gestión de innovación",
           "en": "Innovation Management",
-          "va": "Gestió de innovació"
+          "va": "Gestió d'innovació"
         },
         "description": {
           "es": "Gestion de innovacion para convertir capacidades de IA en soluciones transferibles.",
           "en": "Innovation management to turn AI capabilities into transferable solutions.",
-          "va": "Gestio de la innovacio per a convertir capacitats d IA en solucions transferibles."
+          "va": "Gestió de la innovació per a convertir capacitats d’IA en solucions transferibles."
         }
       },
       {
@@ -1483,17 +1483,17 @@ export const TRAINING_CONFIG = {
         "label": {
           "es": "Uso responsable de IA generativa",
           "en": "Responsible Use of Generative AI",
-          "va": "Ús responsable de IA generativa"
+          "va": "Ús responsable d'IA generativa"
         },
         "shortLabel": {
           "es": "Uso responsable de IA generativa",
           "en": "Responsible Use of Generative AI",
-          "va": "Ús responsable de IA generativa"
+          "va": "Ús responsable d'IA generativa"
         },
         "title": {
           "es": "Uso responsable de IA generativa",
           "en": "Responsible Use of Generative AI",
-          "va": "Ús responsable de IA generativa"
+          "va": "Ús responsable d'IA generativa"
         },
         "description": {
           "es": "Uso seguro, transparente y supervisado de sistemas de IA en contextos formativos y sectoriales.",
@@ -1598,7 +1598,7 @@ export const TRAINING_CONFIG = {
         "description": {
           "es": "Criterios de privacidad, etica y gobernanza en el trabajo con datos e IA.",
           "en": "Privacy, ethics and governance criteria when working with data and AI.",
-          "va": "Criteris de privacitat, etica i governanca en el treball amb dades i IA."
+          "va": "Criteris de privacitat, ètica i governança en el treball amb dades i IA."
         }
       },
       {
@@ -1633,17 +1633,17 @@ export const TRAINING_CONFIG = {
         "label": {
           "es": "Integración de IA en pedagogía",
           "en": "AI Integration in Pedagogy",
-          "va": "Integració de IA en pedagogia"
+          "va": "Integració d'IA en pedagogia"
         },
         "shortLabel": {
           "es": "Integración de IA en pedagogía",
           "en": "AI Integration in Pedagogy",
-          "va": "Integració de IA en pedagogia"
+          "va": "Integració d'IA en pedagogia"
         },
         "title": {
           "es": "Integración de IA en pedagogía",
           "en": "AI Integration in Pedagogy",
-          "va": "Integració de IA en pedagogia"
+          "va": "Integració d'IA en pedagogia"
         },
         "description": {
           "es": "Integracion pedagogica de la IA en actividades, proyectos, evaluacion y acompanamiento.",
@@ -1833,17 +1833,17 @@ export const TRAINING_CONFIG = {
         "label": {
           "es": "Estrategia de IA en organizaciones",
           "en": "AI Strategy in Organizations",
-          "va": "Estratègia de IA en organitzacions"
+          "va": "Estratègia d'IA en organitzacions"
         },
         "shortLabel": {
           "es": "Estrategia de IA en organizaciones",
           "en": "AI Strategy in Organizations",
-          "va": "Estratègia de IA en organitzacions"
+          "va": "Estratègia d'IA en organitzacions"
         },
         "title": {
           "es": "Estrategia de IA en organizaciones",
           "en": "AI Strategy in Organizations",
-          "va": "Estratègia de IA en organitzacions"
+          "va": "Estratègia d'IA en organitzacions"
         },
         "description": {
           "es": "Diseno de estrategias de adopcion de IA conectadas con objetivos organizativos y sectoriales.",
@@ -1883,17 +1883,17 @@ export const TRAINING_CONFIG = {
         "label": {
           "es": "Gobernanza de IA",
           "en": "AI Governance",
-          "va": "Governança de IA"
+          "va": "Governança d'IA"
         },
         "shortLabel": {
           "es": "Gobernanza de IA",
           "en": "AI Governance",
-          "va": "Governança de IA"
+          "va": "Governança d'IA"
         },
         "title": {
           "es": "Gobernanza de IA",
           "en": "AI Governance",
-          "va": "Governança de IA"
+          "va": "Governança d'IA"
         },
         "description": {
           "es": "Gobernanza de IA, riesgos, responsabilidades, cumplimiento y supervision humana.",
@@ -1908,22 +1908,22 @@ export const TRAINING_CONFIG = {
         "label": {
           "es": "Gestión de innovación",
           "en": "Innovation Management",
-          "va": "Gestió de innovació"
+          "va": "Gestió d'innovació"
         },
         "shortLabel": {
           "es": "Gestión de innovación",
           "en": "Innovation Management",
-          "va": "Gestió de innovació"
+          "va": "Gestió d'innovació"
         },
         "title": {
           "es": "Gestión de innovación",
           "en": "Innovation Management",
-          "va": "Gestió de innovació"
+          "va": "Gestió d'innovació"
         },
         "description": {
           "es": "Gestion de innovacion para convertir capacidades de IA en soluciones transferibles.",
           "en": "Innovation management to turn AI capabilities into transferable solutions.",
-          "va": "Gestio de la innovacio per a convertir capacitats d IA en solucions transferibles."
+          "va": "Gestió de la innovació per a convertir capacitats d’IA en solucions transferibles."
         }
       },
       {

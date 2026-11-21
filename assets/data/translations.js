@@ -3187,7 +3187,7 @@ export const translations = {
       "europeanUnion": "Unió Europea",
       "accessibility": "Accessibilitat",
       "privacy": "Privacitat",
-      "sitemap": "Mapa Web",
+      "sitemap": "Mapa web",
       "orgName": "Generalitat Valenciana",
       "orgUnit": "Conselleria d'Educació, Cultura i Universitats",
       "legalNav": "Enllaços legals",
@@ -4712,7 +4712,7 @@ export const translations = {
     "legal": {
       "version": "Versió",
       "updated": "Última actualització:",
-      "unavailable": "Aquest document no està disponible en l'idioma seleccionat."
+      "unavailable": "Este document no està disponible en l'idioma seleccionat."
     },
     "cookieNotice": {
       "title": "Sobre les seues dades i aquest lloc",
@@ -4723,7 +4723,7 @@ export const translations = {
     },
     "sitemap": {
       "title": "Mapa web",
-      "intro": "Totes les seccions d'aquest lloc, en una sola pàgina.",
+      "intro": "Totes les seccions d'este lloc, en una sola pàgina.",
       "groupSections": "Seccions",
       "groupLegal": "Informació legal"
     }

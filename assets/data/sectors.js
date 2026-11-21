@@ -1038,7 +1038,7 @@ export const SECTORS_CONFIG = {
             "value": {
               "es": "Drones y sensores en agricultura de precisión",
               "en": "Drones and sensors in precision agriculture",
-              "va": "Drones i sensors en agricultura de precisió"
+              "va": "Drons i sensors en agricultura de precisió"
             }
           },
           {
@@ -1644,7 +1644,7 @@ export const SECTORS_CONFIG = {
         "description": {
           "es": "IA para vivienda sostenible, eficiencia energética, edificios inteligentes, urbanismo social y acceso equitativo a servicios residenciales.",
           "en": "AI for sustainable housing, energy efficiency, smart buildings, social urban planning and equitable access to residential services.",
-          "va": "IA per a habitatge sostenible, eficiència energètica, edificis intel·ligents, urbanisme social i accés equitatiu a servicis residencials."
+          "va": "IA per a vivenda sostenible, eficiència energètica, edificis intel·ligents, urbanisme social i accés equitatiu a servicis residencials."
         },
         "transferRouteIntro": {
           "es": "De las necesidades residenciales y urbanas a competencias FP, aplicación didáctica, evidencia de edificio y conexión académica.",
@@ -1695,7 +1695,7 @@ export const SECTORS_CONFIG = {
             "value": {
               "es": "Constructoras, promotoras y cooperativas de vivienda",
               "en": "Construction companies, developers and housing cooperatives",
-              "va": "Constructores, promotores i cooperatives d'habitatge"
+              "va": "Constructores, promotores i cooperatives de vivenda"
             }
           },
           {
@@ -1722,7 +1722,7 @@ export const SECTORS_CONFIG = {
             "value": {
               "es": "Optimización del consumo energético en bloque de viviendas sociales con ML",
               "en": "Energy consumption optimization in social housing block with ML",
-              "va": "Optimització del consum energètic en bloc d'habitatges socials amb ML"
+              "va": "Optimització del consum energètic en bloc de vivendes socials amb ML"
             }
           },
           {
@@ -1738,7 +1738,7 @@ export const SECTORS_CONFIG = {
         "stakeholderContribution": {
           "es": "En el futuro, constructoras, administraciones y entidades de vivienda podrían contribuir —según el proceso de participación que se valide— con edificios piloto, datos de consumo, retos de eficiencia o casos de inclusión.",
           "en": "In the future, construction companies, administrations and housing organizations could contribute —subject to the participation process to be validated— pilot buildings, consumption data, efficiency challenges or inclusion cases.",
-          "va": "En el futur, constructores, administracions i entitats d'habitatge podrien contribuir —segons el procés de participació que es valide— amb edificis pilot, dades de consum, reptes d'eficiència o casos d'inclusió."
+          "va": "En el futur, constructores, administracions i entitats de vivenda podrien contribuir —segons el procés de participació que es valide— amb edificis pilot, dades de consum, reptes d'eficiència o casos d'inclusió."
         },
         "stakeholderTypes": {
           "es": [
@@ -1752,7 +1752,7 @@ export const SECTORS_CONFIG = {
             "Sustainability and energy efficiency organizations"
           ],
           "va": [
-            "Constructores, promotors i cooperatives d'habitatge",
+            "Constructores, promotors i cooperatives de vivenda",
             "Ajuntaments i agències urbanístiques",
             "Organitzacions de sostenibilitat i eficiència energètica"
           ]
@@ -1980,7 +1980,7 @@ export const SECTORS_CONFIG = {
             "value": {
               "es": "PYMES de servicios y comercio",
               "en": "Service and commerce SMEs",
-              "va": "PIMES de serveis i comerç"
+              "va": "PIMES de servicis i comerç"
             }
           },
           {
@@ -1998,7 +1998,7 @@ export const SECTORS_CONFIG = {
             "value": {
               "es": "Automatización responsable y ética en datos para FP administración, comercio y servicios.",
               "en": "Responsible automation and data ethics for VET in administration, commerce and services.",
-              "va": "Automatització responsable i ètica en dades per a FP administració, comerç i serveis."
+              "va": "Automatització responsable i ètica en dades per a FP administració, comerç i servicis."
             }
           },
           {
@@ -2007,7 +2007,7 @@ export const SECTORS_CONFIG = {
             "value": {
               "es": "Chatbot multilingüe para orientación ciudadana en servicios administrativos municipales",
               "en": "Multilingual chatbot for citizen guidance in municipal administrative services",
-              "va": "Chatbot multilingüe per a orientació ciutadana en serveis administratius municipals"
+              "va": "Chatbot multilingüe per a orientació ciutadana en servicis administratius municipals"
             }
           },
           {
@@ -2037,9 +2037,9 @@ export const SECTORS_CONFIG = {
             "Third sector organizations and social services"
           ],
           "va": [
-            "PIMES de serveis i comerç",
+            "PIMES de servicis i comerç",
             "Administracions públiques i entitats financeres",
-            "Organitzacions del tercer sector i serveis socials"
+            "Organitzacions del tercer sector i servicis socials"
           ]
         },
         "fpSkills": {
@@ -2056,7 +2056,7 @@ export const SECTORS_CONFIG = {
           "va": [
             "Automatització de processos administratius (RPA)",
             "Analítica de dades per a atenció al client",
-            "IA aplicada a serveis públics i comerç"
+            "IA aplicada a servicis públics i comerç"
           ]
         },
         "masterTopics": {
@@ -2072,8 +2072,8 @@ export const SECTORS_CONFIG = {
           ],
           "va": [
             "ML en finances i assegurances: equitat algorítmica",
-            "IA per a serveis ciutadans ètics",
-            "Governança de dades en serveis públics"
+            "IA per a servicis ciutadans ètics",
+            "Governança de dades en servicis públics"
           ]
         },
         "keywords": {
@@ -2102,7 +2102,7 @@ export const SECTORS_CONFIG = {
         "teacherRelevance": {
           "es": "Casos de aula sobre automatización responsable y ética de datos en FP de administración, comercio y servicios; el impacto en el empleo como debate.",
           "en": "Classroom cases on responsible automation and data ethics in administration, commerce and services VET; employment impact as a debate.",
-          "va": "Casos d'aula sobre automatització responsable i ètica de dades en FP d'administració, comerç i serveis; l'impacte en l'ocupació com a debat."
+          "va": "Casos d'aula sobre automatització responsable i ètica de dades en FP d'administració, comerç i servicis; l'impacte en l'ocupació com a debat."
         },
         "exampleChallengeLabel": {
           "es": "Evidencia destacada",

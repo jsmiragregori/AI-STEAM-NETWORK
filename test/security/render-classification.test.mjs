@@ -82,8 +82,10 @@ const EXPECTED_BY_FILE = {
 // G17 (2026-11-04) añade una guardia `visible:false` en renderHero de marketplace.js (+1 a sus
 // cinco excepciones: 1835, 2020, 2022, 2061 y 2221) y siete líneas en governance.js para retirar
 // la pestaña LbD oculta (726 → 733). Mismas expresiones, categorías y recuentos.
+// F8 bis (fechas de Gobernanza) desplaza esta excepcion +24 (733 -> 757).
+// Misma expresion, categoria ESTRUCTURAL y recuentos.
 const EXPECTED_EXCEPTIONS = [
-  { file: 'assets/js/views/governance.js', line: 733, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/governance.js', line: 757, category: 'ESTRUCTURAL' },
   { file: 'assets/js/views/marketplace.js', line: 1835, category: 'HELPER_QUE_ESCAPA' },
   { file: 'assets/js/views/marketplace.js', line: 2020, category: 'ESTRUCTURAL' },
   { file: 'assets/js/views/marketplace.js', line: 2022, category: 'COMPOSICION_CADENA' },
