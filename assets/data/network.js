@@ -424,7 +424,7 @@ export const NETWORK_CONFIG = {
         "contribution": {
           "es": "Contribuye a la comunicación y las actividades públicas del proyecto, tendiendo puentes con comunidades educativas, creativas y profesionales.",
           "en": "Contributes to project communication and public activities, building bridges with educational, creative and professional communities.",
-          "va": "Contribueix a la comunicació i les activitats públiques del projecte, tendint ponts amb comunitats educatives, creatives i professionals."
+          "va": "Contribuïx a la comunicació i les activitats públiques del projecte, tendint ponts amb comunitats educatives, creatives i professionals."
         },
         "sectors": [
           {
@@ -536,7 +536,7 @@ export const NETWORK_CONFIG = {
         "contribution": {
           "es": "Contribuye con investigación científico-técnica a los requisitos, el programa formativo y la conexión con iniciativas europeas de IA educativa.",
           "en": "Contributes science and technology research to requirements, the training programme and links with European AI education initiatives.",
-          "va": "Contribueix amb investigació cientificotècnica als requisits, el programa formatiu i la connexió amb iniciatives europees d'IA educativa."
+          "va": "Contribuïx amb investigació cientificotècnica als requisits, el programa formatiu i la connexió amb iniciatives europees d'IA educativa."
         },
         "sectors": [
           {
@@ -1098,7 +1098,7 @@ export const NETWORK_CONFIG = {
         "contribution": {
           "es": "Garantiza la difusión regional y las conexiones comunitarias de AiSTEAM en la región de los Balcanes Occidentales.",
           "en": "Ensures regional outreach and community connections for AiSTEAM in the Western Balkans region.",
-          "va": "Garanteix la difusió regional i les connexions comunitàries d’AiSTEAM a la regió dels Balcans Occidentals."
+          "va": "Garantix la difusió regional i les connexions comunitàries d’AiSTEAM a la regió dels Balcans Occidentals."
         },
         "sectors": [
           {
@@ -1312,7 +1312,7 @@ export const NETWORK_CONFIG = {
         "contribution": {
           "es": "Contribuye a la cocreación de contenidos y la construcción de comunidad, aportando experiencia en ecosistemas culturales y creativos.",
           "en": "Contributes to content co-creation and community building, bringing expertise in cultural and creative ecosystems.",
-          "va": "Contribueix a la cocreació de continguts i la construcció de comunitat, aportant experiència en ecosistemes culturals i creatius."
+          "va": "Contribuïx a la cocreació de continguts i la construcció de comunitat, aportant experiència en ecosistemes culturals i creatius."
         },
         "sectors": [
           {
