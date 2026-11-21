@@ -3003,7 +3003,7 @@ export const MARKETPLACE_CONFIG = {
       "label": {
         "es": "Requiere reformulación",
         "en": "Needs reformulation",
-        "va": "Requereix reformulació"
+        "va": "Requerix reformulació"
       }
     },
     {
@@ -3564,7 +3564,7 @@ export const MARKETPLACE_CONFIG = {
       "label": {
         "es": "Requiere NDA",
         "en": "NDA required",
-        "va": "Requereix NDA"
+        "va": "Requerix NDA"
       }
     }
   ],
@@ -3646,7 +3646,7 @@ export const MARKETPLACE_CONFIG = {
         "summary": {
           "es": "Solución tecnológica que dota de autonomía comunicativa a personas con trastornos del habla. Combina una app de captura de voz para crear un dataset fonético con un modelo de IA que reconoce y traduce el habla en tiempo real, mostrando el texto en pantalla y narrándolo en voz alta para facilitar la comprensión.",
           "en": "Technological solution providing communicative autonomy to people with speech disorders. It combines a voice capture app to create a phonetic dataset with an AI model that recognizes and translates speech in real time, displaying the text on screen and narrating it aloud to facilitate understanding.",
-          "va": "Solució tecnològica que dota d'autonomia comunicativa persones amb trastorns de la parla. Combina una aplicació de captura de veu per a crear un dataset fonètic amb un model d'IA que reconeix i tradueix la parla en temps real, mostrant el text en pantalla i narrant-lo en veu alta per a facilitar la comprensió."
+          "va": "Solució tecnològica que dota d'autonomia comunicativa persones amb trastorns de la parla. Combina una aplicació de captura de veu per a crear un dataset fonètic amb un model d'IA que reconeix i traduïx la parla en temps real, mostrant el text en pantalla i narrant-lo en veu alta per a facilitar la comprensió."
         },
         "entity": {
           "name": "IES Severo Ochoa",
@@ -4270,7 +4270,7 @@ export const MARKETPLACE_CONFIG = {
         "title": {
           "es": "CENTINELA+: cuando el propio instituto se convierte en el mejor laboratorio",
           "en": "CENTINELA+: When the School Itself Becomes the Ultimate Lab",
-          "va": "CENTINELA+: quan el mateix institut es converteix en el millor laboratori"
+          "va": "CENTINELA+: quan el mateix institut es convertix en el millor laboratori"
         },
         "summary": {
           "es": "El IES Dr. Lluís Simarro (Xàtiva) ha convertido su propio centro en un laboratorio real de IA e IoT para el alumnado del Curso de Especialización en IA y Big Data. Mediante sensórica en 34 espacios conectada a una cadena open source (MQTT, InfluxDB, Grafana, MLOps), el alumnado entrena modelos predictivos, detección de anomalías y asistentes RAG. Destaca por su alta transferibilidad: es un patrón por aula replicable, de código abierto e incluye un generador público de datos sintéticos para empezar sin instalar sensores.",
@@ -4415,7 +4415,7 @@ export const MARKETPLACE_CONFIG = {
         "hypothesis": {
           "es": "Convierte el centro educativo en un living lab monitorizando 34 espacios con sensores de consumo eléctrico y calidad ambiental.\nconvierte el centro en un living lab IoT real que monitoriza 34 espacios para evaluar la eficiencia energética y el confort ambiental, demostrando un ahorro del 18,8% en tomas de corriente. A nivel educativo, permite al alumnado de FP entrenar modelos predictivos de IA (consumo, fotovoltaica y anomalías) sobre flujos MLOps de código abierto. Todo el sistema opera bajo una estricta gobernanza ética con supervisión humana (Shadow Mode) y garantiza su replicabilidad en cualquier otra entidad mediante simulación con datos sintéticos en Docker sin necesidad de instalar sensores físicos iniciales.",
           "en": "It turns the school into a real IoT living lab monitoring 34 spaces to assess energy efficiency and environmental comfort, demonstrating an 18.8% energy savings in power outlets. From an educational perspective, it enables VET students to train predictive AI models (consumption, photovoltaics, and anomalies) on open-source MLOps workflows. The entire system operates under strict ethical governance with human oversight (Shadow Mode) and guarantees replicability in any other entity through synthetic data simulation in Docker without requiring initial physical sensors.",
-          "va": "Converteix el centre en un living lab IoT real que monitoritza 34 espais per a avaluar l'eficiència energètica i el confort ambiental, demostrant un estalvi del 18,8% en preses de corrent. A nivell educatiu, permet a l'alumnat d'FP entrenar models predictius d'IA (consum, fotovoltaica i anomalies) sobre fluxos MLOps de codi obert. Tot el sistema opera sota una estricta governança ètica amb supervisió humana (Shadow Mode) i garantix la seua replicabilitat en qualsevol altra entitat mitjançant simulació amb dades sintètiques en Docker sense necessitat d'instal·lar sensors físics inicials."
+          "va": "Convertix el centre en un living lab IoT real que monitoritza 34 espais per a avaluar l'eficiència energètica i el confort ambiental, demostrant un estalvi del 18,8% en preses de corrent. A nivell educatiu, permet a l'alumnat d'FP entrenar models predictius d'IA (consum, fotovoltaica i anomalies) sobre fluxos MLOps de codi obert. Tot el sistema opera sota una estricta governança ètica amb supervisió humana (Shadow Mode) i garantix la seua replicabilitat en qualsevol altra entitat mitjançant simulació amb dades sintètiques en Docker sense necessitat d'instal·lar sensors físics inicials."
         },
         "objective": {
           "es": "",
@@ -4477,7 +4477,7 @@ export const MARKETPLACE_CONFIG = {
         "headline": {
           "es": "•\tAdopción y usabilidad: Cobertura del 100% en los 34 espacios, estabilidad del pipeline abierto (MQTT/InfluxDB/Grafana) y disponibilidad del generador de datos sintéticos para la AiSTEAM Network.\n•\tAprendizaje y evaluación: Puntuación en Codabench sobre dataset oculto, defensa pública en vídeo y cumplimiento de la auditoría de 20 días en el aula focal P1S01.\n•\tEvidencias y gobernanza: Demostración del ahorro energético proyectado (hasta un 18,8% vía Monte Carlo), auditoría técnica de CAPTIA Technology y 100% de cumplimiento del modo shadow con supervisión humana previa.",
           "en": "It turns the school into a real IoT living lab monitoring 34 spaces to assess energy efficiency and environmental comfort, demonstrating an 18.8% energy savings in power outlets. From an educational perspective, it enables VET students to train predictive AI models (consumption, photovoltaics, and anomalies) on open-source MLOps workflows. The entire system operates under strict ethical governance with human oversight (Shadow Mode) and guarantees replicability in any other entity through synthetic data simulation in Docker without requiring initial physical sensors.",
-          "va": "Converteix el centre en un living lab IoT real que monitoritza 34 espais per a avaluar l'eficiència energètica i el confort ambiental, demostrant un estalvi del 18,8% en preses de corrent. A nivell educatiu, permet a l'alumnat d'FP entrenar models predictius d'IA (consum, fotovoltaica i anomalies) sobre fluxos MLOps de codi obert. Tot el sistema opera sota una estricta governança ètica amb supervisió humana (Shadow Mode) i garantix la seua replicabilitat en qualsevol altra entitat mitjançant simulació amb dades sintètiques en Docker sense necessitat d'instal·lar sensors físics inicials."
+          "va": "Convertix el centre en un living lab IoT real que monitoritza 34 espais per a avaluar l'eficiència energètica i el confort ambiental, demostrant un estalvi del 18,8% en preses de corrent. A nivell educatiu, permet a l'alumnat d'FP entrenar models predictius d'IA (consum, fotovoltaica i anomalies) sobre fluxos MLOps de codi obert. Tot el sistema opera sota una estricta governança ètica amb supervisió humana (Shadow Mode) i garantix la seua replicabilitat en qualsevol altra entitat mitjançant simulació amb dades sintètiques en Docker sense necessitat d'instal·lar sensors físics inicials."
         },
         "outputs": [],
         "decision": null
@@ -4876,7 +4876,7 @@ export const MARKETPLACE_CONFIG = {
           "title": {
             "es": "CENTINELA+: cuando el propio instituto se convierte en el mejor laboratorio",
             "en": "CENTINELA+: When the School Itself Becomes the Ultimate Lab",
-            "va": "CENTINELA+: quan el mateix institut es converteix en el millor laboratori"
+            "va": "CENTINELA+: quan el mateix institut es convertix en el millor laboratori"
           },
           "summary": {
             "es": "El IES Dr. Lluís Simarro (Xàtiva) ha convertido su propio centro en un laboratorio real de IA e IoT para el alumnado del Curso de Especialización en IA y Big Data. Mediante sensórica en 34 espacios conectada a una cadena open source (MQTT, InfluxDB, Grafana, MLOps), el alumnado entrena modelos predictivos, detección de anomalías y asistentes RAG. Destaca por su alta transferibilidad: es un patrón por aula replicable, de código abierto e incluye un generador público de datos sintéticos para empezar sin instalar sensores.",
@@ -5021,7 +5021,7 @@ export const MARKETPLACE_CONFIG = {
           "hypothesis": {
             "es": "Convierte el centro educativo en un living lab monitorizando 34 espacios con sensores de consumo eléctrico y calidad ambiental.\nconvierte el centro en un living lab IoT real que monitoriza 34 espacios para evaluar la eficiencia energética y el confort ambiental, demostrando un ahorro del 18,8% en tomas de corriente. A nivel educativo, permite al alumnado de FP entrenar modelos predictivos de IA (consumo, fotovoltaica y anomalías) sobre flujos MLOps de código abierto. Todo el sistema opera bajo una estricta gobernanza ética con supervisión humana (Shadow Mode) y garantiza su replicabilidad en cualquier otra entidad mediante simulación con datos sintéticos en Docker sin necesidad de instalar sensores físicos iniciales.",
             "en": "It turns the school into a real IoT living lab monitoring 34 spaces to assess energy efficiency and environmental comfort, demonstrating an 18.8% energy savings in power outlets. From an educational perspective, it enables VET students to train predictive AI models (consumption, photovoltaics, and anomalies) on open-source MLOps workflows. The entire system operates under strict ethical governance with human oversight (Shadow Mode) and guarantees replicability in any other entity through synthetic data simulation in Docker without requiring initial physical sensors.",
-            "va": "Converteix el centre en un living lab IoT real que monitoritza 34 espais per a avaluar l'eficiència energètica i el confort ambiental, demostrant un estalvi del 18,8% en preses de corrent. A nivell educatiu, permet a l'alumnat d'FP entrenar models predictius d'IA (consum, fotovoltaica i anomalies) sobre fluxos MLOps de codi obert. Tot el sistema opera sota una estricta governança ètica amb supervisió humana (Shadow Mode) i garantix la seua replicabilitat en qualsevol altra entitat mitjançant simulació amb dades sintètiques en Docker sense necessitat d'instal·lar sensors físics inicials."
+            "va": "Convertix el centre en un living lab IoT real que monitoritza 34 espais per a avaluar l'eficiència energètica i el confort ambiental, demostrant un estalvi del 18,8% en preses de corrent. A nivell educatiu, permet a l'alumnat d'FP entrenar models predictius d'IA (consum, fotovoltaica i anomalies) sobre fluxos MLOps de codi obert. Tot el sistema opera sota una estricta governança ètica amb supervisió humana (Shadow Mode) i garantix la seua replicabilitat en qualsevol altra entitat mitjançant simulació amb dades sintètiques en Docker sense necessitat d'instal·lar sensors físics inicials."
           },
           "objective": {
             "es": "",
@@ -5083,7 +5083,7 @@ export const MARKETPLACE_CONFIG = {
           "headline": {
             "es": "•\tAdopción y usabilidad: Cobertura del 100% en los 34 espacios, estabilidad del pipeline abierto (MQTT/InfluxDB/Grafana) y disponibilidad del generador de datos sintéticos para la AiSTEAM Network.\n•\tAprendizaje y evaluación: Puntuación en Codabench sobre dataset oculto, defensa pública en vídeo y cumplimiento de la auditoría de 20 días en el aula focal P1S01.\n•\tEvidencias y gobernanza: Demostración del ahorro energético proyectado (hasta un 18,8% vía Monte Carlo), auditoría técnica de CAPTIA Technology y 100% de cumplimiento del modo shadow con supervisión humana previa.",
             "en": "It turns the school into a real IoT living lab monitoring 34 spaces to assess energy efficiency and environmental comfort, demonstrating an 18.8% energy savings in power outlets. From an educational perspective, it enables VET students to train predictive AI models (consumption, photovoltaics, and anomalies) on open-source MLOps workflows. The entire system operates under strict ethical governance with human oversight (Shadow Mode) and guarantees replicability in any other entity through synthetic data simulation in Docker without requiring initial physical sensors.",
-            "va": "Converteix el centre en un living lab IoT real que monitoritza 34 espais per a avaluar l'eficiència energètica i el confort ambiental, demostrant un estalvi del 18,8% en preses de corrent. A nivell educatiu, permet a l'alumnat d'FP entrenar models predictius d'IA (consum, fotovoltaica i anomalies) sobre fluxos MLOps de codi obert. Tot el sistema opera sota una estricta governança ètica amb supervisió humana (Shadow Mode) i garantix la seua replicabilitat en qualsevol altra entitat mitjançant simulació amb dades sintètiques en Docker sense necessitat d'instal·lar sensors físics inicials."
+            "va": "Convertix el centre en un living lab IoT real que monitoritza 34 espais per a avaluar l'eficiència energètica i el confort ambiental, demostrant un estalvi del 18,8% en preses de corrent. A nivell educatiu, permet a l'alumnat d'FP entrenar models predictius d'IA (consum, fotovoltaica i anomalies) sobre fluxos MLOps de codi obert. Tot el sistema opera sota una estricta governança ètica amb supervisió humana (Shadow Mode) i garantix la seua replicabilitat en qualsevol altra entitat mitjançant simulació amb dades sintètiques en Docker sense necessitat d'instal·lar sensors físics inicials."
           },
           "outputs": [],
           "decision": null
@@ -5197,7 +5197,7 @@ export const MARKETPLACE_CONFIG = {
           "summary": {
             "es": "Solución tecnológica que dota de autonomía comunicativa a personas con trastornos del habla. Combina una app de captura de voz para crear un dataset fonético con un modelo de IA que reconoce y traduce el habla en tiempo real, mostrando el texto en pantalla y narrándolo en voz alta para facilitar la comprensión.",
             "en": "Technological solution providing communicative autonomy to people with speech disorders. It combines a voice capture app to create a phonetic dataset with an AI model that recognizes and translates speech in real time, displaying the text on screen and narrating it aloud to facilitate understanding.",
-            "va": "Solució tecnològica que dota d'autonomia comunicativa persones amb trastorns de la parla. Combina una aplicació de captura de veu per a crear un dataset fonètic amb un model d'IA que reconeix i tradueix la parla en temps real, mostrant el text en pantalla i narrant-lo en veu alta per a facilitar la comprensió."
+            "va": "Solució tecnològica que dota d'autonomia comunicativa persones amb trastorns de la parla. Combina una aplicació de captura de veu per a crear un dataset fonètic amb un model d'IA que reconeix i traduïx la parla en temps real, mostrant el text en pantalla i narrant-lo en veu alta per a facilitar la comprensió."
           },
           "entity": {
             "name": "IES Severo Ochoa",
@@ -8118,7 +8118,7 @@ export const MARKETPLACE_CONFIG = {
         "label": {
           "es": "Requiere NDA",
           "en": "NDA required",
-          "va": "Requereix NDA"
+          "va": "Requerix NDA"
         }
       }
     ]

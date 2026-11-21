@@ -1865,7 +1865,7 @@ export const SECTORS_CONFIG = {
             "title": {
               "es": "CENTINELA+: cuando el propio instituto se convierte en el mejor laboratorio",
               "en": "CENTINELA+: When the School Itself Becomes the Ultimate Lab",
-              "va": "CENTINELA+: quan el mateix institut es converteix en el millor laboratori"
+              "va": "CENTINELA+: quan el mateix institut es convertix en el millor laboratori"
             },
             "summary": {
               "es": "El IES Dr. Lluís Simarro (Xàtiva) ha convertido su propio centro en un laboratorio real de IA e IoT para el alumnado del Curso de Especialización en IA y Big Data. Mediante sensórica en 34 espacios conectada a una cadena open source (MQTT, InfluxDB, Grafana, MLOps), el alumnado entrena modelos predictivos, detección de anomalías y asistentes RAG. Destaca por su alta transferibilidad: es un patrón por aula replicable, de código abierto e incluye un generador público de datos sintéticos para empezar sin instalar sensores.",
@@ -2155,7 +2155,7 @@ export const SECTORS_CONFIG = {
             "summary": {
               "es": "Solución tecnológica que dota de autonomía comunicativa a personas con trastornos del habla. Combina una app de captura de voz para crear un dataset fonético con un modelo de IA que reconoce y traduce el habla en tiempo real, mostrando el texto en pantalla y narrándolo en voz alta para facilitar la comprensión.",
               "en": "Technological solution providing communicative autonomy to people with speech disorders. It combines a voice capture app to create a phonetic dataset with an AI model that recognizes and translates speech in real time, displaying the text on screen and narrating it aloud to facilitate understanding.",
-              "va": "Solució tecnològica que dota d'autonomia comunicativa persones amb trastorns de la parla. Combina una aplicació de captura de veu per a crear un dataset fonètic amb un model d'IA que reconeix i tradueix la parla en temps real, mostrant el text en pantalla i narrant-lo en veu alta per a facilitar la comprensió."
+              "va": "Solució tecnològica que dota d'autonomia comunicativa persones amb trastorns de la parla. Combina una aplicació de captura de veu per a crear un dataset fonètic amb un model d'IA que reconeix i traduïx la parla en temps real, mostrant el text en pantalla i narrant-lo en veu alta per a facilitar la comprensió."
             },
             "status": "published",
             "targetRoute": "marketplace"
